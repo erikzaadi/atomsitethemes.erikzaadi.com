@@ -3,9 +3,13 @@
     <atom:title>Mystique theme, and source code available for AtomSiteThemes site</atom:title>
     <atom:content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
-            <h2>Welcome back!</h2>
-            <div>There are now 3 custom themes up (Notepad, Arclite and now Arjuna-X)</div>
-            <div>You can also see how many people downloaded each theme.</div>
+            <h2>Hello again..</h2>
+            <div>
+                There's a brand new theme up : <a href="http://atomsitethemes.erikzaadi.com/themecollection/Mystique">Mystique</a>.
+            </div>
+            <div>
+                You can now download / fork the source code for this site at <a href="http://github.com/erikzaadi/atomsitethemes.erikzaadi.com">github</a>.
+            </div>
             <p>Enjoy!</p>
         </div>
     </atom:content>
@@ -15,10 +19,10 @@
         <svc:allowAnnotate>yes</svc:allowAnnotate>
     </app:control>
     <atom:category term="News" />
-    <atom:published>2010-05-01T01:09:00-05:00</atom:published>
-    <atom:updated>2010-05-01T01:11:37.1373829Z</atom:updated>
-    <app:edited>2010-05-01T01:11:37.1373829Z</app:edited>
-    <atom:id>tag:erikzaadi.com,2010:news,ThreeThemesAndDownloadStats</atom:id>
+    <atom:published>2010-06-18T01:09:00-05:00</atom:published>
+    <atom:updated>2010-06-18T01:11:37.1373829Z</atom:updated>
+    <app:edited>2010-06-18T01:11:37.1373829Z</app:edited>
+    <atom:id>tag:erikzaadi.com,2010:news,MystiqueAndSourceCode</atom:id>
     <atom:author svc:id="erikzaadi">
         <atom:name>Erik Zaadi</atom:name>
         <atom:email>erik.zaadi@gmail.com</atom:email>
