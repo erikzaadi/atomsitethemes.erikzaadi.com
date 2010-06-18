@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="Syndication" Class="ItemDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=Syndication;Integrated Security=True" SettingsObjectName="AtomSite.Repository.Properties.Settings" SettingsPropertyName="SyndicationConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Attribute" Member="Attributes">
+    <Type Name="Attribute">
+      <Column Name="AttributeKey" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ParentKey" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="Namespace" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="Value" Type="System.String" DbType="NVarChar(512) NOT NULL" CanBeNull="false" />
+      <Association Name="Person_Attribute" Member="Person" ThisKey="ParentKey" OtherKey="PersonKey" Type="Person" IsForeignKey="true" />
+      <Association Name="Category_Attribute" Member="Category" ThisKey="ParentKey" OtherKey="CategoryKey" Type="Category" IsForeignKey="true" />
+      <Association Name="Content_Attribute" Member="Content" ThisKey="ParentKey" OtherKey="ContentKey" Type="Content" IsForeignKey="true" />
+      <Association Name="Item_Attribute" Member="Item" ThisKey="ParentKey" OtherKey="ItemKey" Type="Item" IsForeignKey="true" />
+      <Association Name="Link_Attribute" Member="Link" ThisKey="ParentKey" OtherKey="LinkKey" Type="Link" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Person" Member="Persons">
+    <Type Name="Person">
+      <Column Name="PersonKey" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ParentKey" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="Uri" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Association Name="Person_Attribute" Member="Attributes" ThisKey="PersonKey" OtherKey="ParentKey" Type="Attribute" />
+      <Association Name="Person_Element" Member="Elements" ThisKey="PersonKey" OtherKey="ParentKey" Type="Element" />
+      <Association Name="Item_Person" Member="Item" ThisKey="ParentKey" OtherKey="ItemKey" Type="Item" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Category" Member="Categories">
+    <Type Name="Category">
+      <Column Name="CategoryKey" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ParentKey" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="Label" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="Scheme" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Association Name="Category_Attribute" Member="Attributes" ThisKey="CategoryKey" OtherKey="ParentKey" Type="Attribute" />
+      <Association Name="Category_Element" Member="Elements" ThisKey="CategoryKey" OtherKey="ParentKey" Type="Element" />
+      <Association Name="Item_Category" Member="Item" ThisKey="ParentKey" OtherKey="ItemKey" Type="Item" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Content" Member="Contents">
+    <Type Name="Content">
+      <Column Name="ContentKey" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Url" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="Text" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Content_Attribute" Member="Attributes" ThisKey="ContentKey" OtherKey="ParentKey" Type="Attribute" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Element" Member="Elements">
+    <Type Name="Element">
+      <Column Name="ElementKey" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ParentKey" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OuterName" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="OuterNamespace" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="Xml" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Category_Element" Member="Category" ThisKey="ParentKey" OtherKey="CategoryKey" Type="Category" IsForeignKey="true" />
+      <Association Name="Person_Element" Member="Person" ThisKey="ParentKey" OtherKey="PersonKey" Type="Person" IsForeignKey="true" />
+      <Association Name="Item_Element" Member="Item" ThisKey="ParentKey" OtherKey="ItemKey" Type="Item" IsForeignKey="true" />
+      <Association Name="Link_Element" Member="Link" ThisKey="ParentKey" OtherKey="LinkKey" Type="Link" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Item" Member="Items">
+    <Type Name="Item">
+      <Column Name="ItemKey" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="TitleKey" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BaseUri" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="LastUpdatedTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="PublishDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SummaryKey" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CopyrightKey" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ContentKey" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Item_Attribute" Member="Attributes" ThisKey="ItemKey" OtherKey="ParentKey" Type="Attribute" />
+      <Association Name="Item_Person" Member="Persons" ThisKey="ItemKey" OtherKey="ParentKey" Type="Person" />
+      <Association Name="Item_Category" Member="Categories" ThisKey="ItemKey" OtherKey="ParentKey" Type="Category" />
+      <Association Name="Item_Element" Member="Elements" ThisKey="ItemKey" OtherKey="ParentKey" Type="Element" />
+      <Association Name="Item_Link" Member="Links" ThisKey="ItemKey" OtherKey="ParentKey" Type="Link" />
+      <Association Name="Content_Item" Member="Content" ThisKey="ContentKey" OtherKey="ContentKey" Type="Content" IsForeignKey="true" />
+      <Association Name="Content_Item1" Member="Copyright" ThisKey="CopyrightKey" OtherKey="ContentKey" Type="Content" IsForeignKey="true" />
+      <Association Name="Content_Item2" Member="Summary" ThisKey="SummaryKey" OtherKey="ContentKey" Type="Content" IsForeignKey="true" />
+      <Association Name="Content_Item3" Member="Title" ThisKey="TitleKey" OtherKey="ContentKey" Type="Content" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Link" Member="Links">
+    <Type Name="Link">
+      <Column Name="LinkKey" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ParentKey" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BaseUri" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="Uri" Type="System.String" DbType="NVarChar(512) NOT NULL" CanBeNull="false" />
+      <Column Name="Length" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MediaType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RelationshipType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Association Name="Link_Attribute" Member="Attributes" ThisKey="LinkKey" OtherKey="ParentKey" Type="Attribute" />
+      <Association Name="Link_Element" Member="Elements" ThisKey="LinkKey" OtherKey="ParentKey" Type="Element" />
+      <Association Name="Item_Link" Member="Item" ThisKey="ParentKey" OtherKey="ItemKey" Type="Item" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<roleMatrix xmlns="http://atomsite.net/info/Service">
+  <!-- AtomPub Actions-->
+  <roleAction name="GetServiceDoc"        admin="True"  author="True"  contrib="True"  user="False" anon="False"/>
+  <roleAction name="UpdateServiceDoc"     admin="True"  author="True"  contrib="False" user="False" anon="False"/>
+  <roleAction name="GetCollectionFeed"    admin="True"  author="True"  contrib="True"  user="False" anon="False"/>
+  <roleAction name="CreateEntryOrMedia"   admin="True"  author="True"  contrib="False" user="False" anon="False"/>
+  <roleAction name="GetEntryOrMedia"      admin="True"  author="True"  contrib="True"  user="False" anon="False"/>
+  <roleAction name="UpdateEntryOrMedia"   admin="True"  author="True"  contrib="True"  user="False" anon="False"/>
+  <roleAction name="DeleteEntryOrMedia"   admin="True"  author="True"  contrib="False" user="False" anon="False"/>
+  <roleAction name="PeekEntryOrMedia"     admin="True"  author="True"  contrib="True"  user="True"  anon="True"/>
+
+  <!-- Additional Actions -->
+  <roleAction name="GetFeed"              admin="True"  author="True"  contrib="True"  user="True"  anon="True"/>
+  <roleAction name="GetAnnotations"       admin="True"  author="True"  contrib="True"  user="True"  anon="True"/>
+  <roleAction name="Annotate"             admin="True"  author="True"  contrib="True"  user="True"  anon="True"/>
+  <roleAction name="ApproveEntryOrMedia"  admin="True"  author="True"  contrib="True"  user="False" anon="False"/>
+  <roleAction name="ApproveAnnotation"    admin="True"  author="True"  contrib="True"  user="False" anon="False"/>
+  <roleAction name="RateEntryOrMedia"     admin="True"  author="True"  contrib="True"  user="True"  anon="True"/>
+</roleMatrix>

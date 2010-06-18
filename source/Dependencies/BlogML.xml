@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BlogML</name>
+    </assembly>
+    <members>
+        <member name="T:BlogML.Pair`2">
+            <summary>
+            A serializable keyvalue pair class
+            </summary>
+        </member>
+    </members>
+</doc>

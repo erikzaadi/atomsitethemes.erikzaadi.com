@@ -1,0 +1,25 @@
+﻿/* Copyright 2008-10 Jarrett Vance
+* see http://www.codeplex.com/blogsvc/license */
+
+/* AdminPluginListing */
+table.plugins {width:100%;}
+table.plugins td {vertical-align:middle}
+table.plugins .title a {font-size:110%}
+table.plugins .title small {padding-left:6px;font-family:'Lucida Console'}
+table.plugins tfoot td.total {text-align:center;}
+table.plugins .merit button{width:30px;padding:0}
+table.plugins .merit button.disabled img{opacity:0.4}
+table.plugins .merit{width:16em;}
+table.plugins span{width:5em;display:inline-block; text-align:center}
+table.plugins .meritval {display:none;}
+table.plugins .ctrl {text-align:right;}
+table.plugins .ctrl button {margin-left:0.8em;font-size:smaller; width:6em}
+table.plugins .ctrl strong {color:Green}
+table.plugins tr.disabled {background:#f3d3d3}
+
+#uploadplugin *[type=submit] {margin:0.2em 2em; font-weight:bold; padding:0.3em 0.6em}
+
+/* for restart */
+#restart .notifications {padding:0.3em 1em; margin-top:2em; min-height:2.2em; display:block}
+#restart strong {color:#a90000; padding-right:0.4em}
+#restart button {float:right; margin:0.2em}

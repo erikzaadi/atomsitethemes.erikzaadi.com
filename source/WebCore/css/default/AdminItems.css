@@ -1,0 +1,17 @@
+﻿/* Copyright 2008-10 Jarrett Vance
+* see http://www.codeplex.com/blogsvc/license */
+
+/* AdminRecentAnnotationsWidget and AdminPendingEntriesWidget */
+.widget.items ol {margin:0}
+.widget.items li {color:#999999; padding:1em 10px 0.8em 10px; border-top:solid 1px #dfdfdf; list-style-type:none}
+
+.widget.items .avatar {float:left; margin:0 10px 5px 0}
+.widget.items h4{font-family:Georgia,"Times New Roman","Bitstream Charter",Times,serif;font-size:121%; font-weight:normal;
+margin:-.2em 0 0.2em 60px; line-height:1.3em;padding:0}
+
+.widget.items .actions {margin-left:60px; font-size:smaller}
+.widget.items h4 abbr {font-size:smaller;border:none;font-family:"Lucida Grande",Verdana,Arial,"Bitstream Vera Sans",sans-serif;color:#888}
+.widget.items blockquote {color:#333;margin:0 0 0.5em 0}
+
+/* AdminPendingEntriesWidget */
+.widget.items li.entry h4 {margin-left:0}

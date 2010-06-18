@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<atom:entry xmlns:atom="http://www.w3.org/2005/Atom"
+            xmlns:svc="http://atomsite.net/info/Service"
+            xmlns:app="http://www.w3.org/2007/app"
+            xmlns:thread="http://purl.org/syndication/thread/1.0"
+            xmlns:plug="http://atomsite.net/info/Plugins">
+  <atom:title>Star Rater Plugin</atom:title>
+  <plug:type>AtomSite.Plugins.RaterPlugin, AtomSite.WebCore, Version=1.4.0.0, Culture=neutral, PublicKeyToken=null</plug:type>
+  <plug:compatibleVersion>1.4.0.0</plug:compatibleVersion>
+  <plug:file name="js\jquery.tools-1.1.2.js" />
+  <plug:homepage>http://atomsite.net/plugins/RaterPlugin.xhtml</plug:homepage>
+  <atom:content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      This widget adds an ajax star rating to an entry page.  It utilizes the
+      <a href="http://jvance.com/pages/jQueryRaterPlugin.xhtml">jQuery Rater Plugin</a> to
+      provide a nice web experience.
+    </div>
+  </atom:content>
+  <atom:category term="Widget" />
+  <atom:published>2009-02-17T13:58:45.8001718Z</atom:published>
+  <atom:updated>2009-05-08T13:58:45.8001718Z</atom:updated>
+  <atom:id>tag:atomsite.net,2009:plugins,Admin</atom:id>
+  <atom:author svc:id="JarrettV">
+    <atom:name>JarrettV</atom:name>
+    <atom:uri>http://jvance.com/</atom:uri>
+    <atom:email>jarrettv@gmail.com</atom:email>
+  </atom:author>
+</atom:entry>

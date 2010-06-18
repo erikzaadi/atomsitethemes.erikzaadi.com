@@ -1,0 +1,70 @@
+﻿li.comment
+{
+    background:url("../../img/arclite/comment-shadow.png") no-repeat scroll right bottom transparent !important;
+    border:none !important;
+	width:95% !important;
+	margin : 0px !important;
+    padding : 17px !important;
+	overflow:hidden !important;
+}
+
+.comment div
+{
+	margin: 0 !important;
+    padding: 0 !important;
+}
+
+blockquote
+{
+    word-wrap: break-word;
+}
+
+#addcomment div {
+    width : 64% !important;
+}
+
+#addcomment fieldset
+{
+    border : none !important;
+}
+
+.quote
+{
+    cursor : pointer !important;
+}
+
+#normallogin fieldset
+{
+    border : none !important;
+}
+
+#normallogin label
+{
+    width : 120px;
+    display:block;
+    float:left;
+}
+
+.openid fieldset
+{
+    border : none !important;
+}
+
+.mario
+{
+    position:absolute;
+    top:130px;
+    left:260px;
+    display:none;
+}
+
+.mariovidwrapper
+{
+    display:none;
+}
+
+#mariovid
+{
+    width:490px;
+    height:395px;
+}

@@ -1,0 +1,14 @@
+﻿/* Copyright 2008-10 Jarrett Vance
+* see http://www.codeplex.com/blogsvc/license */
+#configureForm.choose h4 {background: #EAF2FA; color:#666; padding:0.4em 0.8em; font-weight:normal; float:right; -moz-border-radius:4px; -webkit-border-radius:4px;}
+#configureForm.choose h4 small {color:#6086ac; margin-right:1.5em}
+#configureForm.choose h4 strong {margin:0 2em}
+#configureForm.choose ul.choices {background: #fff; border: 1px solid #888; max-height:18em; overflow:auto; margin:0}
+#configureForm.choose ul.choices li {list-style-type:none;margin:0;padding:0.4em;vertical-align:middle}
+#configureForm.choose ul.choices li .actions {float:right}
+#configureForm.choose ul.choices li.selected {background:#EAF2FA;color:#6086ac}
+
+#configureForm input[type=text] {display:block}
+#configureForm div {margin:0.5em 0}
+#configureForm .validation-summary-errors {margin:-0.5em 0 0.5em 0}
+#configureForm .validation-summary-errors li {margin:0.2em -0.5em; margin-left:2em}

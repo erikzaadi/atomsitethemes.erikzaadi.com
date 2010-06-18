@@ -1,0 +1,210 @@
+﻿/* Copyright 2008-10 Jarrett Vance
+* see http://www.codeplex.com/blogsvc/license */
+html {background-color:#F7F7F7}
+body {margin:10px;font-family:"Lucida Grande",Verdana,Arial,"Bitstream Vera Sans",sans-serif; min-width:974px}
+h1 {font-size: 138.5%;}
+h2 {font-size: 123.1%;}
+h3 {font-size: 108%;}
+h1,h2,h3 {margin: 1em 0;}
+h1,h2,h3,h4,h5,h6,strong,dt {font-weight: bold;}
+optgroup {font-weight:normal;}
+abbr,acronym {border-bottom: 1px dotted #000;	cursor: help;}
+em {font-style: italic;}
+del {text-decoration: line-through;}
+blockquote,ul,ol,dl {margin: 1em;}
+ol,ul,dl {margin-left: 2em;}
+ol li {list-style: decimal outside;}
+ul li {list-style: disc outside;}
+dl dd {margin-left: 1em;}
+th,td {border: 1px solid #000;padding: .5em;}
+th {font-weight: bold;text-align: center;}
+caption {margin-bottom: .5em;text-align: center;}
+sup {vertical-align: super;}
+sub {vertical-align: sub;}
+p,fieldset,table,pre {margin-bottom: 1em;}/*end base*/
+
+#bd {clear:both} /* IE7 */
+
+fieldset {margin:0;padding:0}
+.floatr {float:right;}
+.floatl {float:left;}
+.larger {font-size:larger;}
+.right {text-align:right;}
+.last {border-bottom:none;}
+.btnicon {float:left; margin-right:3px; margin-top:-1px}
+button,input[type="checkbox"],input[type="radio"],input[type="reset"],input[type="submit"] {padding:1px;}
+button.default {font-weight:bold;}
+input[readonly=readonly] {color:#595959; background-color:#F3F3F3;  border: solid 1px #dfdfdf}
+a {color:#21759B;}
+a:visited {color:#21759B}
+a:hover {color:#4397BD}
+
+table a {text-decoration:none;}
+table thead, table tfoot {margin:0; background:#DFDFDF url(../../img/default/gray-grad.png) repeat-x scroll left top; }
+table td, table th{border: none;border-bottom-style:solid; border-bottom-color:#dfdfdf;
+border-bottom-width:1px;text-align:left; padding:0.3em 0.5em 0.18em 0.5em}
+table td {vertical-align:top; color:#666}
+table {width:100%; margin-top:0.8em; border: solid 1px #dfdfdf; border-collapse:separate;
+border-spacing:0;-moz-border-radius:4px; -webkit-border-radius:4px;
+border-style:solid;
+border-width:1px; background:#fff;}
+
+#hd {float:right;width:44%; min-width:480px; overflow:hidden}
+#hd h1 {float:left; margin:0;
+	width: 200px;
+	height: 26px; background: url(../../img/default/manager.png) no-repeat center left; text-indent:-9999px}
+#hd h1+a {display:inline-block;margin:0.3em 0 0 5%}
+#hd .acctstat{float:left; margin:0.3em 5% 0 0}
+#scope a.visitsite{font-size:90%;font-weight:bold;text-decoration:none;float:left;padding: 8px 30px 8px 1em;background: url(../../img/default/adminiconv.png) no-repeat scroll right -802px}
+#scope a.visitsite:hover{background-position: right -770px;color:#a90000}
+
+#ft {margin:1% 4%; font-size:smaller; color:#999; letter-spacing:0.1em; text-align:center;}
+
+.ddmenu { background: #777 url(../../img/default/adminfav.png) repeat-x; float:left; margin:0; width:25em;
+          color:#ddd; font-size:larger; -moz-border-radius:4px; -webkit-border-radius:4px}
+.ddmenu > li {  list-style:none; display:block; padding:1.4% 0 1.4% 1em; width:24em;
+                background: transparent url(../../img/default/adminfav-arrow.gif) no-repeat top right}
+.ddmenu>li>a { border-left: solid thin #6a6a6a; margin-left:2em; padding:1% 6% 1% 3%; color:White; 
+               text-decoration:none; cursor:default; font-weight:bold; }
+.ddmenu>li>a>em { font-style:normal; margin-right:0.3em; font-weight:normal; }
+.ddmenu>li>a>small {font-weight:normal; }
+.ddmenu > li ul {display: none; background-color:#616161;width:17em;position: absolute;margin: 2px 0 0 5em;z-index: 90;padding: 0.5em;}
+
+.ddmenu>li ul>li{ padding: 1.2%;	list-style: none;}
+.ddmenu>li ul>li.current{ background: #838383;
+	-moz-border-radius:4px; -webkit-border-radius:4px; }
+.ddmenu>li ul>li:hover{ background: #a5a5a5;
+	-moz-border-radius:4px; -webkit-border-radius:4px; }
+.ddmenu>li ul>li>a{ color:White; text-decoration:none; width:100%; display:inline-block;}
+.ddmenu>li ul>li>a>em{ color:#ddd; padding-right:1em ;font-style:normal}
+
+#menu{clear:left}
+#menu>ul {margin:8% 0 0 0; padding:0}
+#menu>ul>li {line-height:230%;background-color:#efefef;border-color:#E3E3E3;border-style:solid solid none;border-width:1px; list-style:none;margin:0;padding:0}
+#menu>ul>li>a {width:79%;display:inline-block; padding-left: 20%; text-decoration:none;font-family:Georgia,"Times New Roman","Bitstream Charter",Times,serif;
+font-size:121%;border-color:#FFF #E3E3E3 #FFF #FFF;border-style:solid none none solid;border-width:1px; }
+#menu>ul>li>a:hover {color:#A90000}
+
+#menu>ul>li>ul {margin:0; padding:0}
+#menu>ul>li>ul>li {line-height:190%;background-color:#fefefe;border-style:none;list-style:none;margin:0;padding:0}
+#menu>ul>li>ul>li a {width:95%;display:inline-block; padding-left: 5%; text-decoration:none;font-family:"Lucida Grande",Verdana,Arial,"Bitstream Vera Sans",sans-serif;
+font-size:90%;border-style:none}
+
+#menu>ul>li.first {-moz-border-radius-topleft:6px;
+-moz-border-radius-topright:6px;}
+#menu>ul>li.first a {-moz-border-radius-topleft:6px;
+-moz-border-radius-topright:6px;}
+#menu>ul>li.last {border-style:solid;-moz-border-radius-bottomleft:6px;
+-moz-border-radius-bottomright:6px;}
+
+h2 {color:#464646;-x-system-font:none;font-family:Georgia,"Times New Roman","Bitstream Charter",Times,serif;
+font-size:24px;font-size-adjust:none;font-stretch:normal;font-style:italic;font-variant:normal;font-weight:normal;
+line-height:35px;margin:0 0 1% 0;padding:8px 15px 1px 48px;text-shadow:0 1px 0 #FFFFFF;background:transparent url(../../img/default/icons32.png) no-repeat scroll -10px 6px}
+
+.redbg {background:#fcc}
+.greenbg {background:#cfc}
+.fade {opacity:0.2}
+
+.errors, .notifications,.validation-summary-errors { margin: 1% 0 0; display:none; padding:0.7em 1em; -moz-border-radius:4px; -webkit-border-radius:4px}
+.errors p, .notifications p { margin:0}
+.notifications strong {color:green;font-size:larger}
+.errors strong {color:#a90000;font-size:larger; padding-right:0.3em}
+.notifications {border: 1px solid #f9dd34; background: #fbf5d0; color: #363636; }
+.errors, .validation-summary-errors {border: 1px solid #cd0a0a; background: #fef1ec; color: #cd0a0a }
+.validation-summary-errors {display:block}
+.input-validation-error {border: 1px solid #cd0a0a; color:#900; background-color:#FFDFDF}
+.field-validation-error {color:#a90000; margin-left: 0.4em}
+/*TODO: icon-info and icon-alert */
+
+#AdminDashboard h2 {background-position: -10px -84px;}
+#AdminEntries h2 {background-position: -10px -398px;}
+#AdminEditEntry h2 {background-position: -10px -398px;}
+#AdminAnnotations h2 {background-position: -10px -40px;}
+#AdminSettingsEntireSite h2 {background-position: -10px -356px;}
+#AdminSettingsWorkspace h2 {background-position: -10px -356px;}
+#AdminSettings h2 {background-position: -10px -356px;}
+#AdminPlugins h2 {background-position: -10px -264px;}
+#AdminTools h2 {background-position: -10px -312px;}
+#AdminUsers h2 {background-position: -10px -448px;}
+
+/* TODO: have to specify background for each one... why? */
+li#entries>a {background:transparent url(../../img/default/adminiconv.png) no-repeat scroll 0 -608px;}
+li#entries>a:hover{background-position: 0 -576px;}
+li#dashboard>a {background:transparent url(../../img/default/adminiconv.png) no-repeat scroll 0 -160px;}
+li#dashboard>a:hover{background-position: 0 -128px;}
+li#annotations>a {background:transparent url(../../img/default/adminiconv.png) no-repeat scroll 0 -96px;}
+li#annotations>a:hover{background-position: 0 -64px;}
+li#theme>a {background:transparent url(../../img/default/adminiconv.png) no-repeat scroll 0 -32px;}
+li#theme>a:hover{background-position: 0 -0px;}
+li#widgets>a {background:transparent url(../../img/default/adminiconv.png) no-repeat scroll 0 -736px;}
+li#widgets>a:hover{background-position: 0 -704px;}
+li#settings>a {background:transparent url(../../img/default/adminiconv.png) no-repeat scroll 0 -544px;}
+li#settings>a:hover{background-position: 0 -512px;}
+li#users>a {background:transparent url(../../img/default/adminiconv.png) no-repeat scroll 0 -672px;}
+li#users>a:hover{background-position: 0 -640px;}
+li#plugins>a {background:transparent url(../../img/default/adminiconv.png) no-repeat scroll 0 -416px;}
+li#plugins>a:hover{background-position: 0 -384px;}
+li#tools>a {background:transparent url(../../img/default/adminiconv.png) no-repeat scroll 0 -480px;}
+li#tools>a:hover{background-position: 0 -448px;}
+
+.widget { border: solid 1px #dfdfdf; background:#fff; -moz-border-radius:4px; -webkit-border-radius:4px; margin-bottom:1em }
+.widget h3 {margin:0; background:#DFDFDF url(../../img/default/gray-grad.png) repeat-x scroll left top;
+text-shadow:0 1px 0 #FFFFFF; font-weight:bold; padding:7px 9px;font-size:12px}
+.alt {background-color:#F9F9F9;}
+.widget .tool{padding:0.2em 0.5em; height:2em; background-color:#f1f1f1}
+a[rel=add], a[rel=cancel] {float:right;padding: 0.2em 0.5em 0.2em 18px;background: transparent url('../../img/default/plus.png') no-repeat left center}
+a[rel=cancel] {background-image: url('../../img/default/stop.png')}
+
+h3.action {float:right; margin-top:-0.8em; height:1.2em}
+
+form.more {text-align:right; margin:0.1em}
+button.white {line-height:1.2em; padding:2px 10px; font-size:80%; margin:0 2% 2% 0;}
+
+.actions {visibility:hidden;font-size:85%;margin-left:5%}
+.actions a {text-decoration:none}
+.actions a:hover {text-decoration:underline}
+
+.widget.selection.area li:hover {background-color:#EAF2FA !important}
+
+.filter a {text-decoration:none}
+.filter a:hover {text-decoration:underline}
+.filter div {float:right; margin-top:-0.7em; padding:0.5em 0.6em}
+a.all {color:#000;font-weight:bold}
+a.unapproved, a.admins {color:#a90000;}
+a.published, a.authors {color:Green;}
+a.draft, a.users {color:#666}
+a.pending, a.contribs {color:orange}
+a.spam {color:red}
+.pending .status {color:#a60000}
+.pending .draft {color:#666}
+p.warning {margin:2em; color:#888; text-align:center}
+
+/* root element for tabs  */
+ul.tabs { margin:0.8em !important; padding:0;height:30px}
+
+/* single tab */
+ul.tabs li {float:left;padding:0;list-style-type:none; margin:0.8em;}
+
+/* link inside the tab. uses a background image */
+ul.tabs a {float:left;display:block;padding:0.2em 0.5em;text-decoration:none;border:1px solid #666;
+    -moz-border-radius:3px; -webkit-border-radius:3px; background-color:#efefef;color:#777;position:relative}
+
+ul.tabs a:hover {background-color:#F7F7F7;color:#333}
+	
+/* selected tab */
+ul.tabs a.current {background-color:#EAF2FA;color:#000;cursor:default}
+
+/* tab pane */
+div.panes>div.widget {display:none}
+
+.widget form{margin:0.8em}
+.widget form div label {display:block}
+.widget form div input, div select {margin-bottom:0.5em}
+.widget form small {color:#666}
+
+
+.overlay {-moz-border-radius:8px; -webkit-border-radius:8px; text-align:left;
+	background:#fafafa;display:none;padding:1em 2em;border:solid 3px #555;
+	}
+.overlay .buttons input[type=submit], .overlay .buttons button{margin-left:3em; min-width:8em}
+.overlay .buttons {text-align:right; margin:0.4em}

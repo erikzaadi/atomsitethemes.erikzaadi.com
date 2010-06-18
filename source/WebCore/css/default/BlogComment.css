@@ -1,0 +1,28 @@
+﻿/* Copyright 2008-10 Jarrett Vance
+* see http://www.codeplex.com/blogsvc/license */
+
+/* COMMENTS */
+#comments h4+a { float:right; margin-top:-1.5em; }
+#comments {clear:both;}
+.comment {border: solid #ABABAB thin;border-style: solid none;
+    background:#ffffff url(../../img/default/fadegrey.png) repeat-x;overflow:auto;width:100%;margin: 0 0 1.1em 0;}
+.commentOwner {border-color: #0094D6;background-image: url(../../img/default/fadeblue.png);}
+.commentSelf {border-color: #F2D580;background-image: url(../../img/default/fadegold.png);}
+.commentNotApproved {border-color: #E59292;background-image: url(../../img/default/fadered.png);}
+.commentApprove {border-color: #B1EDB2;background-image: url(../../img/default/fadegreen.png);}
+.comment h5{margin: 10px;font-size: 1em;font-weight: bold;}
+.comment div{margin: 10px;}
+.comment img.avatar{float:left;width:80;height:80;margin:10px;border:1px solid #6c6c6c;}
+.comment div.admin{float:right;width: 5em;}
+.comment div.admin button {width:100%;}
+
+/* COMMENT ADD FORM */
+#addcomment label { display:block;}
+#addcomment .notify {float:left;width: 18em;text-align:right;margin: 0 1em 0.5em 9em;}
+#addcomment input[type="text"] {width: 100%;margin-bottom:0.5em;}
+#addcomment textarea {width: 100%;}
+#addcomment input[type="submit"] {margin: 1em;}
+
+#anonDetails {width:44%; clear:right;padding-right:1%}
+#userDetails img.avatar {vertical-align:top;}
+#userDetails strong { font-size:larger; font-weight:normal; padding:.5em 0 0 .5em; }

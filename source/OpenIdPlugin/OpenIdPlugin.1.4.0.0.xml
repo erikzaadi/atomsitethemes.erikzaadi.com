@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<atom:entry xmlns:atom="http://www.w3.org/2005/Atom"
+            xmlns:svc="http://atomsite.net/info/Service" 
+            xmlns:app="http://www.w3.org/2007/app"
+            xmlns:thread="http://purl.org/syndication/thread/1.0"
+            xmlns:plug="http://atomsite.net/info/Plugins">
+  <atom:title>OpenID Plugin</atom:title>
+  <plug:type>AtomSite.Plugins.OpenIdPlugin.OpenIdPlugin, AtomSite.Plugins.OpenIdPlugin, Version=1.4.0.0, Culture=neutral, PublicKeyToken=null</plug:type>
+  <plug:compatibleVersion>1.4.0.0</plug:compatibleVersion>
+  <plug:file name="bin\AtomSite.Plugins.OpenIdPlugin.dll" />
+  <plug:file name="bin\DotNetOpenAuth.dll" />
+  <plug:widget>
+    <plug:name>OpenIdModalWidget</plug:name>
+    <plug:description>Provides a login link that opens a modal dialog the user can login to.</plug:description>
+    <plug:file name="js\jquery.tools-1.1.2.js" />
+    <plug:file name="js\jquery.openid-1.1.js" />
+    <plug:file name="js\default\OpenIdModalWidgetTail.js" />
+    <plug:file name="css\default\OpenId.css" />
+    <plug:file name="themes\default\OpenIdModalWidget.ascx" />
+    <plug:file name="img\default\googleW.png" />
+    <plug:file name="img\default\yahooW.png" />
+    <plug:file name="img\default\flickrW.png" />
+    <plug:file name="img\default\aolW.png" />
+    <plug:file name="img\default\openidico.png" />
+  </plug:widget>
+  <plug:widget>
+    <plug:name>OpenIdLoginWidget</plug:name>
+    <plug:description>Provides a login form with an OpenID selector for the user to login.</plug:description>
+    <plug:file name="js\jquery.openid-1.1.js" />
+    <plug:file name="css\default\OpenId.css" />
+    <plug:file name="themes\default\OpenIdLoginWidget.ascx" />
+    <plug:file name="img\default\aolW.png" />
+    <plug:file name="img\default\blogger.png" />
+    <plug:file name="img\default\claimid.png" />
+    <plug:file name="img\default\facebookW.png" />
+    <plug:file name="img\default\flickr.png" />
+    <plug:file name="img\default\flickrW.png" />
+    <plug:file name="img\default\googleW.png" />
+    <plug:file name="img\default\livejournal.png" />
+    <plug:file name="img\default\myopenid.png" />
+    <plug:file name="img\default\myopenidW.png" />
+    <plug:file name="img\default\myspaceW.png" />
+    <plug:file name="img\default\openidico.png" />
+    <plug:file name="img\default\openidW.png" />
+    <plug:file name="img\default\technorati.png" />
+    <plug:file name="img\default\verisign.png" />
+    <plug:file name="img\default\vidoop.png" />
+    <plug:file name="img\default\wordpress.png" />
+    <plug:file name="img\default\yahooW.png" />
+  </plug:widget>
+  <plug:homepage>http://atomsite.net/plugins/OpenIdPlugin.xhtml</plug:homepage>
+  <atom:content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <p>This plugin includes an authentication module (must be activated in web.config) and a couple widgets to allow logging into the site via <a href="http://openid.net">OpenID</a>.</p>
+      <p>
+        <strong style="#a90000">Update </strong> Now the web.config file gets updated automatically during setup.
+      </p>
+      <h3>Web.config Settings</h3>
+      <h4>IE7</h4>
+      <p>If installing manually, add the following line to the &lt;system.webServer&gt; &lt;modules&gt; section:</p>
+      <code>
+        &lt;add name="OpenIdAuthenticationModule" type="AtomSite.Plugins.OpenIdPlugin.OpenIdAuthenticationModule, AtomSite.Plugins.OpenIdPlugin"/&gt;
+      </code>
+    </div>
+  </atom:content>
+  <atom:category term="Authentication" />
+  <atom:category term="Widget" />
+  <atom:published>2009-02-17T13:58:45.8001718Z</atom:published>
+  <atom:updated>2010-02-08T13:58:45.8001718Z</atom:updated>
+  <atom:id>tag:atomsite.net,2009:plugins,OpenIdPlugin</atom:id>
+  <atom:author svc:id="JarrettV">
+    <atom:name>JarrettV</atom:name>
+    <atom:uri>http://jvance.com/</atom:uri>
+    <atom:email>jarrettv@gmail.com</atom:email>
+  </atom:author>
+</atom:entry>

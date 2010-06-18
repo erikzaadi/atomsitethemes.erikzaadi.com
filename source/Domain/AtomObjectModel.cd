@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AtomSite.Core.AtomCategory">
+    <Position X="11" Y="2.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAEgAAAAAAEAAAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>AtomCategory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtomSite.Core.AtomContent">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEgEAAAAAAAAACAAAAAQIACAAAAAA=</HashCode>
+      <FileName>AtomContent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtomSite.Core.AtomEntry">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AACCxIAEAgAQAEcEiAIAAAACAApCUQgJXACAiCAAAAA=</HashCode>
+      <FileName>AtomEntry.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AtomSite.Core.AtomFeed">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAChQAAAAAQAGAAQAIAAAACAABAEAAASACAgAEAAAA=</HashCode>
+      <FileName>AtomFeed.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AtomSite.Core.AtomPerson">
+    <Position X="11" Y="4" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAEgAAAAAQAAAAAAAACCAAAAAAAAAA=</HashCode>
+      <FileName>AtomPerson.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtomSite.Core.AtomText">
+    <Position X="7.5" Y="4.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEgAAAAAAAAAAAAAAAAQAACAAAIAA=</HashCode>
+      <FileName>AtomText.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtomSite.Core.ThreadInReplyTo">
+    <Position X="12.75" Y="3" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAgAAgAAAAAAAAAAAAABAAQAAAAAAAAA=</HashCode>
+      <FileName>ThreadInReplyTo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtomSite.Core.AppService">
+    <Position X="13.25" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>ACAIgIAAAAAAAAAAAAAAgQICAgRAAAAAAAAAgEAAgAA=</HashCode>
+      <FileName>AppService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AtomSite.Core.AppWorkspace">
+    <Position X="16.75" Y="2.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAEAAAAAAIAQAAABAAAAAAAAAAMAAAAA=</HashCode>
+      <FileName>AppWorkspace.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtomSite.Core.AppCollection">
+    <Position X="15" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>ABADBQQAAAAAAUAEQQgAIAQAAQJAUBBAAACEAAkAgAA=</HashCode>
+      <FileName>AppCollection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtomSite.Core.AppControl">
+    <Position X="15" Y="4.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAEAAAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AppControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AtomSite.Core.AppCategories">
+    <Position X="16.75" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAgIAAAAQAAAAAAAAAAAAGAABAEABAAAAAgABAAAA=</HashCode>
+      <FileName>AppCategories.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+
+  <parameter name="Application Path" description="Full site path where you would like to install your application (i.e., Default Web Site/atomsite)"
+             defaultValue="Default Web Site/atomsite" tags="iisapp">
+    <parameterEntry type="ProviderPath" scope="iisapp" match="AtomSite" />
+  </parameter>
+  
+  <parameter name="SetAclParameterAppData" defaultValue="{Application Path}/App_Data" tags="Hidden">
+    <parameterEntry type="ProviderPath" scope="setAcl" match="AtomSite/App_Data" />
+  </parameter>
+  <parameter name="SetAclParameterBin" defaultValue="{Application Path}/bin" tags="Hidden">
+    <parameterEntry type="ProviderPath" scope="setAcl" match="AtomSite/bin" />
+  </parameter>
+  <parameter name="SetAclParameterCss" defaultValue="{Application Path}/css" tags="Hidden">
+    <parameterEntry type="ProviderPath" scope="setAcl" match="AtomSite/css" />
+  </parameter>
+  <parameter name="SetAclParameterImg" defaultValue="{Application Path}/img" tags="Hidden">
+    <parameterEntry type="ProviderPath" scope="setAcl" match="AtomSite/img" />
+  </parameter>
+  <parameter name="SetAclParameterJs" defaultValue="{Application Path}/js" tags="Hidden">
+    <parameterEntry type="ProviderPath" scope="setAcl" match="AtomSite/js" />
+  </parameter>
+  <parameter name="SetAclParameterPlugins" defaultValue="{Application Path}/plugins" tags="Hidden">
+    <parameterEntry type="ProviderPath" scope="setAcl" match="AtomSite/plugins" />
+  </parameter>
+  <parameter name="SetAclParameterThemes" defaultValue="{Application Path}/themes" tags="Hidden">
+    <parameterEntry type="ProviderPath" scope="setAcl" match="AtomSite/themes" />
+  </parameter>
+  
+  <parameter name="SetAclParameter5" defaultValue="{Application Path}/Service.config" tags="Hidden">
+    <parameterEntry type="ProviderPath" scope="setAcl" match="AtomSite/Service.config" />
+  </parameter>
+  <parameter name="SetAclParameter6" defaultValue="{Application Path}/Users.config" tags="Hidden">
+    <parameterEntry type="ProviderPath" scope="setAcl" match="AtomSite/Users.config" />
+  </parameter>
+
+</parameters>

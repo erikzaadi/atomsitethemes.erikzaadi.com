@@ -1,0 +1,129 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="ViewMasterPage<PageModel>" %>
+
+<% Model.UpdatePageModel(Page, "Site"); %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <asp:ContentPlaceHolder ID="head" runat="server" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+    <!--[if IE]>
+		<link rel="stylesheet" href="<%= Url.Content("~/css/inove/ie.css") %>" type="text/css" media="screen" />
+	<![endif]-->
+    <link rel="icon" type="image/png" href="<%= Url.ImageSrc("icon.png") %>" />
+    <link rel="stylesheet" type="text/css" href="<%= Url.ThemeStyleSheetHref() %>" />
+    <%= Html.StyleLinks() %>
+    <% Html.RenderWidgets("head"); %>
+</head>
+<body id="<%= Model.PageName %>">
+    <div id="wrap">
+        <div id="container">
+            <%-- class="one-column" --%>
+            <div id="header">
+                <div class="banner">
+                </div>
+                <div id="caption">
+                    <h1 id="title">
+                        <a href="<%= Url.Content("~/") %>">
+                            <%= Model.Workspace.Title %></a></h1>
+                    <div id="tagline">
+                        <%= Model.Workspace.Subtitle %></div>
+                </div>
+                <div class="fixed">
+                </div>
+            </div>
+            <div id="navigation">
+                <% Html.RenderWidgets("nav"); %>
+                <div class="fixed">
+                </div>
+            </div>
+            <div id="content">
+                <div id="main">
+                    <asp:ContentPlaceHolder ID="content" runat="server" />
+                    <% Html.RenderWidgets("content"); %>
+                </div>
+                <div id="sidebar">
+                    <div id="northsidebar" class="sidebar">
+                        <asp:ContentPlaceHolder ID="sidetop" runat="server" />
+                        <% Html.RenderWidgets("sidetop"); %>
+                        <asp:ContentPlaceHolder ID="sidemid" runat="server" />
+                        <% Html.RenderWidgets("sidemid");%>
+                    </div>
+                    <%-- Need to find a way to customize this via the admin side..
+                    <div id="centersidebar">
+                        <div id="eastsidebar" class="sidebar">
+                        </div>
+                        <div id="westsidebar" class="sidebar">
+                        </div>
+                        <div class="fixed">
+                        </div>
+                    </div>
+                    --%>
+                    <div id="southsidebar" class="sidebar">
+                        <div class="widget">
+                            <asp:ContentPlaceHolder ID="sidebot" runat="server" />
+                            <% Html.RenderWidgets("sidebot"); %>
+                        </div>
+                    </div>
+                </div>
+                <div class="fixed">
+                </div>
+            </div>
+            <div id="footer">
+                <a onclick="MGJS.goTop();return false;" href="#" id="gotop">Top</a> <a href="http://atomsite.net"
+                    id="powered" title="Atom Site <%= ServerApp.CurrentVersion %>">AtomSite</a>
+                <% if (Model.AuthorizeService.GetScopes(Model.User).Count() > 0)
+                   {%>
+                <a href="<%=Url.Action("Dashboard", "Admin") %>">Dashboard</a>&#160;|&#160;
+                <% }%>
+                <% Html.RenderWidgets("foot"); %>
+                <div id="copyright">
+                    Copyright &copy;
+                    <%= DateTime.Today.Year %></div>
+                <div id="themeinfo">
+                    Theme by <a href="http://www.neoease.com/">NeoEase</a>. Valid <a href="http://validator.w3.org/check?uri=referer">
+                        XHTML 1.1</a> and <a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3">
+                            CSS 3</a>. Ported to <a href="http://atomsite.net">AtomSite</a> by <a href="http://erikzaadi.com">
+                                Erik Zaadi</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="<%= Url.ScriptSrc("jquery-1.4.2.js")%>"></script>
+    <script type="text/javascript" src="<%= Url.ScriptSrc("jquery.timeago-0.8.2.js")%>"></script>
+    <script type="text/javascript" src="<%= Url.ScriptSrc("base.js")%>"></script>
+    <script type="text/javascript" src="<%= Url.ScriptSrc("menu.js")%>"></script>
+    <%= Html.ScriptSources() %>
+    <asp:ContentPlaceHolder ID="tail" runat="server" />
+    <script type="text/javascript">//<![CDATA[
+     $(document).ready(function()
+    {
+     $('abbr.timeago').timeago(); }); <%= Model.TailScript %> 
+     //]]></script>
+    <% Html.RenderWidgets("tail"); %>
+    <script type="text/javascript"> //<![CDATA[
+        var searchbox = MGJS.$("searchbox");
+        var searchtxt = MGJS.getElementsByClassName("textfield", "input", searchbox)[0];
+        var searchbtn = MGJS.getElementsByClassName("button", "input", searchbox)[0];
+        var tiptext = "Type text to search here...";
+        if (searchtxt.value == "" || searchtxt.value == tiptext) {
+            searchtxt.className += " searchtip";
+            searchtxt.value = tiptext;
+        }
+        searchtxt.onfocus = function (e) {
+            if (searchtxt.value == tiptext) {
+                searchtxt.value = "";
+                searchtxt.className = searchtxt.className.replace(" searchtip", "");
+            }
+        }
+        searchtxt.onblur = function (e) {
+            if (searchtxt.value == "") {
+                searchtxt.className += " searchtip";
+                searchtxt.value = tiptext;
+            }
+        }
+        searchbtn.onclick = function (e) {
+            if (searchtxt.value == "" || searchtxt.value == tiptext) { return false; }
+        } 
+        //]]> </script>
+</body>
+</html>

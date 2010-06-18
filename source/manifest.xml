@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSDeploy.iisApp>
+  <iisapp path="AtomSite" />
+  <setAcl path="AtomSite/App_Data" setAclAccess="Modify" />
+  <setAcl path="AtomSite/bin" setAclAccess="Modify" />
+  <setAcl path="AtomSite/css" setAclAccess="Modify" />
+  <setAcl path="AtomSite/img" setAclAccess="Modify" />
+  <setAcl path="AtomSite/js" setAclAccess="Modify" />
+  <setAcl path="AtomSite/plugins" setAclAccess="Modify" />
+  <setAcl path="AtomSite/themes" setAclAccess="Modify" />
+  <setAcl path="AtomSite/Service.config" setAclResourceType="File"  setAclAccess="Read,Write" />
+  <setAcl path="AtomSite/Users.config" setAclResourceType="File"  setAclAccess="Read,Write" />
+</MSDeploy.iisApp>

@@ -1,0 +1,150 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="ViewMasterPage<PageModel>" %>
+
+<% Model.UpdatePageModel(Page, "Site"); %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <asp:ContentPlaceHolder ID="head" runat="server" />
+    <link rel="icon" type="image/png" href="<%= Url.ImageSrc("icon.png") %>" />
+    <link rel="stylesheet" type="text/css" href="<%= Url.ThemeStyleSheetHref() %>" />
+    <%= Html.StyleLinks() %>
+    <% Html.RenderWidgets("head"); %>
+    <!--[if lte IE 7]><link rel="stylesheet" href="<%= Url.Content("~/css/arjuna-x/ie7.css") %>" type="text/css" media="screen" /><![endif]-->
+    <!--[if lte IE 6]>
+	<link rel="stylesheet" href="<%= Url.Content("~/css/arjuna-x/ie6.css") %>" type="text/css" media="screen" />
+	<![endif]-->
+</head>
+<body>
+    <div class="pageContainer">
+        <div class="headerBG">
+        </div>
+        <div class="header">
+            <div class="headerMenu1">
+                <ul id="headerMenu1">
+                </ul>
+                <span class="clear"></span>
+            </div>
+            <div class="headerMain header_<%= Model.PageTemplate%>">
+                <h1>
+                    <a href="<%= Url.Content("~/") %>">
+                        <%= Model.Workspace.Title %></a></h1>
+                <span>
+                    <%= Model.Workspace.Subtitle %></span>
+                <div class="headerSearch">
+                    <form method="get" action="<%= Url.Content("~/") %>Search.xhtml?workspace=<%= Model.Scope.Workspace %>">
+                    <input type="text" class="searchQuery arjuna-watermark" rel="searchQueryIA" id="searchQuery"
+                        title="Search here..." name="term" />
+                    <input type="submit" class="searchButton" value="Find" />
+                    </form>
+                </div>
+            </div>
+            <div class="headerMenu2">
+                <% Html.RenderWidgets("nav"); %>
+                <span class="clear"></span>
+            </div>
+        </div>
+        <%
+            var sideclass = string.Empty;
+            switch (Model.PageWidth)
+            {
+                case "left-large":
+                    sideclass = "LSLW";
+                    break;
+                case "left-small":
+                    sideclass = "LSSW";
+                    break;
+                case "right-large":
+                    sideclass = "RSLW";
+                    break;
+                default:
+                    sideclass = "RSSW";
+                    break;
+            } %>
+        <div class="contentWrapper <%=sideclass %>">
+            <a name="content"></a>
+            <div class="contentArea">
+                <asp:ContentPlaceHolder ID="content" runat="server" />
+                <% Html.RenderWidgets("content"); %>
+            </div>
+            <div class="sidebars">
+                <div class="t">
+                    <div>
+                    </div>
+                </div>
+                <div class="i">
+                    <div class="i2">
+                        <div class="c">
+                            <div class="sidebarIcons">
+                            </div>
+                            <div>
+                                <div class="sidebarbox">
+                                    <asp:ContentPlaceHolder ID="sidetop" runat="server" />
+                                    <% Html.RenderWidgets("sidetop"); %>
+                                </div>
+                                <div class="sidebarbox">
+                                    <asp:ContentPlaceHolder ID="sidemid" runat="server" />
+                                    <% Html.RenderWidgets("sidemid"); %>
+                                </div>
+                            </div>
+                            <div class="sidebarLeft">
+                                <div class="sidebarbox">
+                                    <asp:ContentPlaceHolder ID="sidebot" runat="server" />
+                                    <% Html.RenderWidgets("sidebot"); %>
+                                </div>
+                            </div>
+                            <div class="sidebarRight">
+                                <div class="sidebarbox">
+                                    <a href="http://validator.w3.org/check?uri=referer">
+                                        <img src="http://www.w3.org/Icons/valid-xhtml10-blue" alt="Valid XHTML 1.0 Strict"
+                                            height="31" width="88" />
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="clear">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="b">
+                    <div>
+                    </div>
+                </div>
+            </div>
+            <div class="clear">
+            </div>
+        </div>
+        <div class="footer<%= Model.PageTemplate == "lightBlue" ? "2" :"" %>">
+            <a class="icon1" href="http://atomsite.net" title="Powered by AtomSite <%= ServerApp.CurrentVersion %>">
+                <img width="20" height="20" src="<%= Url.ImageSrc("footer-icon.png")  %>" alt="Powered by AtomSite <%= ServerApp.CurrentVersion %>" /></a>
+            <a class="icon2">
+                <img src="<%= Url.ImageSrc(string.Format("srsIcon{0}", Model.PageTemplate == "lightBlue" ? "2.jpg" :".png")) %>"
+                    width="18" height="30" alt="Web Design by SRS Solutions" /></a> <span class="copyright">
+                        &copy; Copyright
+                        <%= DateTime.Today.Year %>
+                        |
+                        <% if (Model.AuthorizeService.GetScopes(Model.User).Count() > 0)
+                           {%>
+                        <a href="<%=Url.Action("Dashboard", "Admin") %>">Dashboard</a>&#160;|&#160;
+                        <% }%>
+                        <% Html.RenderWidgets("foot"); %>
+                    </span><span class="design"><a href="http://www.srssolutions.com/en/" title="Web Design by SRS Solutions">
+                        Design by <em>SRS Solutions</em></a>, ported by <a target="_blank" href="http://erikzaadi.com">
+                            Erik Zaadi</a></span>
+        </div>
+    </div>
+    <script type="text/javascript" src="<%= Url.ScriptSrc("jquery-1.4.2.js")%>"></script>
+    <script type="text/javascript" src="<%= Url.ScriptSrc("jquery.timeago-0.8.2.js")%>"></script>
+    <%= Html.ScriptSources() %>
+    <script type="text/javascript" src="<%= Url.Content("~/js/arjuna-x/default.js") %>"></script>
+    <!--[if lte IE 6]>
+	<script type="text/javascript" src="<%= Url.Content("~/js/arjuna-x/ie6.js") %>"></script>
+	<![endif]-->
+    <asp:ContentPlaceHolder ID="tail" runat="server" />
+    <script type="text/javascript">//<![CDATA[ 
+    $(document).ready(function() { $('abbr.timeago').timeago();
+    }); 
+    <%= Model.TailScript %> 
+    //]]></script>
+    <% Html.RenderWidgets("tail"); %>
+</body>
+</html>

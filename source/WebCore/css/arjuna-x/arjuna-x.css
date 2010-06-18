@@ -1,0 +1,1652 @@
+/*  
+Theme Name: Arjuna X
+Theme URI: http://www.srssolutions.com/en/downloads/arjuna_wordpress_theme
+Description: Arjuna stands for elegance, accessibility, and attention to detail. We have put a great deal in optimizing its ins and outs. Translation ready, SEO focused, IE6-8, Firefox, Chrome, Safari and Opera compatibility, support for threaded comments, four widget bars, flexible sidebar, and more. It can be customized via the admin panel. Changelog: http://bit.ly/aLicfb
+Author: SRS Solutions
+Author URI: http://www.srssolutions.com
+Version: 1.3.7
+Tags: white, silver, light, three-columns, two-columns, fixed-width, right-sidebar, left-sidebar, theme-options, translation-ready, threaded-comments, black
+
+
+This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY !important; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+
+/*
+    Ported to AtomSite by Erik Zaadi (http://erikzaadi.com)
+*/
+
+/**
+ * Normalize
+ */
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, p, blockquote, th, td {
+	margin: 0 !important;
+	padding: 0 !important;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-size: 100% !important;
+	font-weight:normal !important;
+}
+ol, ul {
+	list-style: none !important;
+}
+address, caption, cite, code, dfn, em, strong, th, var {
+	font-style: normal !important;
+	font-weight: normal !important;
+}
+table {
+	border-collapse: collapse !important;
+	border-spacing: 0 !important;
+}
+fieldset, img {
+	border: 0 !important;
+}
+caption, th {
+	text-align: left !important;
+}
+q:before, q:after {
+	content: '' !important;
+}
+abbr {
+	border:0 !important;
+}
+
+/**
+ * WordPress Static
+ */
+
+.alignleft {
+	float:left !important;
+	text-align:left !important;
+	margin-right:10px !important;
+}
+.alignright {
+	float:right !important;
+	text-align:right !important;
+	margin-left:10px !important;
+}
+.aligncenter {
+	margin: 10px auto !important;
+	text-align: center !important;
+	display: block !important;
+}
+
+.wp-caption {
+  text-align:center !important;
+  padding:7px 2px 2px !important;
+}
+.wp-caption p.wp-caption-text {
+  font-size:12px !important;
+  line-height:17px !important;
+  padding:2px 4px 5px !important;
+  margin:0 !important;
+  color:#555 !important;
+	font-style:italic !important;
+}
+blockquote,
+pre {
+	background:url(../../img/arjuna-x/blockquote.png) 3px 3px no-repeat !important;
+	padding:4px 12px 0 40px !important;
+	margin:5px 0 !important;
+	word-wrap:break-word !important;
+	overflow:hidden !important;
+	font-style:italic !important;
+}
+.more-link,
+.more-link:visited,
+.more-link:hover {
+	font-size:11px !important;
+	color:#999 !important;
+	text-decoration:none !important;
+}
+
+/**
+ * Main design
+ */
+
+body {
+	background:#d9d9d9 url(../../img/arjuna-x/pageBG.png) repeat-x 0 0 !important;
+	font-family:Arial, Helvetica, Verdana, sans-serif !important;
+	font-size:13px !important;
+	line-height:normal !important;
+}
+
+/* Links */
+a, a:visited {
+	text-decoration:none !important;
+	color:#5c7a99 !important;
+}
+a:hover {
+	text-decoration:underline !important;
+}
+
+/* Standard buttons */
+a.btn,
+a.btn:hover {
+	display:-moz-inline-stack !important;
+	display:inline-block !important;
+	height:18px !important;
+	background:url(../../img/arjuna-x/icons.png) no-repeat 0 -220px !important;
+	color:#5c7a99 !important;
+	text-decoration:none !important;
+	margin:0 0 0 10px !important;
+}
+.btn span {
+	display:block !important;
+	height:18px !important;
+	margin-left:21px !important;
+	background:url(../../img/arjuna-x/icons.png) no-repeat 100% -60px !important;
+	line-height:18px !important;
+	font-size:11px !important;
+	padding:0 15px 0 8px !important;
+}
+a.btn:hover span {
+	background-position:100% -80px !important;
+}
+
+/* Miscellaneous */
+.clear {
+	display:block !important;
+	clear:both !important;
+}
+
+
+a#skipToPosts {
+	position:absolute !important;
+	top:0 !important;
+	left:-999em !important;
+}
+
+.pageContainer {
+	text-align:left !important;
+	width:980px !important;
+	margin:0 auto !important;
+	position:relative !important;
+	overflow:hidden !important;
+	z-index:1 !important;
+}
+
+.headerBG {
+	width:1000px !important;
+	height:140px !important;
+	position:absolute !important;
+	top:0 !important;
+	left:-10px !important;
+	background:url(../../img/arjuna-x/headerBG.png) no-repeat 0 0 !important;
+}
+.header {
+	position:relative !important;
+	z-index:2 !important;
+	margin:0 10px !important;
+}
+.headerMain {
+	position:relative !important;
+}
+.headerMain h1 {
+	position:absolute !important;
+	left:50px !important;
+	top:10px !important;
+	color:#36414d !important;
+	font-size:40px !important;
+	font-family:"Times New Roman", Times, serif !important;
+}
+.headerMain h1 a,
+.headerMain h1 a:visited,
+.headerMain h1 a:hover {
+	color:#36414d !important;
+	font-size:40px !important;
+	font-family:"Times New Roman", Times, serif !important;
+	text-decoration:none !important;
+}
+.headerMain span {
+	position:absolute !important;
+	left:52px !important;
+	top:53px !important;
+	color:#666 !important;
+	font-size:14px !important;
+	font-family:"Times New Roman", Times, serif !important;
+}
+
+/*
+ * Header Versions
+ */
+.header_lightBlue {
+	height:89px !important;
+	background:url(../../img/arjuna-x/header/lightBlue.jpg) no-repeat 0 0 !important;
+}
+
+.header_darkBlue {
+	height:89px !important;
+	background:url(../../img/arjuna-x/header/darkBlue.jpg) no-repeat 0 0 !important;
+}
+.header_darkBlue h1,
+.header_darkBlue h1 a,
+.header_darkBlue h1 a:visited,
+.header_darkBlue h1 a:hover {
+	color:#0f2033 !important;
+}
+.header_darkBlue span {
+	color:#4d4d4d !important;
+}
+
+.header_khaki {
+	height:89px !important;
+	background:url(../../img/arjuna-x/header/khaki.jpg) no-repeat 0 0 !important;
+}
+.header_khaki h1,
+.header_khaki h1 a,
+.header_khaki h1 a:visited,
+.header_khaki h1 a:hover {
+	color:#4d2d16 !important;
+}
+.header_khaki span {
+	color:#5f4e3a !important;
+}
+
+.header_seaGreen {
+	height:89px !important;
+	background:url(../../img/arjuna-x/header/seaGreen.jpg) no-repeat 0 0 !important;
+}
+.header_seaGreen h1,
+.header_seaGreen h1 a,
+.header_seaGreen h1 a:visited,
+.header_seaGreen h1 a:hover {
+	color:#003330 !important;
+}
+.header_seaGreen span {
+	color:#33504e !important;
+}
+
+
+
+.headerSearch {
+	width:200px !important;
+	height:25px !important;
+	position:absolute !important;
+	bottom:0 !important;
+	right:1px !important;
+	background:url(../../img/arjuna-x/headerSearch.png) no-repeat 0 0 !important;
+}
+.headerMain .searchQuery {
+	display:block !important;
+	float:left !important;
+	padding:6px 5px 5px 10px !important;
+	width:157px !important;
+	height:14px !important;
+	font-size:11px !important;
+	border:0 !important;
+	color:#333 !important;
+	background:none !important;
+}
+.headerMain .searchQueryIA {
+	color:#888b8d !important;
+	font-style:italic !important;
+}
+.headerMain .searchButton {
+	display:block !important;
+	float:left !important;
+	margin-left:3px !important;
+	width:25px !important;
+	height:25px !important;
+	padding:0 !important;
+	border:0 !important;
+	background:none !important;
+	text-indent:-1000px !important;
+	cursor:pointer !important;
+}
+
+/* When the option to disable header menu 1 is set */
+/*.hideHeaderMenu1 .headerBG {
+	height:113px !important;
+	background-position:0 -27px !important;
+}
+*/
+
+/* Content Wrapper */
+.contentWrapper {
+	min-height:350px !important;
+	padding:20px !important;
+}
+
+.headerMenu1 {
+	z-index:3 !important;
+	position:relative !important;
+	min-height:25px !important;
+	background:url(../../img/arjuna-x/headerMenu1.png) no-repeat 0 bottom !important;
+}
+.headerMenu1 ul {
+	float:right !important;
+	margin:0 20px !important;
+}
+.headerMenu1L ul {
+	float:left !important;
+}
+.headerMenu1 ul li {
+	float:left !important;
+	height:24px !important;
+	position:relative !important;
+	z-index:1 !important;
+}
+.headerMenu1 li a,
+.headerMenu1 li a:visited {
+	display:block !important;
+	height:24px !important;
+	line-height:24px !important;
+	color:#a6a6a6 !important;
+	font-size:11px !important;
+	text-decoration:none !important;
+	padding:0 8px !important;
+}
+.headerMenu1 li a:hover {
+	color:#bfbfbf !important;
+	text-decoration:none !important;
+}
+.headerMenu1 ul ul {
+	position:absolute !important;
+	top:24px !important;
+	right:0 !important;
+	display:none !important;
+	background-color:#dbdddd !important;
+	border:1px solid #000 !important;
+	margin:0 !important;
+	z-index:1 !important;
+}
+.headerMenu1L ul ul {
+	right:auto !important;
+	left:0 !important;
+}
+.headerMenu1 li li {
+	float:none !important;
+	width:180px !important;
+	height:auto !important;
+}
+.headerMenu1 li li a,
+.headerMenu1 li li a:visited {
+	height:auto !important;
+	line-height:20px !important;
+	padding:0 8px !important;
+	width:164px !important;
+	position:relative !important;
+	color:#333 !important;
+}
+.headerMenu1 li li a:hover {
+	background:#cacccc !important;
+	padding:0 8px !important;
+	color:#333 !important;
+}
+.headerMenu1 li:hover ul,
+.headerMenu1 li.jHover ul {
+	display:block !important;
+}
+.headerMenu1 ul ul ul,
+.headerMenu1 li:hover ul ul,
+.headerMenu1 li.jHover ul ul {
+	display:none !important;
+	top:3px !important;
+	right:175px !important;
+}
+.headerMenu1L ul ul ul,
+.headerMenu1L li:hover ul ul,
+.headerMenu1L li.jHover ul ul {
+	right:auto !important;
+	left:175px !important;
+}
+.headerMenu1 li li:hover ul,
+.headerMenu1 li li.jHover ul {
+	display:block !important;
+}
+
+.headerMenu2 {
+	position:relative !important;
+	z-index:2 !important;
+	background:url(../../img/arjuna-x/headerMenu2.png) no-repeat 0 0 !important;
+}
+.headerMenu2 ul {
+	margin:0 20px !important;
+	height:26px !important;
+}
+.headerMenu2DS ul {
+	padding-left:2px !important;
+	background:url(../../img/arjuna-x/headerMenu2.png) no-repeat -958px -120px !important;
+}
+.headerMenu2 li {
+	float:left !important;
+	height:26px !important;
+	position:relative !important;
+	z-index:1 !important;
+}
+.headerMenu2DS li {
+	background:url(../../img/arjuna-x/headerMenu2.png) no-repeat right -120px !important;
+	padding-right:2px !important;
+}
+.headerMenu2 li a,
+.headerMenu2 li a:visited {
+	display:block !important;
+	line-height:26px !important;
+	height:26px !important;
+	color:#fff !important;
+	font-size:12px !important;
+	text-decoration:none !important;
+	padding:0 8px !important;
+}
+.headerMenu2 li a:hover {
+	background:url(../../img/arjuna-x/headerMenu2.png) no-repeat -25px -60px !important;
+	color:#ddd !important;
+	text-decoration:none !important;
+}
+.headerMenu2 ul ul {
+	position:absolute !important;
+	top:25px !important;
+	left:0 !important;
+	display:none !important;
+	background:#dbdddd !important;
+	border:1px solid #000 !important;
+	margin:0 !important;
+	z-index:1 !important;
+	height:auto !important;
+	padding:0 !important;
+}
+.headerMenu2 li li {
+	float:none !important;
+	width:180px !important;
+	height:auto !important;
+	background:none !important;
+	padding-right:0 !important;
+}
+.headerMenu2 li li a,
+.headerMenu2 li li a:visited {
+	height:auto !important;
+	line-height:20px !important;
+	padding:0 8px !important;
+	width:164px !important;
+	position:relative !important;
+	color:#333 !important;
+}
+.headerMenu2 li li a:hover {
+	background:#cacccc !important;
+	color:#333 !important;
+}
+.headerMenu2 li:hover ul,
+.headerMenu2 li.jHover ul {
+	display:block !important;
+}
+.headerMenu2 ul ul ul,
+.headerMenu2 li:hover ul ul,
+.headerMenu2 li.jHover ul ul {
+	top:3px !important;
+	display:none !important;
+	left:175px !important;
+}
+.headerMenu2 li li:hover ul,
+.headerMenu2 li li.jHover ul {
+	display:block !important;
+}
+
+.headerMenu2 li a.homeIcon,
+.headerMenu2 li a.homeIcon:visited {
+	background:url(../../img/arjuna-x/headerMenu2.png) no-repeat 0 -120px !important;
+	padding-left:26px !important;
+}
+.headerMenu2 li a.homeIcon:hover {
+	background:url(../../img/arjuna-x/headerMenu2.png) no-repeat 0 -60px !important;
+}
+
+h3.contentHeader {
+	font-family:Verdana, Geneva, sans-serif !important;
+	font-size:18px !important;
+	border-bottom:1px solid #8c8c8c !important;
+	padding-bottom:4px !important;
+	text-align:center !important;
+	margin:10px 0 40px !important;
+}
+h3.contentHeader em {
+	font-style:normal !important;
+	font-weight:bold !important;
+}
+
+.postHeader {
+}
+.postTitle {
+	font-weight:bold !important;
+	font-size:16px !important;
+	font-family:Verdana, Geneva, sans-serif !important;
+}
+.postHeader .postTitle {
+	background:url(../../img/arjuna-x/heading.png) no-repeat 0 0 !important;
+	padding-left:15px !important;
+	margin-right:15px !important;
+}
+.postHeader .postTitle span {
+	display:block !important;
+	background:url(../../img/arjuna-x/heading.png) no-repeat right 0 !important;
+	padding:8px 15px 7px !important;
+	margin-right:-15px !important;
+}
+.postTitle a,
+.postTitle a:visited,
+.postTitle a:hover {
+	text-decoration:none !important;
+	color:#000 !important;
+}
+.postHeader .bottom {
+	background:url(../../img/arjuna-x/heading.png) no-repeat 0 -60px !important;
+	padding-left:15px !important;
+	margin-right:15px !important;
+}
+.postHeader .bottom div {
+	background:url(../../img/arjuna-x/heading.png) no-repeat right -60px !important;
+	padding:0 15px !important;
+	margin-right:-15px !important;
+	height:22px !important;
+	position:relative !important;
+}
+.postDate {
+	display:block !important;
+	float:left !important;
+	font-size:11px !important;
+	color:#555 !important;
+	line-height:22px !important;
+	background:url(../../img/arjuna-x/heading.png) no-repeat 0 -86px !important;
+	padding-left:20px !important;
+}
+.postAuthor {
+	display:block !important;
+	float:left !important;
+	font-size:11px !important;
+	color:#555 !important;
+	line-height:22px !important;
+	background:url(../../img/arjuna-x/heading.png) no-repeat -200px -86px !important;
+	padding-left:15px !important;
+	margin-left:15px !important;
+}
+.postAuthor a {
+	color:#555 !important;
+}
+
+.postHeaderCompact {
+	background:url(../../img/arjuna-x/heading.png) no-repeat 0 -120px !important;
+	padding-left:15px !important;
+	margin:0 15px 40px 0 !important;
+}
+.postHeaderCompact .inner {
+	display:block !important;
+	background:url(../../img/arjuna-x/heading.png) no-repeat right -120px !important;
+	padding:0 15px !important;
+	margin-right:-15px !important;
+	position:relative !important;
+}
+.postHeaderCompact .postTitle {
+	margin-bottom:-30px !important;
+	position:relative !important;
+	z-index:1 !important;
+	top:8px !important;
+}
+.postHeaderCompact .bottom {
+	background:url(../../img/arjuna-x/heading.png) no-repeat 0 -152px !important;
+	padding-left:15px !important;
+	margin:0 15px 0 -30px !important;
+	position:relative !important;
+	bottom:-26px !important;
+	height:26px !important;
+}
+.postHeaderCompact .bottom span {
+	display:block !important;
+	background:url(../../img/arjuna-x/heading.png) no-repeat right -152px !important;
+	padding:0 15px !important;
+	margin-right:-30px !important;
+	height:26px !important;
+	position:relative !important;
+}
+
+.postCommentLabel {
+	display:block !important;
+	height:16px !important;
+	position:absolute !important;
+	right:20px !important;
+	top:3px !important;
+	background:url(../../img/arjuna-x/icons.png) no-repeat 0 0 !important;
+}
+.postCommentLabel span {
+	display:block !important;
+	height:16px !important;
+	margin-left:21px !important;
+	background:url(../../img/arjuna-x/icons.png) no-repeat 100% -20px !important;
+	line-height:16px !important;
+	font-size:11px !important;
+	padding:0 15px 0 8px !important;
+	color:#555 !important;
+}
+a.postCommentLabel span {
+	color:#5c7a99 !important;
+}
+a.postCommentLabel:hover span {
+	background-position:100% -40px !important;
+}
+a.postCommentLabel:hover {
+	text-decoration:none !important;
+}
+
+.postContent {
+	color:#555 !important;
+	font-family:Verdana, Geneva, sans-serif !important;
+	font-size:12px !important;
+	line-height:20px !important;
+	margin:20px 15px !important;
+	overflow:hidden !important;
+}
+.postContent p {
+	margin:0 0 15px !important;
+}
+.postContent table {
+	border-collapse:collapse !important;
+	margin:5px 0 10px !important;
+}
+.postContent th, 
+.postContent td {
+	border:1px solid #aaa !important;
+	padding:3px 10px !important;
+	text-align:left !important;
+	vertical-align:top !important;
+}
+.postContent th {
+	background:#e5e5e5 !important;
+}
+.postContent em {
+	font-style:italic !important;
+}
+.postContent strong {
+	font-weight:bold !important;
+}
+.postContent ul,
+.postContent ol {
+	margin-bottom:15px !important;
+}
+.postContent ul ul,
+.postContent ol ol {
+	margin-bottom:0 !important;
+}
+.postContent ul li {
+	list-style:disc !important;
+	margin-left:25px !important;
+}
+.postContent ul ul li {
+	list-style:circle !important;
+}
+.postContent ul ul ul li {
+	list-style:square !important;
+}
+.postContent ul ul ul ul li {
+	list-style:disc !important;
+}
+.postContent ol li {
+	list-style:decimal !important;
+	margin-left:25px !important;
+}
+.postContent ol ol li {
+	list-style:lower-alpha !important;
+}
+.postContent ol ol ol li {
+	list-style:lower-roman !important;
+}
+.postContent ol ol ol ol li {
+	list-style:decimal !important;
+}
+.postContent h1 {
+	font-size:16px !important;
+	font-weight:bold !important;
+	margin-bottom:10px !important;
+}
+.postContent h2 {
+	font-size:15px !important;
+	font-weight:bold !important;
+	margin-bottom:10px !important;
+}
+.postContent h3 {
+	font-size:14px !important;
+	font-weight:bold !important;
+	margin-bottom:10px !important;
+}
+.postContent h4 {
+	font-size:13px !important;
+	font-weight:bold !important;
+	margin-bottom:10px !important;
+}
+
+.postFooter {
+	background:url(../../img/arjuna-x/postFooter.png) no-repeat 0 0 !important;
+	margin:0 40px 20px 0 !important;
+	padding-left:40px !important;
+	position:relative !important;
+	min-height:33px !important;
+}
+.postFooter .r {
+	height:33px !important;
+	background:url(../../img/arjuna-x/postFooter.png) no-repeat 100% 0 !important;
+	width:40px !important;
+	position:absolute !important;
+	right:-40px !important;
+	top:0 !important;
+}
+.postFooter .left {
+	margin-left:-20px !important;
+	margin-right:130px !important;
+	overflow:hidden !important;
+	padding-top:8px !important;
+}
+.postCategories {
+	background:url(../../img/arjuna-x/icons.png) no-repeat 0px -99px !important;
+	padding-left:25px !important;
+	font-size:11px !important;
+	margin-right:20px !important;
+	float:left !important;
+}
+.postTags {
+	background:url(../../img/arjuna-x/icons.png) no-repeat 0px -150px !important;
+	padding-left:25px !important;
+	font-size:11px !important;
+	float:left !important;
+}
+.postTags i {
+	color:#777 !important;
+}
+
+.postEdit,
+a.postEdit:hover {
+	position:absolute !important;
+	top:8px !important;
+	right:-20px !important;
+	height:18px !important;
+	background:url(../../img/arjuna-x/icons.png) no-repeat 0 -340px !important;
+	color:#5c7a99 !important;
+	text-decoration:none !important;
+}
+a.postEdit:hover {
+	text-decoration:none !important;
+}
+.postEdit span {
+	display:block !important;
+	height:18px !important;
+	margin-left:21px !important;
+	background:url(../../img/arjuna-x/icons.png) no-repeat 100% -60px !important;
+	line-height:18px !important;
+	font-size:11px !important;
+	padding:0 15px 0 8px !important;
+}
+.postEdit:hover span {
+	background-position:100% -80px !important;
+}
+
+.postReadMore,
+a.postReadMore:hover {
+	position:absolute !important;
+	top:8px !important;
+	right:-20px !important;
+	height:18px !important;
+	background:url(../../img/arjuna-x/icons.png) no-repeat 0 -220px !important;
+	color:#5c7a99 !important;
+	text-decoration:none !important;
+}
+a.postReadMore:hover {
+	text-decoration:none !important;
+}
+.postReadMore span {
+	display:block !important;
+	height:18px !important;
+	margin-left:21px !important;
+	background:url(../../img/arjuna-x/icons.png) no-repeat 100% -60px !important;
+	line-height:18px !important;
+	font-size:11px !important;
+	padding:0 15px 0 8px !important;
+}
+.postReadMore:hover span {
+	background-position:100% -80px !important;
+}
+
+/**
+ * Comments
+ */
+
+.noComments {
+	margin:0 0 40px !important;
+}
+
+.postComments {
+	margin-top:30px !important;
+}
+.commentHeader {
+	height:30px !important;
+	background:url(../../img/arjuna-x/icons.png) repeat-x 0 -172px !important;
+	margin-bottom:20px !important;
+	overflow:hidden !important;
+}
+.commentHeader h4 {
+	float:left !important;
+	font-size:16px !important;
+	font-family:Verdana, Geneva, sans-serif !important;
+	line-height:30px !important;
+	margin:0 20px 0 15px !important;
+}
+a.btnTrackback,
+a.btnTrackback:hover {
+	background-position:0 -260px !important;
+	margin-top:5px !important;
+}
+a.btnReply,
+a.btnReply:hover {
+	background-position:0 -240px !important;
+	margin-top:5px !important;
+}
+
+li.comment {
+	overflow:hidden !important;
+    margin: 0px 0px 20px 0px !important;
+    background:none !important;
+    border : none !important;
+    width : inherit !important;
+    border-style:none !important;
+}
+.comment div
+{   
+    margin : 0 !important;
+}
+li.comment .commentmain
+{
+    margin: 10px 0px 0px 0px !important;
+}
+
+li.comment li {
+	margin:2px 0 0 !important;
+}
+.comment .avatar {
+	border:1px solid #a6a6a6 !important;
+	background-color:#d9d9d9 !important;
+	padding:1px !important;
+	float:left !important;
+	margin: 8px 0px 0px 0px !important;
+}
+.comment .message {
+	margin-left:50px !important;
+}
+.comment .message .t {
+	height:40px !important;
+	background:url(../../img/arjuna-x/comment.png) no-repeat 0 0 !important;
+	margin-right:10px !important;
+}
+.comment .message .t div {
+	height:40px !important;
+	width:10px !important;
+	background:url(../../img/arjuna-x/comment.png) no-repeat -990px 0 !important;
+	float:right !important;
+	margin-right:-10px !important;
+}
+.comment .message .i {
+	border:1px solid #bfbfbf !important;
+	border-width:0 1px !important;
+	background-color:#f2f2f2 !important;
+	margin:0 0 0 17px !important;
+	padding:1px 0 !important;
+}
+.comment .message .i .i2 {
+	margin:-37px 15px 0 !important;
+	position:relative !important;
+	padding-top:14px !important;
+}
+	.comment .message .i span {
+		font-size:11px !important;
+	}
+	.comment .message .i .title {
+		display:block !important;
+		position:absolute !important;
+		top:0 !important;
+		left:5px !important;
+	}
+	.comment .message .i .links {
+		display:block !important;
+		position:absolute !important;
+		top:0 !important;
+		right:5px !important;
+	}
+.comment .message .b {
+	height:11px !important;
+	background:url(../../img/arjuna-x/comment.png) no-repeat 0 -40px !important;
+	margin-right:10px !important;
+}
+.comment .message .b div {
+	height:11px !important;
+	width:10px !important;
+	background:url(../../img/arjuna-x/comment.png) no-repeat -990px -40px !important;
+	float:right !important;
+	margin-right:-10px !important;
+}
+.comment .message p,
+.comment .message ul {
+	margin-top:10px !important;
+	font-size:12px !important;
+	line-height:150% !important;
+}
+
+.commentList ul.children {
+	margin:0 0 0 20px !important;
+	clear:both !important;
+}
+
+
+.commentListAlt .thread-odd .avatar,
+.commentListRight .comment .avatar {
+	float:right !important;
+}
+.commentListAlt .thread-odd .message,
+.commentListRight .comment .message {
+	margin:0 50px 0 0 !important;
+}
+.commentListAlt .thread-odd .message .t,
+.commentListRight .comment .message .t {
+	margin:0 0 0 10px !important;
+	background-position:right -60px !important;
+}
+.commentListAlt .thread-odd .message .t div,
+.commentListRight .comment .message .t div {
+	background-position:0 -60px !important;
+	float:left !important;
+	margin:0 0 0 -10px !important;
+}
+.commentListAlt .thread-odd .message .i,
+.commentListRight .comment .message .i {
+	margin:0 17px 0 0 !important;
+}
+.commentListAlt .thread-odd .message .b,
+.commentListRight .comment .message .b {
+	background-position:right -100px !important;
+	margin:0 0 0 10px !important;
+}
+.commentListAlt .thread-odd .message .b div,
+.commentListRight .comment .message .b div {
+	background-position:0 -100px !important;
+	float:left !important;
+	margin:0 0 0 -10px !important;
+}
+
+.commentListAlt .thread-odd ul.children,
+.commentListRight .comment ul.children {
+	margin:0 20px 0 0 !important;
+}
+
+/* Comment pagination */
+.commentNavigation {
+	height:24px !important;
+	background:url(../../img/arjuna-x/pagination.png) no-repeat 0 -30px !important;
+	margin:30px 10px 0 0 !important;
+}
+.commentNavigation div {
+	height:24px !important;
+	background:url(../../img/arjuna-x/pagination.png) no-repeat right -30px !important;
+	margin:0 -10px 0 10px !important;
+	padding:0 20px 0 10px !important;
+}
+.commentNavigation span,
+.commentNavigation a
+{
+	display:block !important;
+	float:left !important;
+	height:18px !important;
+	border:1px solid #9a9a9a !important;
+	margin:1px !important;
+	color:#5c7a99 !important;
+	font-size:11px !important;
+	line-height:18px !important;
+	padding:1px 7px !important;
+	background:#fff url(../../img/arjuna-x/pagination.png) no-repeat -15px -99px !important;
+}
+.commentNavigation a:hover {
+	background-position:-15px -124px !important;
+	text-decoration:none !important;
+}
+.commentNavigation .title {
+	display:block !important;
+	float:left !important;
+	color:#808080 !important;
+	height:22px !important;
+	line-height:22px !important;
+	padding:0 15px 0 25px !important;
+	font-size:11px !important;
+	border:none !important;
+	background:url(../../img/arjuna-x/pagination.png) no-repeat 0 -61px !important;
+}
+.commentNavigation .gap {
+	color:#808080 !important;
+	height:22px !important;
+	line-height:22px !important;
+	font-size:11px !important;
+	padding:0 8px !important;
+	border:none !important;
+	background:none !important;
+}
+.commentNavigation .current {
+	float:left !important;
+	margin:-2px 1px -2px 0 !important;
+	height:24px !important;
+	line-height:24px !important;
+	background:#fff url(../../img/arjuna-x/pagination.png) no-repeat 0 -149px !important;
+	padding:1px 9px !important;
+	font-weight:bold !important;
+	color:#808080 !important;
+}
+
+.commentNavigation .newer,
+.commentNavigation .older {
+	display:block !important;
+	background:none !important;
+	padding:0 !important;
+	border:0 !important;
+	margin:0 !important;
+}
+.commentNavigation .newer a {
+	background:#fff url(../../img/arjuna-x/pagination.png) no-repeat 0 -99px !important;
+	padding-left:20px !important;
+}
+.commentNavigation .newer a:hover {
+	background-position:0 -124px !important;
+}
+.commentNavigation .older {
+	float:right !important;
+}
+.commentNavigation .older a {
+	background:#fff url(../../img/arjuna-x/pagination.png) no-repeat right -99px !important;
+	padding-right:20px !important;
+}
+.commentNavigation .older a:hover {
+	background-position:right -124px !important;
+}
+
+/*
+ * Post Pagination
+ */
+.postLinkPages {
+	font-size:11px !important;
+	margin:0 20px 10px !important;
+}
+
+
+.commentReply {
+	padding-top:20px !important;
+}
+.replyHeader {
+	overflow:hidden !important;
+	height:30px !important;
+	background:url(../../img/arjuna-x/icons.png) repeat-x 0 -172px !important;
+	margin-bottom:20px !important;
+}
+.replyHeader h4 {
+	font-size:16px !important;
+	font-family:Verdana, Geneva, sans-serif !important;
+	line-height:30px !important;
+	margin:0 20px 0 15px !important;
+	float:left !important;
+}
+.cancelReply {
+	display:inline !important;
+}
+a.btnCancel,
+a.btnCancel:hover {
+	margin-top:5px !important;
+	background-position:0 -320px !important;
+}
+.commentReply .replyLoggedIn {
+	color:#666 !important;
+	font-family:Verdana, Geneva, sans-serif !important;
+	margin:0 10px 10px !important;
+	font-size:11px !important;
+	line-height:18px !important;
+}
+.commentReply .replyRow {
+	margin-bottom:2px !important;
+}
+.commentReply .inputText {
+	background:#f2f2f2 url(../../img/arjuna-x/inputText.png) no-repeat 0 0 !important;
+	border:1px solid #999 !important;
+	padding:3px 8px !important;
+	font-size:13px !important;
+	width:184px !important;
+	font-family:Verdana, Geneva, sans-serif !important;
+}
+.commentReply textarea {
+	font-family:Verdana, Geneva, sans-serif !important;
+	background:#f2f2f2 url(../../img/arjuna-x/inputText.png) no-repeat 0 0 !important;
+	border:1px solid #999 !important;
+	padding:3px 8px !important;
+	font-size:13px !important;
+	width:98% !important;
+	height:120px !important;
+}
+.commentReply .inputIA {
+	color:#999 !important;
+	font-style:italic !important;
+}
+.commentReplyActive {
+	padding:20px !important;
+	margin:20px 0 !important;
+	border:1px dashed #999 !important;
+}
+.commentReplyActive .replyHeader {
+	margin:0 -19px 20px !important;
+}
+
+.replySubmitArea {
+	overflow:hidden !important;
+	margin-top:10px !important;
+}
+.inputBtn {
+	float:right !important;
+	background:url(../../img/arjuna-x/button.png) no-repeat 0 0 !important;
+	border:0 !important;
+	height:23px !important;
+	width:160px !important;
+	margin-right:20px !important;
+	padding:0 !important;
+	position:relative !important;
+	overflow:visible !important;
+	cursor:pointer !important;
+	text-align:center !important;
+	line-height:20px !important;
+	color:#b3b3b3 !important;
+}
+.inputBtn::-moz-focus-inner {
+	padding:0 !important;
+	border:0 !important;
+}
+
+a.btnSubscribe,
+a.btnSubscribe:hover {
+	background-position:0 -280px !important;
+}
+a.btnLogout,
+a.btnLogout:hover {
+	background-position:0 -300px !important;
+}
+
+.pagination {
+	height:24px !important;
+	background:url(../../img/arjuna-x/pagination.png) no-repeat 0 -30px !important;
+	margin:30px 10px 0 0 !important;
+}
+.paginationTop {
+	margin:0 10px 30px 0 !important;
+	background-position:0 0 !important;
+}
+.pagination div {
+	height:24px !important;
+	background:url(../../img/arjuna-x/pagination.png) no-repeat right -30px !important;
+	margin:0 -10px 0 10px !important;
+	padding:0 20px 0 10px !important;
+}
+.paginationTop div {
+	background-position:right 0 !important;
+}
+.pagination .info {
+	display:block !important;
+	float:left !important;
+	color:#808080 !important;
+	height:22px !important;
+	line-height:22px !important;
+	padding:0 15px 0 25px !important;
+	font-size:11px !important;
+	background:url(../../img/arjuna-x/pagination.png) no-repeat 0 -61px !important;
+}
+
+.pagination li {
+	float:left !important;
+	margin:1px 1px 1px 0 !important;
+}
+.pagination li.current {
+	float:left !important;
+	margin:-2px 1px -2px 0 !important;
+	height:26px !important;
+}
+.pagination li.prev {
+	margin-right:10px !important;
+}
+.pagination li.prev a span {
+	background:url(../../img/arjuna-x/pagination.png) no-repeat 0 -100px !important;
+	padding:0 7px 0 20px !important;
+}
+.pagination li.prev a:hover span {
+	background-position:0 -125px !important;
+}
+.pagination li.next {
+	margin-left:10px !important;
+}
+.pagination li.next a span {
+	background:url(../../img/arjuna-x/pagination.png) no-repeat right -100px !important;
+	padding:0 20px 0 7px !important;
+}
+.pagination li.next a:hover span {
+	background-position:right -125px !important;
+}
+.pagination li.gap span {
+	line-height:22px !important;
+	display:block !important;
+	float:left !important;
+	padding:0 5px !important;
+	color:#808080 !important;
+}
+.pagination a {
+	display:block !important;
+	float:left !important;
+	height:20px !important;
+	border:1px solid #9a9a9a !important;
+	background:#fff !important;
+	-moz-border-radius:3px !important;
+	-webkit-border-radius:3px !important;
+	border-radius:3px !important;
+}
+.pagination a span {
+	display:block !important;
+	margin:1px !important;
+	height:18px !important;
+	color:#5c7a99 !important;
+	font-size:11px !important;
+	line-height:18px !important;
+	padding:0 7px !important;
+	background:url(../../img/arjuna-x/pagination.png) no-repeat -15px -100px !important;
+}
+.pagination a:hover {
+	text-decoration:none !important;
+	border-color:#808080 !important;
+}
+.pagination a:hover span {
+	background-position:-15px -125px !important;
+}
+.pagination li.current a {
+	height:26px !important;
+}
+.pagination li.current a span {
+	height:24px !important;
+	line-height:24px !important;
+	background:url(../../img/arjuna-x/pagination.png) no-repeat 0 -150px !important;
+	padding:0 9px !important;
+	font-weight:bold !important;
+}
+.pagination li.current a:hover span {
+	background-position:0 -150px !important;
+}
+
+.pagination .newer {
+	display:block !important;
+	margin-top:1px !important;
+}
+.pagination .newer span {
+	background:url(../../img/arjuna-x/pagination.png) no-repeat 0 -100px !important;
+	padding-left:20px !important;
+}
+.pagination a.newer:hover span {
+	background-position:0 -125px !important;
+}
+.pagination .older {
+	display:block !important;
+	float:right !important;
+	margin-top:1px !important;
+}
+.pagination .older span {
+	background:url(../../img/arjuna-x/pagination.png) no-repeat right -100px !important;
+	padding-right:20px !important;
+}
+.pagination a.older:hover span {
+	background-position:right -125px !important;
+}
+
+/* Footer */
+.footer {
+	height:90px !important;
+	width:960px !important;
+	margin:10px auto 0 !important;
+	background:url(../../img/arjuna-x/footer.png) no-repeat 0 0 !important;
+	position:relative !important;
+}
+.footer .icon1 {
+	position:absolute !important;
+	top:20px !important;
+	left:80px !important;
+}
+.footer .icon2 {
+	position:absolute !important;
+	top:15px !important;
+	left:110px !important;
+}
+.footer .copyright {
+	position:absolute !important;
+	top:15px !important;
+	left:150px !important;
+	color:#999 !important;
+	font-size:11px !important;
+}
+.footer .design {
+	position:absolute !important;
+	top:30px !important;
+	left:150px !important;
+	color:#999 !important;
+	font-size:11px !important;
+}
+.footer .design a {
+	color:#999 !important;
+	text-decoration:none !important;
+}
+.footer .design a em {
+	color:#525c66 !important;
+}
+
+/* Footer Style 2 */
+.footer2 {
+	height:74px !important;
+	width:960px !important;
+	margin:10px auto 0 !important;
+	position:relative !important;
+	background:url(../../img/arjuna-x/footer2.jpg) no-repeat 0 0 !important;
+}
+.footer2 .icon1 {
+	position:absolute !important;
+	top:33px !important;
+	left:80px !important;
+}
+.footer2 .icon2 {
+	position:absolute !important;
+	top:28px !important;
+	left:110px !important;
+}
+.footer2 .copyright {
+	position:absolute !important;
+	top:28px !important;
+	left:150px !important;
+	color:#666 !important;
+	font-size:11px !important;
+}
+.footer2 .design {
+	position:absolute !important;
+	top:43px !important;
+	left:150px !important;
+	color:#666 !important;
+	font-size:11px !important;
+}
+.footer2 .design a {
+	color:#666 !important;
+	text-decoration:none !important;
+}
+.footer2 .design a em {
+	color:#525c66 !important;
+}
+
+/**
+ * Layout Setups
+ */
+
+/* Standard setup: Right sidebar, normal width */
+.contentArea {
+	float:left !important;
+	width:620px !important;
+}
+.sidebars {
+	width:300px !important;
+	float:right !important;
+}
+.sidebarLeft {
+	width:125px !important;
+	float:left !important;
+}
+.sidebarRight {
+	width:125px !important;
+	float:right !important;
+}
+.sidebarFull {
+	clear:both !important;
+}
+.sidebarIcons {
+	overflow:hidden !important;
+}
+.sidebarIcons a {
+	float:left !important;
+}
+
+/* No sidebar */
+.NS .contentArea {
+	float:none !important;
+	width:920px !important;
+}
+
+/* Right sidebar, large width (RSLW) */
+.RSLW .contentArea {
+	float:left !important;
+	width:570px !important;
+}
+.RSLW .sidebars {
+	width:350px !important;
+	float:right !important;
+}
+.RSLW .sidebarLeft,
+.RSLW .sidebarRight {
+	width:150px !important;
+}
+
+/* Right sidebar, small width (RSSW) */
+.RSSW .contentArea {
+	float:left !important;
+	width:670px !important;
+}
+.RSSW .sidebars {
+	width:250px !important;
+	float:right !important;
+}
+.RSSW .sidebarLeft,
+.RSSW .sidebarRight {
+	width:100px !important;
+}
+
+/* Left sidebar, normal width (LSNW) */
+.LSNW .contentArea {
+	float:right !important;
+	width:620px !important;
+}
+.LSNW .sidebars {
+	width:300px !important;
+	float:left !important;
+}
+
+/* Left sidebar, large width (LSLW) */
+.LSLW .contentArea {
+	float:right !important;
+	width:570px !important;
+}
+.LSLW .sidebars {
+	width:350px !important;
+	float:left !important;
+}
+.LSLW .sidebarLeft,
+.LSLW .sidebarRight {
+	width:150px !important;
+}
+
+/* Left sidebar, small width (LSSW) */
+.LSSW .contentArea {
+	float:right !important;
+	width:670px !important;
+}
+.LSSW .sidebars {
+	width:250px !important;
+	float:left !important;
+}
+.LSSW .sidebarLeft,
+.LSSW .sidebarRight {
+	width:100px !important;
+}
+
+
+/* No sidebar */
+.contentAreaFull {
+	float:none !important;
+	width:auto !important;
+}
+
+
+/* Sidebar */
+.sidebars .t {
+	height:170px !important;
+	background:url(../../img/arjuna-x/sidebars.png) no-repeat 0 0 !important;
+	margin-right:15px !important;
+}
+.sidebars .t div {
+	height:170px !important;
+	width:15px !important;
+	background:url(../../img/arjuna-x/sidebars.png) no-repeat -485px 0 !important;
+	float:right !important;
+	margin-right:-15px !important;
+}
+.sidebars .i {
+	background:url(../../img/arjuna-x/sidebars.png) repeat-y -500px 0 !important;
+	margin-right:15px !important;
+}
+.sidebars .i .i2 {
+	background:url(../../img/arjuna-x/sidebars.png) repeat-y right 0 !important;
+	margin:0 -15px 0 15px !important;
+	padding:1px 0 !important;
+}
+.sidebars .i .c {
+	margin:-155px 15px 0 0 !important;
+	position:relative !important;
+}	
+	.sidebars h4 {
+		border:1px solid #ccc !important;
+		border-width:1px 0 !important;
+		background-color:#fbfbfb !important;
+		margin:10px -14px !important;
+	}
+	.sidebars h4 span {
+		display:block !important;
+		margin:1px 0 !important;
+		background-color:#ebebeb !important;
+		font-family:Verdana, Geneva, sans-serif !important;
+		font-size:16px !important;
+		padding:6px 15px !important;
+	}
+	.sidebars ul {
+	}
+	.sidebars li {
+		background:url(../../img/arjuna-x/sidebars.png) no-repeat 0 -225px !important;
+		padding:0 0 0 20px !important;
+		margin-bottom:1px !important;
+		line-height:18px !important;
+		font-size:12px !important;
+		font-family:Verdana, Geneva, sans-serif !important;
+	}
+	.sidebars a.rssBtn {
+		display:block !important;
+		height:26px !important;
+		padding:0 10px 0 32px !important;
+		line-height:26px !important;
+		font-size:12px !important;
+		font-weight:bold !important;
+		color:#662700 !important;
+		background:url(../../img/arjuna-x/sidebars.png) no-repeat 0 -190px !important;
+	}
+	.sidebars a.twitterBtn {
+		display:block !important;
+		height:26px !important;
+		padding:0 10px 0 32px !important;
+		line-height:26px !important;
+		font-size:12px !important;
+		font-weight:bold !important;
+		color:#056 !important;
+		background:url(../../img/arjuna-x/sidebars.png) no-repeat -150px -190px !important;
+	}
+	.sidebars a.facebookBtn {
+		display:block !important;
+		height:26px !important;
+		padding:0 10px 0 32px !important;
+		line-height:26px !important;
+		font-size:12px !important;
+		font-weight:bold !important;
+		color:#223b73 !important;
+		background:url(../../img/arjuna-x/sidebars.png) no-repeat -300px -190px !important;
+	}
+.sidebars .b {
+	height:15px !important;
+	background:url(../../img/arjuna-x/sidebars.png) no-repeat 0 -170px !important;
+	margin-right:15px !important;
+}
+.sidebars .b div {
+	height:15px !important;
+	width:15px !important;
+	background:url(../../img/arjuna-x/sidebars.png) no-repeat -485px -170px !important;
+	float:right !important;
+	margin-right:-15px !important;
+}
+
+
+#wp-calendar {
+	width:99% !important;
+	border-collapse:separate !important;
+	border-spacing:1px !important;
+}
+#wp-calendar caption {
+	font-weight:bold !important;
+	font-size:12px !important;
+	text-align:left !important;
+	padding-bottom:5px !important;
+}
+#wp-calendar th, 
+#wp-calendar td {
+	text-align:center !important;
+}
+#wp-calendar th {
+	background:#f2f2f2 url(../../img/arjuna-x/calendar.gif) repeat-x 0 -50px !important;
+	border:1px solid #999 !important;
+	line-height:16px !important;
+	font-size:12px !important;
+	color:#666 !important;
+}
+#wp-calendar tbody td {
+}
+#wp-calendar td a,
+#wp-calendar td a:visited {
+	display:block !important;
+	background:#fff url(../../img/arjuna-x/calendar.gif) repeat-x 0 1px !important;
+	border:1px solid #bfbfbf !important;
+	line-height:16px !important;
+	font-size:12px !important;
+	color:#666 !important;
+}
+#wp-calendar tbody td a:hover {
+	border-color:#999 !important;
+	text-decoration:none !important;
+}
+#wp-calendar #today {
+	font-weight:bold !important;
+}
+#wp-calendar tbody td.pad {
+	border:0 none !important;
+}
+#wp-calendar td#prev a,
+#wp-calendar td#prev a:visited {
+	padding-top:5px !important;
+	text-align:left !important;
+	background:none !important;
+	border:none !important;
+	color:#5c7a99 !important;
+}
+#wp-calendar td#next a,
+#wp-calendar td#next a:visited {
+	text-align:right !important;
+	padding-top:5px !important;
+	background:none !important;
+	border:none !important;
+	color:#5c7a99 !important;
+}

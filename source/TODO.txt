@@ -1,0 +1,34 @@
+* = high priority
+
+FIXED Unapprove link doesn't work in Manager for non-blog collections
+DONE  Add Edit User support
+DONE  Installed, Online, Upload filter on Themes
+DONE  Update Users page in Manager
+ADDED Role Manager, need to add modify, inherit, scope support
+
+Better theme thumbnails
+* Add upload theme support
+* Delete theme
+* Clone theme
+
+Change site when (new collection/workspace)
+* Fix href when new collection created
+Delete workspace and delete collection in Manager
+
+Show not implemented on non-finished links
+
+* Widget scoping, asset group, master page, areas improvements, additional descriptions
+
+* Fix CSS for response for QuickPub
+Force pending entries to update upon quickpub draft
+Update counts in right now widget upon approve, delete
+Update counts upon approve, delete in Entries and Annotations
+* Delete user
+Better user names when logging in with google OpenId
+
+* Update counts for items, authors, contributors in workspace, collection settings
+Fix multi-folder, multi-subdomin, add new multi-domain in AtomSite Manager
+
+Update more of the code to properly use ModelBinders
+
+CDN Manager and setting

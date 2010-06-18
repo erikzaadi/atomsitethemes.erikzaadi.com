@@ -1,0 +1,11 @@
+﻿/* Copyright 2008-10 Jarrett Vance
+* see http://www.codeplex.com/blogsvc/license */
+table.entries .coll {width:4em}
+table .authors {width:13%}
+table.entries .cats {width:22%}
+table.entries .anns {width:4em}
+table.entries .date {width:16.5%}
+
+table.annotations .inreplyto {width:25%; font-size:85%;}
+table.annotations .content p {margin:0.3em 0; color:#222}
+table.annotations div.actions {margin-left:0}

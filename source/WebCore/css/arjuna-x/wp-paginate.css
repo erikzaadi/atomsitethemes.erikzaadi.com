@@ -1,0 +1,49 @@
+.wp-paginate span,
+.wp-paginate a
+{
+	display:block;
+	float:left;
+	height:18px;
+	border:1px solid #9a9a9a;
+	color:#5c7a99;
+	font-size:11px;
+	line-height:18px;
+	padding:1px 7px;
+	background:#fff url(../../img/arjuna-x/pagination.png) no-repeat -15px -69px;
+}
+.wp-paginate a:hover {
+	background-position:-15px -94px;
+}
+.wp-paginate .title {
+	display:block;
+	float:left;
+	color:#808080;
+	height:22px;
+	line-height:22px;
+	padding:0 15px 0 25px;
+	font-size:11px;
+	border:none;
+	background:url(../../img/arjuna-x/pagination.png) no-repeat 0 -31px;
+}
+.wp-paginate .gap {
+	color:#808080;
+	height:22px;
+	line-height:22px;
+	font-size:11px;
+	padding:0 8px;
+	border:none;
+	background:none;
+}
+.wp-paginate .current {
+	float:left;
+	margin:-2px 1px -2px 0;
+	height:24px;
+	line-height:24px;
+	background:#fff url(../../img/arjuna-x/pagination.png) no-repeat 0 -119px;
+	padding:1px 9px;
+	font-weight:bold;
+	color:#808080;
+}
+
+
+

@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<atom:entry xmlns:atom="http://www.w3.org/2005/Atom"
+            xmlns:svc="http://atomsite.net/info/Service" 
+            xmlns:app="http://www.w3.org/2007/app"
+            xmlns:thread="http://purl.org/syndication/thread/1.0"
+            xmlns:plug="http://atomsite.net/info/Plugins">
+  <atom:title>BlogML Import/Export Plugin</atom:title>
+  <plug:type>AtomSite.Plugins.BlogMLPlugin.BlogMLPlugin, AtomSite.Plugins.BlogMLPlugin, Version=1.4.0.0, Culture=neutral, PublicKeyToken=null</plug:type>
+  <plug:compatibleVersion>1.4.0.0</plug:compatibleVersion>
+  <plug:file name="bin\AtomSite.Plugins.BlogMLPlugin.dll" />
+  <plug:file name="bin\BlogML.dll" />
+  <plug:widget>
+    <plug:name>BlogMLExportToolWidget</plug:name>
+    <plug:description>Provides an export tool to generate a BlogML file.</plug:description>
+    <plug:file name="themes\default\BlogMLExportToolWidget.ascx" />
+  </plug:widget>
+  <plug:widget>
+    <plug:name>BlogMLImportToolWidget</plug:name>
+    <plug:description>Provides an import tool to read a BlogML file into the system.</plug:description>
+    <plug:file name="themes\default\BlogMLImportToolWidget.ascx" />
+  </plug:widget>
+  <plug:widget>
+    <plug:name>BlogMLWizardChoiceWidget</plug:name>
+    <plug:description>Provides a new setup choice to launch a BlogML import wizard.</plug:description>
+    <plug:file name="themes\default\BlogMLWizardChoiceWidget.ascx" />
+  </plug:widget>
+  <plug:page>
+    <plug:name>BlogMLWizardImport</plug:name>
+    <plug:description>Import your existing blog to create new collections.</plug:description>
+    <plug:file name="themes\default\BlogMLWizardImport.aspx" />
+  </plug:page>
+  <plug:homepage>http://atomsite.net/plugins/BlogMLPlugin.xhtml</plug:homepage>
+  <atom:content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <p>This plugin provides tools to allow the import/export of data from <a href="http://en.wikpedia.org/wiki/BlogML">BlogML</a> format.</p>
+    </div>
+  </atom:content>
+  <atom:category term="BlogML" />
+  <atom:category term="Import" />
+  <atom:category term="Export" />
+  <atom:category term="Wizard" />
+  <atom:category term="Tool" />
+  <atom:published>2009-02-17T13:58:45.8001718Z</atom:published>
+  <atom:updated>2009-07-28T13:58:45.8001718Z</atom:updated>
+  <atom:id>tag:atomsite.net,2009:plugins,BlogMLPlugin</atom:id>
+  <atom:author svc:id="JarrettV">
+    <atom:name>JarrettV</atom:name>
+    <atom:uri>http://jvance.com/</atom:uri>
+    <atom:email>jarrettv@gmail.com</atom:email>
+  </atom:author>
+</atom:entry>

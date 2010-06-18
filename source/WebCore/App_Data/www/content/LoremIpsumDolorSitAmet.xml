@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?><atom:entry xmlns:atom="http://www.w3.org/2005/Atom" xmlns:svc="http://atomsite.net/info/Service" xmlns:app="http://www.w3.org/2007/app" xmlns:thread="http://purl.org/syndication/thread/1.0"><atom:title>Lorem Ipsum Dolor sit Amet</atom:title><atom:content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Class
+aptent taciti sociosqu ad litora torquent per conubia nostra, per
+inceptos himenaeos. Curabitur vitae ipsum sed lorem viverra
+dapibus. Proin euismod, dui et blandit viverra, sapien elit
+vulputate elit, non venenatis mi pede a massa. Proin suscipit
+dapibus mi. Duis sed velit ut lectus porta gravida. Suspendisse
+potenti. Suspendisse potenti. Nam eget mi eu diam pulvinar
+tincidunt.</p><p>Vivamus condimentum imperdiet magna. Phasellus fringilla congue
+purus. Vivamus ut lacus et est lacinia lobortis. Ut semper auctor
+urna. Nulla arcu magna, tempus at, viverra facilisis, accumsan at,
+sapien. Fusce lacinia sagittis lorem. Nunc ut nisl vitae metus
+vulputate ullamcorper. Proin non mauris id turpis gravida vehicula.
+Nunc ac magna.</p><p>Donec condimentum aliquam sem. Quisque placerat mattis nulla.
+Curabitur mattis posuere felis. Maecenas iaculis nisi vitae nisi.
+Cras nec leo. Nunc auctor lectus nec turpis. Aenean nunc nisi,
+ullamcorper in, facilisis sit amet, sagittis vitae, magna. Integer
+eros dolor, ultrices et, interdum quis, bibendum eu, lectus. Donec
+et sem. Sed condimentum nisi a mauris. Nam consequat felis et
+justo.</p></div></atom:content><atom:category term="LoremIpsum" label="Lorem Ipsum Samples" /><atom:id>tag:erikzaadi.com,2008-10-01:content,LoremIpsumDolorSitAmet</atom:id><atom:author svc:id="erikzaadi"><atom:name>Erik Zaadi</atom:name><atom:email>erik.zaadi@gmail.com</atom:email><atom:uri>http://erikzaadi.com/</atom:uri></atom:author><app:control><app:draft>no</app:draft><svc:approved>yes</svc:approved><svc:allowAnnotate>no</svc:allowAnnotate></app:control><atom:published>2008-09-30T21:02:00-05:00</atom:published><atom:updated>2010-06-07T09:56:28.0836596Z</atom:updated><app:edited>2010-06-07T09:56:28.0846597Z</app:edited></atom:entry>

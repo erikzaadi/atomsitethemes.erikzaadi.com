@@ -1,0 +1,1554 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D0B348D5-387D-46EF-BD9A-DC3C25DD68B9}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <!--<ProjectTypeGuids>{603c0e0b-db56-11dc-be95-000d561079b0};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>-->
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AtomSite.WebCore</RootNamespace>
+    <AssemblyName>AtomSite.WebCore</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <PackageAsSingleFile>false</PackageAsSingleFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.85.5.452, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="SgmlReaderDll, Version=1.8.0.16504, Culture=neutral, PublicKeyToken=46b2db9ca481831b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\SgmlReaderDll.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap, Version=2.5.4.0, Culture=neutral, PublicKeyToken=e60ad81abae3c223, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Abstractions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET MVC RC\Assemblies\System.Web.Abstractions.dll</HintPath>
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Routing, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET MVC RC\Assemblies\System.Web.Routing.dll</HintPath>
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="Yahoo.Yui.Compressor, Version=1.3.0.0, Culture=neutral, PublicKeyToken=f8b4b81ec75097e2, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\Yahoo.Yui.Compressor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActionOutputCacheAttribute.cs" />
+    <Compile Include="BaseController.cs" />
+    <Compile Include="BaseModel.cs" />
+    <Compile Include="CollectionRouteConstraint.cs" />
+    <Compile Include="IAuthenticateService.cs" />
+    <Compile Include="IThemeService.cs" />
+    <Compile Include="HandleErrorAttribute.cs" />
+    <Compile Include="IPage.cs" />
+    <Compile Include="PluginEngine.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicControllerFactory.cs" />
+    <Compile Include="HtmlHelperExtensions.cs" />
+    <Compile Include="HttpResult.cs" />
+    <Compile Include="ILogService.cs" />
+    <Compile Include="IPlugin.cs" />
+    <Compile Include="IRouteRegistrar.cs" />
+    <Compile Include="IRouteService.cs" />
+    <Compile Include="IWidget.cs">
+    </Compile>
+    <Compile Include="PageModel.cs" />
+    <Compile Include="plugins\Account\AccountController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Account\AccountPlugin.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Account\ServiceAuthorizeService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Admin\AdminAcceptsModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Admin\AdminAnnotationsModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Admin\AdminCategoriesModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Admin\AdminCollCountModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Admin\AdminController.Annotations.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Admin\AdminController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Admin\AdminController.Entries.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Admin\AdminController.Plugins.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Admin\AdminController.Settings.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Admin\AdminController.Themes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Admin\AdminController.Tools.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Admin\AdminController.Users.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Admin\AdminController.Widgets.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Admin\AdminEntriesModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Admin\AdminEntryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Admin\AdminHtmlHelperExtensions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Admin\AdminMediaModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Admin\AdminModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Admin\AdminPlugin.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Admin\AdminPluginModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Admin\AdminPluginsModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Admin\AdminProgressModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Admin\AdminRightNowModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Admin\AdminRoleMatrixModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Admin\AdminRouteRegistrar.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Admin\AdminRouteService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Admin\AdminService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Admin\AdminSettingsCollectionModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Admin\AdminSettingsEntireSiteModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Admin\AdminSettingsModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Admin\AdminSettingsWorkspaceModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Admin\AdminThemeModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Admin\AdminUserModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Admin\AdminUserSelectModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Admin\AdminUsersModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Admin\AdminWidgetSelectModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Admin\AdminWidgetsModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Admin\SelectionCriteria.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Annotate\AnnotateController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Annotate\AnnotatePlugin.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Annotate\AnnotateRouteRegistrar.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Annotate\AnnotateService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Annotate\AnnotationsWidget.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Annotate\IAnnotateService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Asset\AssetController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Asset\AssetPlugin.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Asset\AssetService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\AtomPub\AtomPubController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\AtomPub\AtomPubPlugin.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\AtomPub\AtomPubRouteRegistrar.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\AtomPub\AtomPubService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\AtomPub\EntryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\AtomPub\FeedModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\AtomPub\IAtomPubService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Blog\AddCommentModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Blog\BlogAddCommentWidget.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Blog\BlogAppCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Blog\BlogAppService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Blog\BlogCommentsWidget.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Blog\BlogController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Blog\BlogEntryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Blog\BlogEntrySimpleWidget.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Blog\BlogPlugin.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Blog\BlogRouteRegistrar.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Blog\BlogSearchModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Blog\BlogSearchWidget.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Blog\BlogService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Blog\BlogSettingsEntireSiteModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Blog\BlogSettingsModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Blog\CategoriesModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Blog\CommentModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Blog\IBlogService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Blog\ICleanContentService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Blog\ITrackbackService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Blog\PingbackResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Blog\TrackbackController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Blog\TrackbackResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Blog\TrackbackRouteRegistrar.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Blog\TrackbackService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Blog\XhtmlCleanContentService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Contact\ContactAppWorkspace.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Contact\ContactController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Contact\ContactModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Contact\ContactPlugin.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Contact\ContactSettingsModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Menu\MenuController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Menu\MenuCustomInclude.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Menu\MenuCustomWidget.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Menu\MenuModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Menu\MenuPlugin.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Rater\IRaterService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Rater\RaterAppCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Rater\RaterController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Rater\RaterModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Rater\RaterPlugin.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Rater\RaterRouteRegistrar.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Rater\RaterService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Rater\RaterWidget.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\ThemeSwitcher\IThemeSwitcherService.cs" />
+    <Compile Include="plugins\ThemeSwitcher\ThemeSwitcherController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\ThemeSwitcher\ThemeSwitcherModels.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\ThemeSwitcher\ThemeSwitcherPlugin.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Widgets\ConfigLinkWidget.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Widgets\EntryConfigModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Widgets\EntryWidget.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Widgets\FeedConfigModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Widgets\IdInclude.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Widgets\LiteralConfigModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Widgets\LiteralInclude.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Widgets\LiteralWidget.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Widgets\ScopeConfigModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Widgets\ScopeInclude.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Widgets\WidgetController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Widgets\WidgetPlugin.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Wizard\WizardBasicSettingsModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Wizard\WizardController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Wizard\WizardPlugin.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="plugins\Wizard\WizardThemeChoiceModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Registry.cs" />
+    <Compile Include="ScopeAuthorize.cs" />
+    <Compile Include="ServerApp.cs" />
+    <Compile Include="BasicAuthenticationModule.cs" />
+    <Compile Include="FormsBypassModule.cs" />
+    <Compile Include="IAuthorizeService.cs" />
+    <Compile Include="UrlHelperExtensions.cs" />
+    <Compile Include="IAssetService.cs" />
+    <Compile Include="WsseAuthenticationModule.cs" />
+    <Compile Include="StreamResult.cs" />
+    <Compile Include="ThemeViewEngine.cs" />
+    <Compile Include="XmlWriterResult.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\www\content\Contact.xml" />
+    <Content Include="App_Data\www\content\Quisqueatdolor.xml" />
+    <Content Include="App_Data\www\content\Morbialiquetmauris.xml" />
+    <Content Include="App_Data\www\content\Phasellusmolestiesuscipit.xml" />
+    <Content Include="App_Data\www\content\Quisquepharetralobortis.xml" />
+    <Content Include="App_Data\www\content\Phasellusintellus.xml" />
+    <Content Include="App_Data\www\content\ForSideBar.xml" />
+    <Content Include="App_Data\www\content\Home.xml" />
+    <Content Include="App_Data\www\content\HtmlEntitiesSample.xml" />
+    <Content Include="App_Data\www\content\SemperVestibulum\Comment1.xml" />
+    <Content Include="App_Data\www\content\SemperVestibulum\Comment.xml" />
+    <Content Include="App_Data\www\content\SemperVestibulum\Comment2.xml" />
+    <Content Include="App_Data\www\content\SemperVestibulum\SampleTrackBack2.xml" />
+    <Content Include="App_Data\www\content\SemperVestibulum\SampleTrackBack1.xml" />
+    <Content Include="App_Data\www\media\AtomThemeLogo.png" />
+    <Content Include="App_Data\www\media\AtomThemeLogo.xml" />
+    <Content Include="App_Data\www\media\AtomThemeLogo128.png" />
+    <Content Include="App_Data\www\media\AtomThemeLogo128.xml" />
+    <Content Include="App_Data\www\media\AtomThemeLogo64.png" />
+    <Content Include="App_Data\www\media\AtomThemeLogo64.xml" />
+    <Content Include="App_Data\www\news\ThreeThemesAndDownloadStats.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Data\www\news\AtomSiteThemeSiteIsUp.xml" />
+    <Content Include="App_Data\www\news\NewThemeAndDownloadAvailable.xml" />
+    <Content Include="App_Data\www\themecollection\Arclite.xml" />
+    <Content Include="App_Data\www\themecollection\ArjunaX\TwitterTrackbacksForArjuna-XThemeerikzaadicomOnTopsycom.xml" />
+    <Content Include="App_Data\www\themecollection\BlueTheme.xml" />
+    <Content Include="App_Data\www\themecollection\ArjunaX.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Data\www\themecollection\CoolBlue.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Data\www\themecollection\Mystique.xml" />
+    <Content Include="App_Data\www\themecollection\Inove.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Data\www\themecollection\Notepad.xml" />
+    <Content Include="App_Data\www\themecollection\Default.xml" />
+    <Content Include="App_Data\www\themecollection\Hibiscus.xml" />
+    <Content Include="App_Data\www\themecollection\Settings.xml" />
+    <Content Include="bin\GA4AtomSitePlugin.1.4.0.0.xml" />
+    <Content Include="bin\WLWWorkaroundPlugin-1.4.0.0.xml" />
+    <Content Include="css\arclite\arclite.css" />
+    <Content Include="css\arclite\atomsite.css" />
+    <Content Include="css\arclite\ie6.css" />
+    <Content Include="css\arclite\jquery.fancybox-1.3.1.css" />
+    <Content Include="css\arclite\options\content-default.css" />
+    <Content Include="css\arclite\options\content-grunge.css" />
+    <Content Include="css\arclite\options\content-white.css" />
+    <Content Include="css\arclite\options\header-blue.css" />
+    <Content Include="css\arclite\options\header-default.css" />
+    <Content Include="css\arclite\options\header-field.css" />
+    <Content Include="css\arclite\options\header-fire.css" />
+    <Content Include="css\arclite\options\header-green.css" />
+    <Content Include="css\arclite\options\header-red.css" />
+    <Content Include="css\arclite\options\header-wall.css" />
+    <Content Include="css\arclite\options\header-wood.css" />
+    <Content Include="css\arclite\options\leftsidebar.css" />
+    <Content Include="css\arclite\options\side-blue.css" />
+    <Content Include="css\arclite\options\side-default.css" />
+    <Content Include="css\arclite\options\side-gray.css" />
+    <Content Include="css\arclite\options\side-green.css" />
+    <Content Include="css\arclite\style-imageless.css" />
+    <Content Include="css\arclite\style.css" />
+    <Content Include="css\arclite\TwitterPlugin.css" />
+    <Content Include="css\arjuna-x\ie6.css" />
+    <Content Include="css\arjuna-x\ie6_full.css" />
+    <Content Include="css\arjuna-x\ie7.css" />
+    <Content Include="css\arjuna-x\pagenavi-css.css" />
+    <Content Include="css\arjuna-x\arjuna-x.css" />
+    <Content Include="css\arjuna-x\wp-paginate.css" />
+    <Content Include="css\blue\blue.css" />
+    <Content Include="css\coolblue\coolbluemain.css" />
+    <Content Include="css\coolblue\enhancements.css" />
+    <Content Include="css\coolblue\reset.css" />
+    <Content Include="css\coolblue\coolblue.css" />
+    <Content Include="css\default\Admin.css" />
+    <Content Include="css\default\AdminAcceptsWidget.css" />
+    <Content Include="css\default\AdminCategoriesWidget.css" />
+    <Content Include="css\default\AdminEdit.css" />
+    <Content Include="css\default\AdminItems.css" />
+    <Content Include="css\default\AdminListings.css" />
+    <Content Include="css\default\AdminPluginListing.css" />
+    <Content Include="css\default\AdminQuickPubWidget.css" />
+    <Content Include="css\default\AdminRightNowWidget.css" />
+    <Content Include="css\default\AdminSettings.css" />
+    <Content Include="css\default\AdminTheme.css" />
+    <Content Include="css\default\AdminWidgets.css" />
+    <Content Include="css\default\BlogComment.css" />
+    <Content Include="css\default\Contact.css" />
+    <Content Include="css\default\default.css" />
+    <Content Include="css\default\OpenId.css" />
+    <Content Include="css\default\RaterWidget.css" />
+    <Content Include="css\default\ThemeSwitcher.css" />
+    <Content Include="css\default\TwitterPlugin.css" />
+    <Content Include="css\default\WidgetConfig.css" />
+    <Content Include="css\default\wizard.css" />
+    <Content Include="css\hibiscus\hibiscus.css" />
+    <Content Include="css\inove\404.css" />
+    <Content Include="css\inove\ie.css" />
+    <Content Include="css\inove\pagenavi-css.css" />
+    <Content Include="css\inove\polls-css.css" />
+    <Content Include="css\inove\rtl.css" />
+    <Content Include="css\inove\inove.css" />
+    <Content Include="css\inove\wp-recentcomments.css" />
+    <Content Include="css\inove\wp-syntax.css" />
+    <Content Include="css\mystique\color-blue.css" />
+    <Content Include="css\mystique\color-green.css" />
+    <Content Include="css\mystique\color-grey.css" />
+    <Content Include="css\mystique\color-red.css" />
+    <Content Include="css\mystique\editor.css" />
+    <Content Include="css\mystique\ie6.css" />
+    <Content Include="css\mystique\ie7.css" />
+    <Content Include="css\mystique\rtl.css" />
+    <Content Include="css\mystique\mystique.css" />
+    <Content Include="css\notepad\notepad.css" />
+    <Content Include="css\reset-fonts-grids-2.7.0.css" />
+    <Content Include="css\settings\settings.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="FavIcon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="img\arclite\avatar.png" />
+    <Content Include="img\arclite\blockquote.png" />
+    <Content Include="img\arclite\box-bl.png" />
+    <Content Include="img\arclite\box-br.png" />
+    <Content Include="img\arclite\box-left-bg.png" />
+    <Content Include="img\arclite\box-right-bg.png" />
+    <Content Include="img\arclite\box-shadow.png" />
+    <Content Include="img\arclite\box-title-bg.png" />
+    <Content Include="img\arclite\box-title-left.png" />
+    <Content Include="img\arclite\box-tl.png" />
+    <Content Include="img\arclite\box-tr.png" />
+    <Content Include="img\arclite\comment-bg-left.png" />
+    <Content Include="img\arclite\comment-bg-right.png" />
+    <Content Include="img\arclite\comment-head-admin.png" />
+    <Content Include="img\arclite\comment-head.png" />
+    <Content Include="img\arclite\comment-shadow.png" />
+    <Content Include="img\arclite\date-bg.png" />
+    <Content Include="img\arclite\div-h.png" />
+    <Content Include="img\arclite\div-h2.gif" />
+    <Content Include="img\arclite\fancy\blank.gif" />
+    <Content Include="img\arclite\fancy\fancybox-x.png" />
+    <Content Include="img\arclite\fancy\fancybox-y.png" />
+    <Content Include="img\arclite\fancy\fancybox.png" />
+    <Content Include="img\arclite\fancy\fancy_close.png" />
+    <Content Include="img\arclite\fancy\fancy_loading.png" />
+    <Content Include="img\arclite\fancy\fancy_nav_left.png" />
+    <Content Include="img\arclite\fancy\fancy_nav_right.png" />
+    <Content Include="img\arclite\fancy\fancy_shadow_e.png" />
+    <Content Include="img\arclite\fancy\fancy_shadow_n.png" />
+    <Content Include="img\arclite\fancy\fancy_shadow_ne.png" />
+    <Content Include="img\arclite\fancy\fancy_shadow_nw.png" />
+    <Content Include="img\arclite\fancy\fancy_shadow_s.png" />
+    <Content Include="img\arclite\fancy\fancy_shadow_se.png" />
+    <Content Include="img\arclite\fancy\fancy_shadow_sw.png" />
+    <Content Include="img\arclite\fancy\fancy_shadow_w.png" />
+    <Content Include="img\arclite\fancy\fancy_title_left.png" />
+    <Content Include="img\arclite\fancy\fancy_title_main.png" />
+    <Content Include="img\arclite\fancy\fancy_title_over.png" />
+    <Content Include="img\arclite\fancy\fancy_title_right.png" />
+    <Content Include="img\arclite\header-bg.jpg" />
+    <Content Include="img\arclite\header-center.jpg" />
+    <Content Include="img\arjuna-x\footer-icon.png" />
+    <Content Include="img\arclite\main-bg.jpg" />
+    <Content Include="img\arclite\main-center.jpg" />
+    <Content Include="img\arclite\main-top.jpg" />
+    <Content Include="img\arclite\nav-active.png" />
+    <Content Include="img\arclite\nav-bg-ie6.png" />
+    <Content Include="img\arclite\nav-bg.png" />
+    <Content Include="img\arclite\nav-div.png" />
+    <Content Include="img\arclite\nav-left-ie6.png" />
+    <Content Include="img\arclite\nav-left.png" />
+    <Content Include="img\arclite\options\box-title-bg-blue.png" />
+    <Content Include="img\arclite\options\box-title-bg-gray.png" />
+    <Content Include="img\arclite\options\box-title-bg-green.png" />
+    <Content Include="img\arclite\options\box-title-left-blue.png" />
+    <Content Include="img\arclite\options\box-title-left-gray.png" />
+    <Content Include="img\arclite\options\box-title-left-green.png" />
+    <Content Include="img\arclite\options\header-field-center.jpg" />
+    <Content Include="img\arclite\options\header-field.jpg" />
+    <Content Include="img\arclite\options\header-fire-center.jpg" />
+    <Content Include="img\arclite\options\header-fire.jpg" />
+    <Content Include="img\arclite\options\header-noise-blue-center.jpg" />
+    <Content Include="img\arclite\options\header-noise-blue.jpg" />
+    <Content Include="img\arclite\options\header-noise-green-center.jpg" />
+    <Content Include="img\arclite\options\header-noise-green.jpg" />
+    <Content Include="img\arclite\options\header-noise-red-center.jpg" />
+    <Content Include="img\arclite\options\header-noise-red.jpg" />
+    <Content Include="img\arclite\options\header-x-wall-center.jpg" />
+    <Content Include="img\arclite\options\header-x-wall.jpg" />
+    <Content Include="img\arclite\options\header-x-wood-center.jpg" />
+    <Content Include="img\arclite\options\header-x-wood.jpg" />
+    <Content Include="img\arclite\options\main2-bg.jpg" />
+    <Content Include="img\arclite\options\main2-center.jpg" />
+    <Content Include="img\arclite\options\main2-top.jpg" />
+    <Content Include="img\arclite\post-info.png" />
+    <Content Include="img\arclite\rss.png" />
+    <Content Include="img\arclite\search-bg-ie6.png" />
+    <Content Include="img\arclite\search-bg.png" />
+    <Content Include="img\arclite\search-go-ie6.png" />
+    <Content Include="img\arclite\search-go.png" />
+    <Content Include="img\arclite\side-menu-active.png" />
+    <Content Include="img\arclite\side-menu-rss.png" />
+    <Content Include="img\arclite\super_mario_mushroom.png" />
+    <Content Include="img\arclite\table-header.gif" />
+    <Content Include="img\arclite\tag.gif" />
+    <Content Include="img\arjuna-x\admin\admin.png" />
+    <Content Include="img\arjuna-x\admin\adminContainers.png" />
+    <Content Include="img\arjuna-x\admin\headerImages.jpg" />
+    <Content Include="img\arjuna-x\blockquote.png" />
+    <Content Include="img\arjuna-x\button.png" />
+    <Content Include="img\arjuna-x\calendar.gif" />
+    <Content Include="img\arjuna-x\comment.png" />
+    <Content Include="img\arjuna-x\footer.png" />
+    <Content Include="img\arjuna-x\footer2.jpg" />
+    <Content Include="img\arjuna-x\headerBG.png" />
+    <Content Include="img\arjuna-x\headerMenu1.png" />
+    <Content Include="img\arjuna-x\headerMenu2.png" />
+    <Content Include="img\arjuna-x\headerSearch.png" />
+    <Content Include="img\arjuna-x\header\darkBlue.jpg" />
+    <Content Include="img\arjuna-x\header\khaki.jpg" />
+    <Content Include="img\arjuna-x\header\lightBlue.jpg" />
+    <Content Include="img\arjuna-x\header\seaGreen.jpg" />
+    <Content Include="img\arjuna-x\heading.png" />
+    <Content Include="img\arjuna-x\icons.png" />
+    <Content Include="img\arjuna-x\ie6\blank.gif" />
+    <Content Include="img\arjuna-x\ie6\blockquote.png" />
+    <Content Include="img\arjuna-x\ie6\comment.png" />
+    <Content Include="img\arjuna-x\ie6\footer.png" />
+    <Content Include="img\arjuna-x\ie6\headerMenu2.png" />
+    <Content Include="img\arjuna-x\ie6\headerOverlay.png" />
+    <Content Include="img\arjuna-x\ie6\headerSearch.png" />
+    <Content Include="img\arjuna-x\ie6\heading.png" />
+    <Content Include="img\arjuna-x\ie6\icons.png" />
+    <Content Include="img\arjuna-x\ie6\pageBG.png" />
+    <Content Include="img\arjuna-x\ie6\pagination.png" />
+    <Content Include="img\arjuna-x\ie6\postFooter.png" />
+    <Content Include="img\arjuna-x\ie6\sidebars.png" />
+    <Content Include="img\arjuna-x\ie6\srsIcon.png" />
+    <Content Include="img\arjuna-x\ie6\wordpressIcon.png" />
+    <Content Include="img\arjuna-x\inputText.png" />
+    <Content Include="img\arjuna-x\pageBG.png" />
+    <Content Include="img\arjuna-x\pagination.png" />
+    <Content Include="img\arjuna-x\paging.png" />
+    <Content Include="img\arjuna-x\postFooter.png" />
+    <Content Include="img\arjuna-x\sidebars.png" />
+    <Content Include="img\arjuna-x\srsIcon.png" />
+    <Content Include="img\arjuna-x\srsIcon2.jpg" />
+    <Content Include="img\arjuna-x\wordpressIcon.png" />
+    <Content Include="img\arjuna-x\wordpressIcon2.jpg" />
+    <Content Include="img\blue\backlight.png" />
+    <Content Include="img\blue\navbg.jpg" />
+    <Content Include="img\blue\sidebg.png" />
+    <Content Include="img\coolblue\bg.gif" />
+    <Content Include="img\coolblue\bg.jpg" />
+    <Content Include="img\coolblue\clock.gif" />
+    <Content Include="img\coolblue\comment.gif" />
+    <Content Include="img\coolblue\content.gif" />
+    <Content Include="img\coolblue\current.gif" />
+    <Content Include="img\coolblue\current.jpg" />
+    <Content Include="img\coolblue\date-bg.gif" />
+    <Content Include="img\coolblue\delicious_32.png" />
+    <Content Include="img\coolblue\digg_32.png" />
+    <Content Include="img\coolblue\document.gif" />
+    <Content Include="img\coolblue\email_32.png" />
+    <Content Include="img\coolblue\facebook_32.png" />
+    <Content Include="img\coolblue\firefox-gray.jpg" />
+    <Content Include="img\coolblue\footer-line.gif" />
+    <Content Include="img\coolblue\gravatar.jpg" />
+    <Content Include="img\coolblue\header-bg.jpg" />
+    <Content Include="img\coolblue\header-bg.png" />
+    <Content Include="img\coolblue\img-post.jpg" />
+    <Content Include="img\coolblue\linkedin_32.png" />
+    <Content Include="img\coolblue\newsvine_32.png" />
+    <Content Include="img\coolblue\permalink.gif" />
+    <Content Include="img\coolblue\quote.gif" />
+    <Content Include="img\coolblue\rss.gif" />
+    <Content Include="img\coolblue\rss_32.png" />
+    <Content Include="img\coolblue\search.gif" />
+    <Content Include="img\coolblue\social_email.png" />
+    <Content Include="img\coolblue\social_facebook.png" />
+    <Content Include="img\coolblue\social_rss.png" />
+    <Content Include="img\coolblue\social_twitter.png" />
+    <Content Include="img\coolblue\speech_bubble.gif" />
+    <Content Include="img\coolblue\stumbleupon_32.png" />
+    <Content Include="img\coolblue\tag.gif" />
+    <Content Include="img\coolblue\technorati_32.png" />
+    <Content Include="img\coolblue\thumb.jpg" />
+    <Content Include="img\coolblue\twitter_32.png" />
+    <Content Include="img\coolblue\user.gif" />
+    <Content Include="img\default\accessdenied.jpg" />
+    <Content Include="img\default\add.png" />
+    <Content Include="img\default\adminfav-arrow.gif" />
+    <Content Include="img\default\adminfav.png" />
+    <Content Include="img\default\adminiconv.png" />
+    <Content Include="img\default\aolW.png" />
+    <Content Include="img\default\areakey.png" />
+    <Content Include="img\default\asterik.png" />
+    <Content Include="img\default\asterikW.png" />
+    <Content Include="img\default\asterikY.png" />
+    <Content Include="img\default\atomthemelogo.png" />
+    <Content Include="img\default\atomthemelogo128.png" />
+    <Content Include="img\default\atomthemelogo64.png" />
+    <Content Include="img\default\blogger.png" />
+    <Content Include="img\default\brush.png" />
+    <Content Include="img\default\busy.gif" />
+    <Content Include="img\default\check.png" />
+    <Content Include="img\default\claimid.png" />
+    <Content Include="img\default\doc-custom.png" />
+    <Content Include="img\default\doc-customoff.png" />
+    <Content Include="img\default\doc.png" />
+    <Content Include="img\default\doc2.png" />
+    <Content Include="img\default\doc2off.png" />
+    <Content Include="img\default\doc3.png" />
+    <Content Include="img\default\doc3off.png" />
+    <Content Include="img\default\doc4.png" />
+    <Content Include="img\default\doc4off.png" />
+    <Content Include="img\default\docoff.png" />
+    <Content Include="img\default\error.jpg" />
+    <Content Include="img\default\facebookW.png" />
+    <Content Include="img\default\fade-butt.png" />
+    <Content Include="img\default\fadeblue.png" />
+    <Content Include="img\default\fadegold.png" />
+    <Content Include="img\default\fadegreen.png" />
+    <Content Include="img\default\fadegrey.png" />
+    <Content Include="img\default\fadered.png" />
+    <Content Include="img\default\failure.png" />
+    <Content Include="img\default\flickr.png" />
+    <Content Include="img\default\flickrW.png" />
+    <Content Include="img\default\fullscreen.png" />
+    <Content Include="img\default\googleW.png" />
+    <Content Include="img\default\gray-grad.png" />
+    <Content Include="img\default\icon.png" />
+    <Content Include="img\default\icons32.png" />
+    <Content Include="img\default\livejournal.png" />
+    <Content Include="img\default\logo.png" />
+    <Content Include="img\default\logosm.png" />
+    <Content Include="img\default\manager.png" />
+    <Content Include="img\default\myopenid.png" />
+    <Content Include="img\default\myopenidW.png" />
+    <Content Include="img\default\myspaceW.png" />
+    <Content Include="img\default\next.png" />
+    <Content Include="img\default\noav.png" />
+    <Content Include="img\default\notfound.jpg" />
+    <Content Include="img\default\openidico.png" />
+    <Content Include="img\default\openidW.png" />
+    <Content Include="img\default\pending.png" />
+    <Content Include="img\default\plus.png" />
+    <Content Include="img\default\prev.png" />
+    <Content Include="img\default\scopematrix.png" />
+    <Content Include="img\default\scopeskey.png" />
+    <Content Include="img\default\search.png" />
+    <Content Include="img\default\signal.png" />
+    <Content Include="img\default\stars.png" />
+    <Content Include="img\default\stop.png" />
+    <Content Include="img\default\subtract.png" />
+    <Content Include="img\default\success.png" />
+    <Content Include="img\default\technorati.png" />
+    <Content Include="img\default\verisign.png" />
+    <Content Include="img\default\vidoop.png" />
+    <Content Include="img\default\warning.png" />
+    <Content Include="img\default\white-grad.png" />
+    <Content Include="img\default\wizbg.png" />
+    <Content Include="img\default\wordpress.png" />
+    <Content Include="img\default\yahooW.png" />
+    <Content Include="img\default\yui-t1.png" />
+    <Content Include="img\default\yui-t1off.png" />
+    <Content Include="img\default\yui-t2.png" />
+    <Content Include="img\default\yui-t2off.png" />
+    <Content Include="img\default\yui-t3.png" />
+    <Content Include="img\default\yui-t3off.png" />
+    <Content Include="img\default\yui-t4.png" />
+    <Content Include="img\default\yui-t4off.png" />
+    <Content Include="img\default\yui-t5.png" />
+    <Content Include="img\default\yui-t5off.png" />
+    <Content Include="img\default\yui-t6.png" />
+    <Content Include="img\default\yui-t6off.png" />
+    <Content Include="img\default\zoom.png" />
+    <Content Include="img\hibiscus\background1.png" />
+    <Content Include="img\hibiscus\contentback.png" />
+    <Content Include="img\hibiscus\leftFlowr.png" />
+    <Content Include="img\hibiscus\midback.png" />
+    <Content Include="img\hibiscus\nav.png" />
+    <Content Include="img\hibiscus\nav2.png" />
+    <Content Include="img\hibiscus\sideback.png" />
+    <Content Include="img\hibiscus\topbg.png" />
+    <Content Include="img\inove\ajax-loader.gif" />
+    <Content Include="img\inove\arrow.gif" />
+    <Content Include="img\inove\bg.jpg" />
+    <Content Include="img\inove\blockquote.gif" />
+    <Content Include="img\inove\box.gif" />
+    <Content Include="img\inove\box_1col.gif" />
+    <Content Include="img\inove\comment.gif" />
+    <Content Include="img\inove\commentpoint.png" />
+    <Content Include="img\inove\comment_1col.gif" />
+    <Content Include="img\inove\feeds.gif" />
+    <Content Include="img\inove\footer.jpg" />
+    <Content Include="img\inove\header.jpg" />
+    <Content Include="img\inove\atomsite-logo.png" />
+    <Content Include="img\inove\icons.gif" />
+    <Content Include="img\inove\imgrtl\arrow.gif" />
+    <Content Include="img\inove\imgrtl\blockquote.gif" />
+    <Content Include="img\inove\imgrtl\menu.gif" />
+    <Content Include="img\inove\imgrtl\path.gif" />
+    <Content Include="img\inove\imgrtl\searchbox.gif" />
+    <Content Include="img\inove\imgrtl\sidesep.gif" />
+    <Content Include="img\inove\light.gif" />
+    <Content Include="img\inove\lovelace.gif" />
+    <Content Include="img\inove\main_shadow.gif" />
+    <Content Include="img\inove\menu.gif" />
+    <Content Include="img\inove\messagebox.gif" />
+    <Content Include="img\inove\messagebox_1col.gif" />
+    <Content Include="img\inove\postbox.gif" />
+    <Content Include="img\inove\postbox_1col.gif" />
+    <Content Include="img\inove\readers.gif" />
+    <Content Include="img\inove\searchbox.gif" />
+    <Content Include="img\inove\sidebar_shadow.gif" />
+    <Content Include="img\inove\sidesep.gif" />
+    <Content Include="img\inove\textfield.gif" />
+    <Content Include="img\inove\title.gif" />
+    <Content Include="img\inove\widgetsep.png" />
+    <Content Include="img\inove\wp-logo.png" />
+    <Content Include="img\mystique\bg-lightgray.png" />
+    <Content Include="img\mystique\bg-trans.png" />
+    <Content Include="img\mystique\bg-trans2.png" />
+    <Content Include="img\mystique\bg.png" />
+    <Content Include="img\mystique\block-nav.png" />
+    <Content Include="img\mystique\blockquote.png" />
+    <Content Include="img\mystique\blue\block-title.png" />
+    <Content Include="img\mystique\blue\comment-head.png" />
+    <Content Include="img\mystique\blue\search.png" />
+    <Content Include="img\mystique\blue\tabs-bg.png" />
+    <Content Include="img\mystique\blue\tabs-c.png" />
+    <Content Include="img\mystique\blue\tabs.png" />
+    <Content Include="img\mystique\box-tabs.png" />
+    <Content Include="img\mystique\box.png" />
+    <Content Include="img\mystique\comment-bg.gif" />
+    <Content Include="img\mystique\dot.gif" />
+    <Content Include="img\mystique\dot2.gif" />
+    <Content Include="img\mystique\featured.jpg" />
+    <Content Include="img\mystique\flickr.png" />
+    <Content Include="img\mystique\green\block-title.png" />
+    <Content Include="img\mystique\green\comment-head.png" />
+    <Content Include="img\mystique\green\search.png" />
+    <Content Include="img\mystique\green\tabs-bg.png" />
+    <Content Include="img\mystique\green\tabs-c.png" />
+    <Content Include="img\mystique\green\tabs.png" />
+    <Content Include="img\mystique\grey\block-title.png" />
+    <Content Include="img\mystique\grey\comment-head.png" />
+    <Content Include="img\mystique\grey\search.png" />
+    <Content Include="img\mystique\grey\tabs-bg.png" />
+    <Content Include="img\mystique\grey\tabs-c.png" />
+    <Content Include="img\mystique\grey\tabs.png" />
+    <Content Include="img\mystique\header.jpg" />
+    <Content Include="img\mystique\icons.png" />
+    <Content Include="img\mystique\info-bar.png" />
+    <Content Include="img\mystique\loader-white.gif" />
+    <Content Include="img\mystique\loader.gif" />
+    <Content Include="img\mystique\main-left.jpg" />
+    <Content Include="img\mystique\main-right.jpg" />
+    <Content Include="img\mystique\nav-active.png" />
+    <Content Include="img\mystique\nav-div.png" />
+    <Content Include="img\mystique\nav-icons.png" />
+    <Content Include="img\mystique\nav-pointer.png" />
+    <Content Include="img\mystique\nav.png" />
+    <Content Include="img\mystique\page-controls.png" />
+    <Content Include="img\mystique\red\block-title.png" />
+    <Content Include="img\mystique\red\comment-head.png" />
+    <Content Include="img\mystique\red\search.png" />
+    <Content Include="img\mystique\red\tabs-bg.png" />
+    <Content Include="img\mystique\red\tabs-c.png" />
+    <Content Include="img\mystique\red\tabs.png" />
+    <Content Include="img\mystique\shadow.png" />
+    <Content Include="img\mystique\socialize.jpg" />
+    <Content Include="img\mystique\twitter.png" />
+    <Content Include="img\mystique\_alt\comment-head-trans.png" />
+    <Content Include="img\mystique\_alt\header2.jpg" />
+    <Content Include="img\mystique\_ie6\block-nav.png" />
+    <Content Include="img\mystique\_ie6\block-title.png" />
+    <Content Include="img\mystique\_ie6\box-tabs.png" />
+    <Content Include="img\notepad\bg-stripe.png" />
+    <Content Include="img\notepad\blockquote.png" />
+    <Content Include="img\notepad\bullet.png" />
+    <Content Include="img\notepad\cancel-reply.png" />
+    <Content Include="img\notepad\comment-nav.png" />
+    <Content Include="img\notepad\comment-submit.png" />
+    <Content Include="img\notepad\comments-nav-circle.png" />
+    <Content Include="img\notepad\content-dots.png" />
+    <Content Include="img\notepad\footer.png" />
+    <Content Include="img\notepad\form-button-bg.png" />
+    <Content Include="img\notepad\header.png" />
+    <Content Include="img\notepad\more-link.png" />
+    <Content Include="img\notepad\nav-bg.png" />
+    <Content Include="img\notepad\post-nav.png" />
+    <Content Include="img\notepad\postdata-icons.png" />
+    <Content Include="img\notepad\reply.png" />
+    <Content Include="img\notepad\searchform.png" />
+    <Content Include="img\notepad\sidebar-dots.png" />
+    <Content Include="img\notepad\sidebar-list-arrow.png" />
+    <Content Include="img\notepad\sidebar-list-circle.png" />
+    <Content Include="img\notepad\socialmedia\amazon.png" />
+    <Content Include="img\notepad\socialmedia\aol.png" />
+    <Content Include="img\notepad\socialmedia\app-store.png" />
+    <Content Include="img\notepad\socialmedia\apple.png" />
+    <Content Include="img\notepad\socialmedia\bebo.png" />
+    <Content Include="img\notepad\socialmedia\behance.png" />
+    <Content Include="img\notepad\socialmedia\blogger.png" />
+    <Content Include="img\notepad\socialmedia\delicious.png" />
+    <Content Include="img\notepad\socialmedia\design-bump.png" />
+    <Content Include="img\notepad\socialmedia\designfloat.png" />
+    <Content Include="img\notepad\socialmedia\deviant-art.png" />
+    <Content Include="img\notepad\socialmedia\digg.png" />
+    <Content Include="img\notepad\socialmedia\email.png" />
+    <Content Include="img\notepad\socialmedia\facebook.png" />
+    <Content Include="img\notepad\socialmedia\flickr.png" />
+    <Content Include="img\notepad\socialmedia\friendfeed.png" />
+    <Content Include="img\notepad\socialmedia\frinedster.png" />
+    <Content Include="img\notepad\socialmedia\google-talk.png" />
+    <Content Include="img\notepad\socialmedia\google.png" />
+    <Content Include="img\notepad\socialmedia\lastfm.png" />
+    <Content Include="img\notepad\socialmedia\linkedin.png" />
+    <Content Include="img\notepad\socialmedia\microsoft.png" />
+    <Content Include="img\notepad\socialmedia\mister-wong.png" />
+    <Content Include="img\notepad\socialmedia\mixx.png" />
+    <Content Include="img\notepad\socialmedia\mobileme.png" />
+    <Content Include="img\notepad\socialmedia\msn.png" />
+    <Content Include="img\notepad\socialmedia\myspace.png" />
+    <Content Include="img\notepad\socialmedia\netvibes.png" />
+    <Content Include="img\notepad\socialmedia\newsvine.png" />
+    <Content Include="img\notepad\socialmedia\posterous.png" />
+    <Content Include="img\notepad\socialmedia\qik.png" />
+    <Content Include="img\notepad\socialmedia\reddit.png" />
+    <Content Include="img\notepad\socialmedia\retweet.png" />
+    <Content Include="img\notepad\socialmedia\rss.png" />
+    <Content Include="img\notepad\socialmedia\sharethis.png" />
+    <Content Include="img\notepad\socialmedia\skype.png" />
+    <Content Include="img\notepad\socialmedia\slashdot.png" />
+    <Content Include="img\notepad\socialmedia\slideshare.png" />
+    <Content Include="img\notepad\socialmedia\squidoo.png" />
+    <Content Include="img\notepad\socialmedia\stumbleupon.png" />
+    <Content Include="img\notepad\socialmedia\technorati.png" />
+    <Content Include="img\notepad\socialmedia\tumblr.png" />
+    <Content Include="img\notepad\socialmedia\twitter.png" />
+    <Content Include="img\notepad\socialmedia\viddler.png" />
+    <Content Include="img\notepad\socialmedia\vimeo.png" />
+    <Content Include="img\notepad\socialmedia\virb.png" />
+    <Content Include="img\notepad\socialmedia\wordpress.png" />
+    <Content Include="img\notepad\socialmedia\yahoo-buzz.png" />
+    <Content Include="img\notepad\socialmedia\yahoo.png" />
+    <Content Include="img\notepad\socialmedia\youtube.png" />
+    <Content Include="img\notepad\subnav-gradient.png" />
+    <Content Include="img\notepad\wrapper.png" />
+    <Content Include="img\settings\background1.png" />
+    <Content Include="img\settings\bg.jpg" />
+    <Content Include="img\settings\img01.png" />
+    <Content Include="img\settings\img02.jpg" />
+    <Content Include="img\settings\img04.jpg" />
+    <Content Include="img\settings\spacer.gif" />
+    <Content Include="js\arclite\jquery.arclite.js" />
+    <Content Include="js\arclite\jquery.easing-1.3.pack.js" />
+    <Content Include="js\arclite\jquery.fancybox-1.3.1.js" />
+    <Content Include="js\arclite\jquery.fancybox-1.3.1.pack.js" />
+    <Content Include="js\arclite\jquery.mousewheel-3.0.2.pack.js" />
+    <Content Include="js\arjuna-x\default.js" />
+    <Content Include="js\arjuna-x\ie6.js" />
+    <Content Include="js\ckeditor\ckeditor.js" />
+    <Content Include="js\ckeditor\contents.css" />
+    <Content Include="js\ckeditor\images\spacer.gif" />
+    <Content Include="js\ckeditor\lang\en.js" />
+    <Content Include="js\ckeditor\LICENSE.html" />
+    <Content Include="js\ckeditor\plugins\a11yhelp\dialogs\a11yhelp.js" />
+    <Content Include="js\ckeditor\plugins\a11yhelp\lang\en.js" />
+    <Content Include="js\ckeditor\plugins\about\dialogs\about.js" />
+    <Content Include="js\ckeditor\plugins\about\dialogs\logo_ckeditor.png" />
+    <Content Include="js\ckeditor\plugins\clipboard\dialogs\paste.js" />
+    <Content Include="js\ckeditor\plugins\colordialog\dialogs\colordialog.js" />
+    <Content Include="js\ckeditor\plugins\dialog\dialogDefinition.js" />
+    <Content Include="js\ckeditor\plugins\div\dialogs\div.js" />
+    <Content Include="js\ckeditor\plugins\find\dialogs\find.js" />
+    <Content Include="js\ckeditor\plugins\flash\dialogs\flash.js" />
+    <Content Include="js\ckeditor\plugins\flash\images\placeholder.png" />
+    <Content Include="js\ckeditor\plugins\forms\dialogs\button.js" />
+    <Content Include="js\ckeditor\plugins\forms\dialogs\checkbox.js" />
+    <Content Include="js\ckeditor\plugins\forms\dialogs\form.js" />
+    <Content Include="js\ckeditor\plugins\forms\dialogs\hiddenfield.js" />
+    <Content Include="js\ckeditor\plugins\forms\dialogs\radio.js" />
+    <Content Include="js\ckeditor\plugins\forms\dialogs\select.js" />
+    <Content Include="js\ckeditor\plugins\forms\dialogs\textarea.js" />
+    <Content Include="js\ckeditor\plugins\forms\dialogs\textfield.js" />
+    <Content Include="js\ckeditor\plugins\iframedialog\plugin.js" />
+    <Content Include="js\ckeditor\plugins\image\dialogs\image.js" />
+    <Content Include="js\ckeditor\plugins\link\dialogs\anchor.js" />
+    <Content Include="js\ckeditor\plugins\link\dialogs\link.js" />
+    <Content Include="js\ckeditor\plugins\link\images\anchor.gif" />
+    <Content Include="js\ckeditor\plugins\pagebreak\images\pagebreak.gif" />
+    <Content Include="js\ckeditor\plugins\pastefromword\filter\default.js" />
+    <Content Include="js\ckeditor\plugins\pastetext\dialogs\pastetext.js" />
+    <Content Include="js\ckeditor\plugins\scayt\dialogs\options.js" />
+    <Content Include="js\ckeditor\plugins\scayt\dialogs\toolbar.css" />
+    <Content Include="js\ckeditor\plugins\showblocks\images\block_address.png" />
+    <Content Include="js\ckeditor\plugins\showblocks\images\block_blockquote.png" />
+    <Content Include="js\ckeditor\plugins\showblocks\images\block_div.png" />
+    <Content Include="js\ckeditor\plugins\showblocks\images\block_h1.png" />
+    <Content Include="js\ckeditor\plugins\showblocks\images\block_h2.png" />
+    <Content Include="js\ckeditor\plugins\showblocks\images\block_h3.png" />
+    <Content Include="js\ckeditor\plugins\showblocks\images\block_h4.png" />
+    <Content Include="js\ckeditor\plugins\showblocks\images\block_h5.png" />
+    <Content Include="js\ckeditor\plugins\showblocks\images\block_h6.png" />
+    <Content Include="js\ckeditor\plugins\showblocks\images\block_p.png" />
+    <Content Include="js\ckeditor\plugins\showblocks\images\block_pre.png" />
+    <Content Include="js\ckeditor\plugins\smiley\dialogs\smiley.js" />
+    <Content Include="js\ckeditor\plugins\smiley\images\angel_smile.gif" />
+    <Content Include="js\ckeditor\plugins\smiley\images\angry_smile.gif" />
+    <Content Include="js\ckeditor\plugins\smiley\images\broken_heart.gif" />
+    <Content Include="js\ckeditor\plugins\smiley\images\confused_smile.gif" />
+    <Content Include="js\ckeditor\plugins\smiley\images\cry_smile.gif" />
+    <Content Include="js\ckeditor\plugins\smiley\images\devil_smile.gif" />
+    <Content Include="js\ckeditor\plugins\smiley\images\embaressed_smile.gif" />
+    <Content Include="js\ckeditor\plugins\smiley\images\envelope.gif" />
+    <Content Include="js\ckeditor\plugins\smiley\images\heart.gif" />
+    <Content Include="js\ckeditor\plugins\smiley\images\kiss.gif" />
+    <Content Include="js\ckeditor\plugins\smiley\images\lightbulb.gif" />
+    <Content Include="js\ckeditor\plugins\smiley\images\omg_smile.gif" />
+    <Content Include="js\ckeditor\plugins\smiley\images\regular_smile.gif" />
+    <Content Include="js\ckeditor\plugins\smiley\images\sad_smile.gif" />
+    <Content Include="js\ckeditor\plugins\smiley\images\shades_smile.gif" />
+    <Content Include="js\ckeditor\plugins\smiley\images\teeth_smile.gif" />
+    <Content Include="js\ckeditor\plugins\smiley\images\thumbs_down.gif" />
+    <Content Include="js\ckeditor\plugins\smiley\images\thumbs_up.gif" />
+    <Content Include="js\ckeditor\plugins\smiley\images\tounge_smile.gif" />
+    <Content Include="js\ckeditor\plugins\smiley\images\whatchutalkingabout_smile.gif" />
+    <Content Include="js\ckeditor\plugins\smiley\images\wink_smile.gif" />
+    <Content Include="js\ckeditor\plugins\specialchar\dialogs\specialchar.js" />
+    <Content Include="js\ckeditor\plugins\stylescombo\styles\default.js" />
+    <Content Include="js\ckeditor\plugins\tabletools\dialogs\tableCell.js" />
+    <Content Include="js\ckeditor\plugins\table\dialogs\table.js" />
+    <Content Include="js\ckeditor\plugins\templates\dialogs\templates.js" />
+    <Content Include="js\ckeditor\plugins\templates\templates\default.js" />
+    <Content Include="js\ckeditor\plugins\templates\templates\images\template1.gif" />
+    <Content Include="js\ckeditor\plugins\templates\templates\images\template2.gif" />
+    <Content Include="js\ckeditor\plugins\templates\templates\images\template3.gif" />
+    <Content Include="js\ckeditor\plugins\uicolor\dialogs\uicolor.js" />
+    <Content Include="js\ckeditor\plugins\uicolor\lang\en.js" />
+    <Content Include="js\ckeditor\plugins\uicolor\plugin.js" />
+    <Content Include="js\ckeditor\plugins\uicolor\uicolor.gif" />
+    <Content Include="js\ckeditor\plugins\uicolor\yui\assets\hue_bg.png" />
+    <Content Include="js\ckeditor\plugins\uicolor\yui\assets\hue_thumb.png" />
+    <Content Include="js\ckeditor\plugins\uicolor\yui\assets\picker_mask.png" />
+    <Content Include="js\ckeditor\plugins\uicolor\yui\assets\picker_thumb.png" />
+    <Content Include="js\ckeditor\plugins\uicolor\yui\assets\yui.css" />
+    <Content Include="js\ckeditor\plugins\uicolor\yui\yui.js" />
+    <Content Include="js\ckeditor\plugins\wsc\dialogs\ciframe.html" />
+    <Content Include="js\ckeditor\plugins\wsc\dialogs\tmpFrameset.html" />
+    <Content Include="js\ckeditor\plugins\wsc\dialogs\wsc.css" />
+    <Content Include="js\ckeditor\plugins\wsc\dialogs\wsc.js" />
+    <Content Include="js\ckeditor\skins\kama\dialog.css" />
+    <Content Include="js\ckeditor\skins\kama\editor.css" />
+    <Content Include="js\ckeditor\skins\kama\icons.png" />
+    <Content Include="js\ckeditor\skins\kama\images\dialog_sides.gif" />
+    <Content Include="js\ckeditor\skins\kama\images\dialog_sides.png" />
+    <Content Include="js\ckeditor\skins\kama\images\dialog_sides_rtl.png" />
+    <Content Include="js\ckeditor\skins\kama\images\mini.gif" />
+    <Content Include="js\ckeditor\skins\kama\images\noimage.png" />
+    <Content Include="js\ckeditor\skins\kama\images\sprites.png" />
+    <Content Include="js\ckeditor\skins\kama\images\sprites_ie6.png" />
+    <Content Include="js\ckeditor\skins\kama\images\toolbar_start.gif" />
+    <Content Include="js\ckeditor\skins\kama\skin.js" />
+    <Content Include="js\ckeditor\skins\kama\templates.css" />
+    <Content Include="js\ckeditor\themes\default\theme.js" />
+    <Content Include="js\default\Admin.js" />
+    <Content Include="js\default\AdminAcceptsWidget.js" />
+    <Content Include="js\default\AdminCategoriesWidget.js" />
+    <Content Include="js\default\AdminDefaultsToggle.js" />
+    <Content Include="js\default\AdminEdit.js" />
+    <Content Include="js\default\AdminPlugins.js" />
+    <Content Include="js\default\AdminQuickPubWidget.js" />
+    <Content Include="js\default\AdminTheme.js" />
+    <Content Include="js\default\AdminUsers.js" />
+    <Content Include="js\default\AdminWidgets.js" />
+    <Content Include="js\default\Blog.js" />
+    <Content Include="js\default\BlogComment.js" />
+    <Content Include="js\default\Contact.js" />
+    <Content Include="js\default\OpenIdModalWidgetTail.js" />
+    <Content Include="js\default\ThemeSwitcher.js" />
+    <Content Include="js\inove\base.js" />
+    <Content Include="js\inove\comment.js" />
+    <Content Include="js\inove\menu.js" />
+    <Content Include="js\jquery-1.4.2.js" />
+    <Content Include="js\jquery.multifile-1.46.js" />
+    <Content Include="js\jquery.openid-1.1.js" />
+    <Content Include="js\jquery.rater-1.1.js" />
+    <Content Include="js\jquery.single-ddm-1.2.js" />
+    <Content Include="js\jquery.timeago-0.8.2.js" />
+    <Content Include="js\jquery.tools-1.1.2.js" />
+    <Content Include="js\jquery.watermark.js" />
+    <Content Include="js\mystique\jquery.mystique.init.js" />
+    <Content Include="js\mystique\jquery.mystique.dev.js" />
+    <Content Include="js\mystique\jquery.mystique.js" />
+    <Content Include="plugins\BlogMLPlugin.1.4.0.0.zip" />
+    <Content Include="plugins\OpenIdPlugin.1.4.0.0.zip" />
+    <Content Include="plugins\TwitterPlugin.1.4.0.0.zip" />
+    <Content Include="themes\arclite\AccountLogin.aspx" />
+    <Content Include="themes\arclite\AccountStatusWidget.ascx" />
+    <Content Include="themes\arclite\arclite.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="themes\arclite\screenshot.png" />
+    <Content Include="themes\arclite\thumbnail.png" />
+    <Content Include="themes\arclite\BlogArchiveWidget.ascx" />
+    <Content Include="themes\arclite\BlogCategoriesWidget.ascx" />
+    <Content Include="themes\arclite\BlogComment.ascx" />
+    <Content Include="themes\arclite\BlogCommentsWidget.ascx" />
+    <Content Include="themes\arclite\BlogEntry.aspx" />
+    <Content Include="themes\arclite\BlogEntrySimpleWidget.ascx" />
+    <Content Include="themes\arclite\BlogListing.aspx" />
+    <Content Include="themes\arclite\BlogRecentCommentsWidget.ascx" />
+    <Content Include="themes\arclite\BlogSearchWidget.ascx" />
+    <Content Include="themes\arclite\BlogSummaryWidget.ascx" />
+    <Content Include="themes\arclite\Box.ascx" />
+    <Content Include="themes\arclite\MenuWidget.ascx" />
+    <Content Include="themes\arclite\Site.Master" />
+    <Content Include="themes\arjuna-x\AccountStatusWidget.ascx" />
+    <Content Include="themes\arjuna-x\BlogAddCommentWidget.ascx" />
+    <Content Include="themes\arjuna-x\BlogArchiveWidget.ascx" />
+    <Content Include="themes\arjuna-x\BlogCategories.ascx" />
+    <Content Include="themes\arjuna-x\BlogCategoriesWidget.ascx" />
+    <Content Include="themes\arjuna-x\BlogCategoryCloudWidget.ascx" />
+    <Content Include="themes\arjuna-x\BlogComment.ascx" />
+    <Content Include="themes\arjuna-x\BlogCommentsWidget.ascx" />
+    <Content Include="themes\arjuna-x\BlogEntry.aspx" />
+    <Content Include="themes\arjuna-x\BlogEntrySimpleWidget.ascx" />
+    <Content Include="themes\arjuna-x\BlogHome.aspx" />
+    <Content Include="themes\arjuna-x\BlogListing.aspx" />
+    <Content Include="themes\arjuna-x\BlogRecentCommentsWidget.ascx" />
+    <Content Include="themes\arjuna-x\BlogRecentWidget.ascx" />
+    <Content Include="themes\arjuna-x\BlogSearchWidget.ascx" />
+    <Content Include="themes\arjuna-x\BlogSummaryWidget.ascx" />
+    <Content Include="themes\arjuna-x\MenuWidget.ascx" />
+    <Content Include="themes\arjuna-x\screenshot.png" />
+    <Content Include="themes\arjuna-x\thumbnail.png" />
+    <Content Include="themes\blue\blue.png" />
+    <Content Include="themes\blue\blue.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="themes\coolblue\AccountStatusWidget.ascx" />
+    <Content Include="themes\coolblue\BlogAddCommentWidget.ascx" />
+    <Content Include="themes\coolblue\BlogArchiveWidget.ascx" />
+    <Content Include="themes\coolblue\BlogComment.ascx" />
+    <Content Include="themes\coolblue\BlogCommentsWidget.ascx" />
+    <Content Include="themes\coolblue\BlogEntry.aspx" />
+    <Content Include="themes\coolblue\BlogListing.aspx" />
+    <Content Include="themes\coolblue\BlogRecentCommentsWidget.ascx" />
+    <Content Include="themes\coolblue\BlogRecentWidget.ascx" />
+    <Content Include="themes\coolblue\BlogSearchWidget.ascx" />
+    <Content Include="themes\coolblue\coolblue.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="themes\coolblue\MenuWidget.ascx" />
+    <Content Include="themes\coolblue\screenshot.png" />
+    <Content Include="themes\coolblue\thumbnail.png" />
+    <Content Include="themes\default\AccessDenied.html" />
+    <Content Include="themes\default\AccountLogin.aspx" />
+    <Content Include="themes\default\AccountStatusWidget.ascx" />
+    <Content Include="themes\default\Admin.Master" />
+    <Content Include="themes\default\AdminAcceptsWidget.ascx" />
+    <Content Include="themes\default\AdminAddCategoryWidget.ascx" />
+    <Content Include="themes\default\AdminAnnotations.aspx" />
+    <Content Include="themes\default\AdminAreas.ascx" />
+    <Content Include="themes\default\AdminCategoriesWidget.ascx" />
+    <Content Include="themes\default\AdminCKEditorWidget.ascx" />
+    <Content Include="themes\default\AdminCollectionsWidget.ascx" />
+    <Content Include="themes\default\AdminDashboard.aspx" />
+    <Content Include="themes\default\AdminEditEntry.aspx" />
+    <Content Include="themes\default\AdminEditMedia.aspx" />
+    <Content Include="themes\default\AdminEntries.aspx" />
+    <Content Include="themes\default\AdminIncludes.ascx" />
+    <Content Include="themes\default\AdminPendingEntriesWidget.ascx" />
+    <Content Include="themes\default\AdminPlugin.aspx" />
+    <Content Include="themes\default\AdminPluginListing.ascx" />
+    <Content Include="themes\default\AdminPlugins.aspx" />
+    <Content Include="themes\default\AdminProgress.aspx" />
+    <Content Include="themes\default\AdminQuickPubWidget.ascx" />
+    <Content Include="themes\default\AdminRecentAnnotationsWidget.ascx" />
+    <Content Include="themes\default\AdminRightNowWidget.ascx" />
+    <Content Include="themes\default\AdminRoleMatrix.aspx" />
+    <Content Include="themes\default\AdminSettingsCollection.aspx" />
+    <Content Include="themes\default\AdminSettingsEntireSite.aspx" />
+    <Content Include="themes\default\AdminSettingsWorkspace.aspx" />
+    <Content Include="themes\default\AdminTargets.ascx" />
+    <Content Include="themes\default\AdminTheme.aspx" />
+    <Content Include="themes\default\AdminThemeInfo.ascx" />
+    <Content Include="themes\default\AdminThemeUpload.aspx" />
+    <Content Include="themes\default\AdminTinyMceWidget.ascx" />
+    <Content Include="themes\default\AdminTools.aspx" />
+    <Content Include="themes\default\AdminUser.aspx" />
+    <Content Include="themes\default\AdminUsers.aspx" />
+    <Content Include="themes\default\AdminUserSelect.ascx" />
+    <Content Include="themes\default\AdminUsersWidget.ascx" />
+    <Content Include="themes\default\AdminWidgets.aspx" />
+    <Content Include="themes\default\AdminWidgetSelect.ascx" />
+    <Content Include="themes\default\AdminWLWWorkaround.ascx" />
+    <Content Include="themes\default\AdminWorkspacesWidget.ascx" />
+    <Content Include="themes\default\AnnotateListWidget.ascx" />
+    <Content Include="themes\default\AtomPubIndex.aspx" />
+    <Content Include="themes\default\AtomPubPeople.ascx" />
+    <Content Include="themes\default\AtomPubResource.aspx" />
+    <Content Include="themes\default\BlogAddCommentWidget.ascx" />
+    <Content Include="themes\default\BlogArchiveWidget.ascx" />
+    <Content Include="themes\default\BlogCategories.ascx" />
+    <Content Include="themes\default\BlogCategoriesWidget.ascx" />
+    <Content Include="themes\default\BlogCategoryCloudWidget.ascx" />
+    <Content Include="themes\default\BlogComment.ascx" />
+    <Content Include="themes\default\BlogCommentsWidget.ascx" />
+    <Content Include="themes\default\BlogEntry.aspx" />
+    <Content Include="themes\default\BlogEntrySimpleWidget.ascx" />
+    <Content Include="themes\default\BlogHome.aspx" />
+    <Content Include="themes\default\BlogListing.aspx" />
+    <Content Include="themes\default\BlogMLExportToolWidget.ascx" />
+    <Content Include="themes\default\BlogMLImportToolWidget.ascx" />
+    <Content Include="themes\default\BlogMLWizardChoiceWidget.ascx" />
+    <Content Include="themes\default\BlogMLWizardImport.aspx" />
+    <Content Include="themes\default\BlogRecentCommentsWidget.ascx" />
+    <Content Include="themes\default\BlogRecentWidget.ascx" />
+    <Content Include="themes\default\BlogSearchWidget.ascx" />
+    <Content Include="themes\default\BlogSettingsEntireSiteWidget.ascx" />
+    <Content Include="themes\default\BlogSettingsWidget.ascx" />
+    <Content Include="themes\default\BlogSummaryWidget.ascx" />
+    <Content Include="themes\default\ContactSettingsWidget.ascx" />
+    <Content Include="themes\default\ContactSuccess.ascx" />
+    <Content Include="themes\default\ContactWidget.ascx" />
+    <Content Include="themes\default\default.png" />
+    <Content Include="themes\default\default.xml" />
+    <Content Include="themes\default\Error.aspx" />
+    <Content Include="themes\default\Error.html" />
+    <Content Include="themes\default\GA4AtomSiteConfig.ascx" />
+    <Content Include="themes\default\GA4AtomSiteWidget.ascx" />
+    <Content Include="themes\default\MenuConfig.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="themes\default\MenuWidget.ascx" />
+    <Content Include="themes\default\NotFound.aspx" />
+    <Content Include="themes\default\NotFound.html" />
+    <Content Include="themes\default\OpenIdLoginWidget.ascx" />
+    <Content Include="themes\default\OpenIdModalWidget.ascx" />
+    <Content Include="themes\default\RaterWidget.ascx" />
+    <Content Include="themes\default\Site.Master" />
+    <Content Include="themes\default\ThemeSwitcherWidget.ascx" />
+    <Content Include="themes\default\ThemeWidget.ascx" />
+    <Content Include="themes\default\TwitterConfig.ascx" />
+    <Content Include="themes\default\TwitterWidget.ascx" />
+    <Content Include="themes\default\WidgetEntryConfig.ascx" />
+    <Content Include="themes\default\WidgetFeedConfig.ascx" />
+    <Content Include="themes\default\WidgetLiteralConfig.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="themes\default\WidgetScopeConfig.ascx" />
+    <Content Include="themes\default\Wizard.Master" />
+    <Content Include="themes\default\WizardBasicSettings.aspx" />
+    <Content Include="themes\default\WizardComplete.aspx" />
+    <Content Include="themes\default\WizardSetupChoice.aspx" />
+    <Content Include="themes\default\WizardTestInstall.aspx" />
+    <Content Include="themes\default\WizardThemeChoice.aspx" />
+    <Content Include="themes\hibiscus\hibiscus.png" />
+    <Content Include="themes\hibiscus\hibiscus.xml" />
+    <Content Include="themes\inove\AccountStatusWidget.ascx" />
+    <Content Include="themes\inove\BlogAddCommentWidget.ascx" />
+    <Content Include="themes\inove\BlogArchiveWidget.ascx" />
+    <Content Include="themes\inove\BlogCategoriesWidget.ascx" />
+    <Content Include="themes\inove\BlogCategoryCloudWidget.ascx" />
+    <Content Include="themes\inove\BlogComment.ascx" />
+    <Content Include="themes\inove\BlogCommentsWidget.ascx" />
+    <Content Include="themes\inove\BlogEntry.aspx" />
+    <Content Include="themes\inove\BlogEntrySimpleWidget.ascx" />
+    <Content Include="themes\inove\BlogListing.aspx" />
+    <Content Include="themes\inove\BlogRecentCommentsWidget.ascx" />
+    <Content Include="themes\inove\BlogRecentWidget.ascx" />
+    <Content Include="themes\inove\BlogSearchWidget.ascx" />
+    <Content Include="themes\inove\BlogSummaryWidget.ascx" />
+    <Content Include="themes\inove\BlogTrackback.ascx" />
+    <Content Include="themes\inove\inove.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="themes\inove\MenuWidget.ascx" />
+    <Content Include="themes\inove\NotFound.aspx" />
+    <Content Include="themes\inove\screenshot.PNG" />
+    <Content Include="themes\inove\thumbnail.png" />
+    <Content Include="themes\mystique\AccountStatusWidget.ascx" />
+    <Content Include="themes\mystique\AdminThemeInfo.ascx" />
+    <Content Include="themes\mystique\BlogAddCommentWidget.ascx" />
+    <Content Include="themes\mystique\BlogArchiveWidget.ascx" />
+    <Content Include="themes\mystique\BlogCategoriesWidget.ascx" />
+    <Content Include="themes\mystique\BlogCategoryCloudWidget.ascx" />
+    <Content Include="themes\mystique\BlogComment.ascx" />
+    <Content Include="themes\mystique\BlogCommentsWidget.ascx" />
+    <Content Include="themes\mystique\BlogEntry.aspx" />
+    <Content Include="themes\mystique\BlogEntrySimpleWidget.ascx" />
+    <Content Include="themes\mystique\BlogHome.aspx" />
+    <Content Include="themes\mystique\BlogListing.aspx" />
+    <Content Include="themes\mystique\BlogRecentCommentsWidget.ascx" />
+    <Content Include="themes\mystique\BlogRecentWidget.ascx" />
+    <Content Include="themes\mystique\BlogSearchWidget.ascx" />
+    <Content Include="themes\mystique\BlogSummaryWidget.ascx" />
+    <Content Include="themes\mystique\BlogTrackBack.ascx" />
+    <Content Include="themes\mystique\MenuWidget.ascx" />
+    <Content Include="themes\mystique\mystique.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="themes\mystique\screenshot.png" />
+    <Content Include="themes\mystique\thumbnail.png" />
+    <Content Include="themes\mystique\TwitterWidget.ascx" />
+    <Content Include="themes\notepad\AccountStatusWidget.ascx" />
+    <Content Include="themes\notepad\BlogAddCommentWidget.ascx" />
+    <Content Include="themes\notepad\BlogArchiveWidget.ascx" />
+    <Content Include="themes\notepad\BlogCategoriesWidget.ascx" />
+    <Content Include="themes\notepad\BlogCategoryCloudWidget.ascx" />
+    <Content Include="themes\notepad\BlogComment.ascx" />
+    <Content Include="themes\notepad\BlogCommentsWidget.ascx" />
+    <Content Include="themes\notepad\BlogEntry.aspx" />
+    <Content Include="themes\notepad\BlogEntrySimpleWidget.ascx" />
+    <Content Include="themes\notepad\BlogListing.aspx" />
+    <Content Include="themes\notepad\BlogRecentCommentsWidget.ascx" />
+    <Content Include="themes\notepad\BlogRecentWidget.ascx" />
+    <Content Include="themes\notepad\BlogSearchWidget.ascx" />
+    <Content Include="themes\notepad\MenuWidget.ascx" />
+    <Content Include="themes\notepad\notepad.xml" />
+    <Content Include="themes\notepad\screenshot.png" />
+    <Content Include="themes\notepad\thumbnail.png" />
+    <Content Include="themes\settings\license.txt" />
+    <Content Include="themes\settings\settings.png" />
+    <Content Include="themes\settings\settings.xml" />
+    <Content Include="themes\arjuna-x\arjuna-x.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="themes\Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Users.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\submodules\AtomSitePlugins\src\AdditionalWidgets\AdditionalWidgets\AdditionalWidgets.csproj">
+      <Project>{58EA243B-FEC5-4F57-8B7F-63165A97715C}</Project>
+      <Name>AdditionalWidgets</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\submodules\AtomSitePlugins\src\GA4AtomSite\GA4AtomSite\GA4AtomSite.csproj">
+      <Project>{E1FA6DF8-6971-44FF-8E85-6F7A61CDD813}</Project>
+      <Name>GA4AtomSite</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\submodules\AtomSitePlugins\src\ThemeExtensions\ThemeExtensions\ThemeExtensions.csproj">
+      <Project>{84080319-900B-45B7-A19C-503E2E5B9828}</Project>
+      <Name>ThemeExtensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\submodules\AtomSitePlugins\src\WLWWorkaround\WLWWorkaround\WLWWorkaround.csproj">
+      <Project>{213F240D-1643-4E96-BF36-303CC8ACB302}</Project>
+      <Name>WLWWorkaround</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Project>{F8BEA67C-22C2-48F9-A331-91E52890D076}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Repository\Repository.csproj">
+      <Project>{7CA132DB-85FE-4F21-B47A-823AF4EB00DC}</Project>
+      <Name>Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TidyNet\TidyNet.csproj">
+      <Project>{C9B7AEFC-11BF-4902-AB1C-055E87479ACE}</Project>
+      <Name>TidyNet</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utils\Utils.csproj">
+      <Project>{72B51CEE-5420-4D12-9E27-9A6D981B82F6}</Project>
+      <Name>Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="css\arclite\fonts\share.eot" />
+    <None Include="css\arclite\fonts\share.ttf" />
+    <None Include="css\arclite\fonts\union.eot" />
+    <None Include="css\arclite\fonts\union.ttf" />
+    <None Include="plugins\Rater\RaterPlugin.1.4.0.0.xml" />
+    <None Include="Properties\Settings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="App_Data\www\content\AdLitoraTorquentPerConubia.xml" />
+    <Content Include="App_Data\www\content\LoremIpsumDolorSitAmet.xml" />
+    <Content Include="App_Data\www\content\SemperVestibulum.xml" />
+    <Content Include="Service.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Data\www\media\AtomSite.png" />
+    <Content Include="App_Data\www\media\AtomSite.xml" />
+    <Content Include="App_Data\www\media\BlogML.png" />
+    <Content Include="App_Data\www\media\BlogML.xml" />
+    <Content Include="App_Data\www\media\BlogSvc.png" />
+    <Content Include="App_Data\www\media\BlogSvc.xml" />
+    <Content Include="App_Data\www\media\CodePlex.png" />
+    <Content Include="App_Data\www\media\CodePlex.xml" />
+    <Content Include="App_Data\www\media\NameChange.png" />
+    <Content Include="App_Data\www\media\NameChange.xml" />
+    <Content Include="themes\notepad\Site.Master" />
+    <Content Include="themes\arjuna-x\Site.Master" />
+    <Content Include="themes\inove\Site.Master" />
+    <Content Include="themes\coolblue\Site.Master" />
+    <Content Include="themes\mystique\Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="plugins\Admin\AdminPlugin.1.4.0.0.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\www\themecollection\Arclite\" />
+    <Folder Include="App_Data\www\themecollection\Notepad\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target> -->
+  <Target Name="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(ProjectDir)\..\$(ProjectName)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>1333</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<atom:entry xmlns:atom="http://www.w3.org/2005/Atom" xmlns:svc="http://atomsite.net/info/Service" xmlns:app="http://www.w3.org/2007/app" xmlns:thread="http://purl.org/syndication/thread/1.0">
+    <atom:published>2008-09-28T21:08:00-05:00</atom:published>
+    <atom:title>Ad Litora Torquent per Conubia</atom:title>
+    <atom:content type="xhtml">
+        <div xmlns="http://www.w3.org/1999/xhtml">
+            <p>
+                Lorem ipsum dolor sit amet,
+                consectetuer adipiscing elit. Aliquam augue nibh, blandit ac,
+                pulvinar eu, auctor aliquam, mauris. Quisque aliquet. Nam in justo
+                mattis dui blandit bibendum. Vestibulum tincidunt, lorem id
+                venenatis lobortis, velit quam vulputate lorem, a venenatis eros
+                odio vel tortor. Maecenas bibendum dictum massa. Etiam pede. Morbi
+                felis nibh, iaculis sit amet, scelerisque et, scelerisque non,
+                dolor.
+            </p>
+            <p>
+                Fusce interdum. Class
+                aptent taciti sociosqu ad litora torquent per conubia nostra, per
+                inceptos himenaeos.
+            </p>
+            <p>
+                Donec leo, vivamus
+                fermentum nibh in augue praesent a lacus at urna congue rutrum.
+                Quisque dictum integer nisl risus, sagittis convallis, rutrum id,
+                congue, and nibh.
+            </p>
+            <p>
+                Donec leo, vivamus
+                fermentum nibh in augue praesent a lacus at urna congue rutrum.
+                Quisque dictum integer nisl risus, sagittis convallis, rutrum id,
+                congue, and nibh.
+            </p>
+        </div>
+    </atom:content>
+    <atom:category term="LoremIpsum" label="Lorem Ipsum Samples" />
+    <atom:updated>2009-03-08T07:17:27.608Z</atom:updated>
+    <atom:id>tag:erikzaadi.com,2008-10-02:content,AdLitoraTorquentPerConubia</atom:id>
+    <atom:author svc:id="erikzaadi">
+        <atom:name>Erik Zaadi</atom:name>
+        <atom:email>erik.zaadi@gmail.com</atom:email>
+        <atom:uri>http://erikzaadi.com/</atom:uri>
+    </atom:author>
+    <app:edited>2010-04-21T22:38:33.6279326+03:00</app:edited>
+</atom:entry>

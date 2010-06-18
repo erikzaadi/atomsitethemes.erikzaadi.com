@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<atom:entry xmlns:atom="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:theme="http://atomsite.net/info/Themes" xmlns:svc="http://atomsite.net/info/Service" xmlns:thread="http://purl.org/syndication/thread/1.0">
+  <atom:title>Settings Theme</atom:title>
+  <atom:content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <p>
+        This theme was adapted from the <a href="http://www.freecsstemplates.org/preview/settings">settings theme</a> on the <a href="http://freecsstemplates.org">freecsstemplates.org</a> site.
+      </p>
+      <p>It is green and has gray text and headers with green links.  There are also green navigation tabs.</p>
+    </div>
+  </atom:content>
+  <atom:published>2009-03-17T18:46:24.122Z</atom:published>
+  <atom:updated>2009-03-17T18:46:24.122Z</atom:updated>
+  <atom:id>tag:atomsite.net,2008:themes,settings</atom:id>
+  <theme:homepage>http://atomsite.net</theme:homepage>
+  <theme:thumbnail>http://atomsite.net/media/SettingsTheme_thumb.png</theme:thumbnail>
+  <theme:screenshot>http://atomsite.net/media/SettingsTheme.png</theme:screenshot>
+  <theme:media>screen</theme:media>
+  <theme:layout>2 column</theme:layout>
+  <theme:width>doc, doc2, doc3, doc4, doc-custom</theme:width>
+  <theme:template>yui-t1, yui-t2, yui-t3, yui-t4, yui-t5, yui-t6</theme:template>
+  <theme:version>1.1</theme:version>
+  <theme:compatibleVersion>1.2.0.0</theme:compatibleVersion>
+  <theme:compatibleVersion>1.3.0.0</theme:compatibleVersion>
+  <theme:compatibleVersion>1.3.1.0</theme:compatibleVersion>
+  <theme:compatibleVersion>1.4.0.0</theme:compatibleVersion>
+  <atom:author svc:id="JarrettV">
+    <atom:name>JarrettV</atom:name>
+    <atom:email>jarrettv@gmail.com</atom:email>
+    <atom:uri>http://jvance.com/</atom:uri>
+  </atom:author>
+  <atom:contributor>
+    <atom:name>freecsstemplates</atom:name>
+    <atom:uri>http://freecsstemplates.org</atom:uri>
+  </atom:contributor>
+  <app:edited>2009-03-18T00:36:37.83Z</app:edited>
+</atom:entry>

@@ -1,0 +1,123 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="ViewMasterPage<PageModel>" %>
+
+<% Model.UpdatePageModel(Page, "Site"); %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <asp:ContentPlaceHolder ID="head" runat="server" />
+    <link rel="icon" type="image/png" href="<%= Url.ImageSrc("icon.png") %>" />
+    <link rel="stylesheet" type="text/css" href="<%= Url.ThemeStyleSheetHref() %>" />
+    <%= Html.StyleLinks() %>
+    <% Html.RenderWidgets("head"); %>
+</head>
+<body id="<%= Model.PageName %>">
+    <div id="header-wrap">
+        <div id="header">
+            <a name="top"></a>
+            <h1 id="logo-text">
+                <a href="<%= Url.Content("~/") %>" title="">
+                    <%= Model.Workspace.Title %></a></h1>
+            <p id="slogan">
+                <%= Model.Workspace.Subtitle %></p>
+            <div id="nav">
+                <% Html.RenderWidgets("nav"); %>
+            </div>
+            <%       if (Model != null && Model.Collection != null && Model.Collection.Id != null)
+                     {%>
+            <p id="rss">
+                <a href="<%=Url.RouteIdUrl("AtomPubFeed", Model.Collection.Id)%>">Grab the RSS feed</a>
+            </p>
+            <%
+                }%>
+            <form id="quick-search" method="get" action="<%= Url.Content("~/") %>Search.xhtml?workspace=<%= Model.Scope.Workspace %>">
+            <fieldset class="search">
+                <label for="qsearch">
+                    Search:</label>
+                <input class="tbox" id="qsearch" type="text" name="term" value="Search..." title="Start typing and hit ENTER" />
+                <button class="btn" title="Submit Search">
+                    Search</button>
+            </fieldset>
+            </form>
+        </div>
+    </div>
+    <div id="content-wrap" class="clear">
+        <div id="content">
+            <div id="main">
+                <asp:ContentPlaceHolder ID="content" runat="server" />
+                <% Html.RenderWidgets("content"); %>
+            </div>
+            <div id="sidebar">
+                <div class="sidemenu">
+                    <asp:ContentPlaceHolder ID="sidetop" runat="server" />
+                    <% Html.RenderWidgets("sidetop"); %>
+                </div>
+                <div class="sidemenu">
+                    <asp:ContentPlaceHolder ID="sidemid" runat="server" />
+                    <% Html.RenderWidgets("sidemid"); %>
+                </div>
+                <div class="sidemenu">
+                    <asp:ContentPlaceHolder ID="sidebot" runat="server" />
+                    <% Html.RenderWidgets("sidebot"); %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer-outer" class="clear">
+        <div id="footer-wrap">
+            <div class="col-a">
+                <% Html.RenderWidgets("bottomcola1"); %>
+            </div>
+            <div class="col-a">
+                <% Html.RenderWidgets("bottomcola2"); %>
+            </div>
+            <div class="col-a">
+                <% Html.RenderWidgets("bottomcola3"); %>
+            </div>
+            <div class="col-b">
+                <% Html.RenderWidgets("bottomcolb"); %>
+            </div>
+        </div>
+    </div>
+    <div id="footer-bottom">
+        <p class="bottom-left">
+            <span class="copyright">&copy; Copyright
+                <%= DateTime.Today.Year %></span> <span class="attribution">Powered by <a href="http://atomsite.net">
+                    AtomSite</a>
+                    <%= ServerApp.CurrentVersion %></span> <a href="http://www.bluewebtemplates.com/"
+                        title="Website Templates">website templates</a> by <a href="http://www.styleshout.com/">
+                            styleshout</a>, ported by <a target="_blank" href="http://erikzaadi.com">Erik Zaadi</a>
+            
+           
+        </p>
+     
+        <p class="bottom-right">
+            <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a> | <a href="http://validator.w3.org/check/referer">
+                XHTML</a> | <a href="<%= Url.Content("~/") %>">Home</a>
+            <%       if (Model != null && Model.Collection != null && Model.Collection.Id != null)
+                     {%>
+            | <a href="<%=Url.RouteIdUrl("AtomPubFeed", Model.Collection.Id)%>">RSS Feed</a>
+            <%
+                }%>
+            | <strong><a href="#top">Back to Top</a></strong>
+                <div>
+            <% if (Model.AuthorizeService.GetScopes(Model.User).Count() > 0)
+               {%>
+            <a href="<%=Url.Action("Dashboard", "Admin") %>">Dashboard</a>&#160;|&#160;
+            <% }%>
+            <% Html.RenderWidgets("foot"); %>
+
+            </div>
+        </p>
+    </div>
+    
+    <script type="text/javascript" src="<%= Url.ScriptSrc("jquery-1.4.2.js")%>"></script>
+    <script type="text/javascript" src="<%= Url.ScriptSrc("jquery.timeago-0.8.2.js")%>"></script>
+    <%= Html.ScriptSources() %>
+    <asp:ContentPlaceHolder ID="tail" runat="server" />
+    <script type="text/javascript">//<![CDATA[
+    $(document).ready(function() { $('abbr.timeago').timeago(); });
+<%= Model.TailScript %>
+//]]></script>
+    <% Html.RenderWidgets("tail"); %>
+</body>
+</html>

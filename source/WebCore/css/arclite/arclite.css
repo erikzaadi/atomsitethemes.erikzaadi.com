@@ -1,0 +1,89 @@
+﻿/*
+
+Arclite template by Digital Nature (http://digitalnature.ro/projects/arclite/).
+
+Ported to AtomSite by Erik Zaadi (http://erikzaadi.com).
+
+
+Hi there!
+
+Thanks for downloading the Arclite template.
+
+
+This file is in charge of how the template looks and feels.
+In order to change anything, edit this file as explained in 
+the comments below.
+
+
+There are a lot of options for this 
+template you can choose from.
+
+For starters, the general layout is determined by:
+*/
+
+@import "style.css";
+/* or
+
+@import "style-imageless.css";
+
+ Then we'll define the header:
+*/
+
+
+/* Or choose from:
+@import "options/header-default.css";
+
+@import "options/header-blue.css";
+@import "options/header-field.css";
+@import "options/header-fire.css";
+@import "options/header-green.css";
+@import "options/header-red.css";
+@import "options/header-wall.css";
+@import "options/header-wood.css";
+
+Now for the content:
+
+*/
+
+
+/* Or choose from:
+
+@import "options/content-default.css";
+@import "options/content-grunge.css";
+@import "options/content-white.css";
+
+and finally the side bar:
+*/
+
+
+/* Or choose from:
+
+@import "options/side-default.css";
+@import "options/side-gray.css";
+@import "options/side-green.css";
+@import "options/side-blue.css";
+
+You also have an option to change the sidebar
+to be on the left side, by adding:
+
+@import "options/leftsidebar.css";
+
+Note: leftsidebar.css needs to be in addition 
+to one of the 4 side bar options available
+
+
+This last import is mandatory, it's some hot fixes 
+to be more fitting to AtomSite and an import
+of a referenced library..
+
+*/
+
+@import "atomsite.css";
+@import "jquery.fancybox-1.3.1.css";
+
+
+/*
+
+Enjoy!
+
+*/

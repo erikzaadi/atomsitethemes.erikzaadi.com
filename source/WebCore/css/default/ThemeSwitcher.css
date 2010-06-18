@@ -1,0 +1,162 @@
+﻿#ThemeSwitcher
+{
+	border: 1px solid #ccc !important;
+    z-index:9999;
+    border-radius : 6px !important;
+    -webkit-border-radius : 6px !important;
+    -moz-border-radius : 6px !important;
+    
+    -moz-box-shadow: 2px 2px 10px #000 !important;
+	-webkit-box-shadow: 2px 2px 10px #000 !important;
+	-webkit-border-radius: 4px !important;
+	-moz-border-radius: 4px !important;
+
+    text-align:left !important;
+
+    filter: 
+		progid:DXImageTransform.Microsoft.Shadow(color=#C6C6C6,direction=0,strength=4)
+		progid:DXImageTransform.Microsoft.Shadow(color=#666666,direction=90,strength=7)
+		progid:DXImageTransform.Microsoft.Shadow(color=#666666,direction=180,strength=7)
+		progid:DXImageTransform.Microsoft.Shadow(color=#C6C6C6,direction=270,strength=4)
+        progid:DXImageTransform.Microsoft.gradient(startColorstr='#cccccc', endColorstr='#FAFAFA') !important;
+
+	background: #FAFAFA;
+
+    background: -webkit-gradient(linear, left top, left bottom, from(#CCC), to(#FAFAFA)) !important; /* for webkit browsers */
+    background: -moz-linear-gradient(top,  #CCC,  #FAFAFA) !important; /* for firefox 3.6+ */
+
+    padding: 1em !important;
+	margin:1em !important;
+
+    position:fixed !important;
+    top:-10px;
+    left:20px;
+
+    color:#000 !important;
+    font:15px arial,sans-serif !important;   
+}
+
+#ThemeSwitcher .ThemeInfo
+{
+    display: none;
+}
+#ThemeSwitcher label
+{
+    display:block !important;
+    float:left !important;
+    width:130px !important;
+    color:#000 !important;
+}
+
+#ThemeSwitcher .ThemeInfoSelected
+{
+    display: block !important;
+}
+
+#ThemeSwitcher fieldset
+{
+    border: 1px solid #ccc !important;
+    border-radius : 6px !important;
+    -webkit-border-radius : 6px !important;
+    -moz-border-radius : 6px !important;
+    padding:10px !important;
+    color:#000 !important;
+}
+#ThemeSwitcher h2
+{
+    font: bold 17px arial,sans-serif !important;   
+    margin : 6px !important;
+    background:none !important;
+    background-image:none !important;
+    color:#000 !important;
+}
+
+#ThemeSwitcher h3
+{
+    font: bold 14px arial,sans-serif !important;   
+    margin : 3px !important;
+    background:none !important;
+    background-image:none !important;
+    color:#000 !important;
+}
+#ThemeSwitcher h4
+{
+    margin : 2px !important;
+    background:none !important;
+    background-image:none !important;
+    font: italic 13px arial,sans-serif !important;   
+    color:#000 !important;
+}
+
+#ThemeSwitcher select
+{
+    width : 120px !important;
+    clear:right !important;
+    color:#000 !important;
+}
+
+#ThemeSwitcher #ThemeName
+{
+    width : 100% !important;
+}
+
+#ThemeSwitcher button
+{
+    padding : 5px;
+    width : 50px !important;
+  
+    cursor:pointer !important;
+    border: 1px solid #ccc !important;
+    border-radius : 6px !important;
+    -webkit-border-radius : 6px !important;
+    -moz-border-radius : 6px !important;
+    
+    -moz-box-shadow: 2px 2px 10px #000 !important;
+	-webkit-box-shadow: 2px 2px 10px #000 !important;
+	-webkit-border-radius: 4px !important;
+	-moz-border-radius: 4px !important;
+
+    text-align:center !important;
+
+    filter: 
+		progid:DXImageTransform.Microsoft.gradient(startColorstr='#FAFAFA', endColorstr='#cccccc') !important;
+
+	background: #FAFAFA;
+
+    background: -webkit-gradient(linear, left top, left bottom, from(#FAFAFA), to(#CCC)) !important; /* for webkit browsers */
+    background: -moz-linear-gradient(top,  #FAFAFA,  #CCC) !important; /* for firefox 3.6+ */
+}
+
+
+#ThemeSwitcher button.active
+{
+    filter: 
+		progid:DXImageTransform.Microsoft.gradient(startColorstr='#cccccc', endColorstr='#FAFAFA') !important;
+
+	background: #cccccc;
+
+    background: -webkit-gradient(linear, left top, left bottom, from(#CCC), to(#FAFAFA)) !important; /* for webkit browsers */
+    background: -moz-linear-gradient(top,  #CCC,  #FAFAFA) !important; /* for firefox 3.6+ */
+}
+
+#ThemeSwitcher #content
+{
+    display : none;
+    width : 330px !important;
+}
+
+
+#ThemeSwitcher #Drag
+{
+    cursor:move !important;
+}
+
+#ThemeSwitcher #submit
+{
+    width : 110px !important;
+}
+
+
+.JSLivePreview{ visibility:hidden;}
+#LivePreview select { clear:both;width : 150px;}
+#LivePreview label { width : 150px; clear:both;display:block; float:left;}

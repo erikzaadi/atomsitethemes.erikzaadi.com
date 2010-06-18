@@ -1,0 +1,22 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="ViewMasterPage<PageModel>" %>
+<% Model.UpdatePageModel(Page, "Wizard"); %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <asp:ContentPlaceHolder ID="head" runat="server" />
+    <%= Html.StyleLinks() %>
+  </head>
+  <body>
+    <div id="content">
+      <asp:ContentPlaceHolder ID="content" runat="server" />
+      <% Html.RenderWidgets("content"); %>
+    </div>
+    <script type="text/javascript" src="<%= Url.ScriptSrc("jquery-1.4.2.js") %>"></script>
+    <%= Html.ScriptSources() %>
+    <asp:ContentPlaceHolder ID="tail" runat="server" />
+    <script type="text/javascript">//<![CDATA[
+<%= Model.TailScript %>
+//]]></script>
+    <% Html.RenderWidgets("tail"); %>
+  </body>
+</html>

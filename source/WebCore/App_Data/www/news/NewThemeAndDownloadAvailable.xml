@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<atom:entry xmlns:atom="http://www.w3.org/2005/Atom" xmlns:svc="http://atomsite.net/info/Service" xmlns:thread="http://purl.org/syndication/thread/1.0" xmlns:os="http://a9.com/-/spec/opensearch/1.1/" xmlns:app="http://www.w3.org/2007/app">
+    <atom:title>New Theme (Notepad) and you can now download themes!</atom:title>
+    <atom:content type="xhtml">
+        <div xmlns="http://www.w3.org/1999/xhtml">
+            <h2>Why hello there!</h2>
+            <p>
+                There's a new theme up called a<a href="http://atomsitethemes.erikzaadi.com/themecollection/Notepad"> Notepad</a>, be sure to check it out
+            </p>
+            <p>
+                Furthermore, you can now download themes (as a zip file) from their pages in the themecollection!
+            </p>
+            <p>
+                Don't forget to subscribe to the <a href="http://atomsitethemes.erikzaadi.com/news/feed.atom">news</a> and <a href="http://atomsitethemes.erikzaadi.com/themecollection/feed.atom">themes</a> rss feeds, as there are some more improvements and themes on the way..
+            </p>
+        </div>
+    </atom:content>
+    <app:control>
+        <app:draft>no</app:draft>
+        <svc:approved>yes</svc:approved>
+        <svc:allowAnnotate>yes</svc:allowAnnotate>
+    </app:control>
+    <atom:published>2010-04-24T13:50:00-05:00</atom:published>
+    <atom:category term="News" />
+    <atom:updated>2010-04-24T18:51:24.591502Z</atom:updated>
+    <app:edited>2010-04-24T18:51:24.591502Z</app:edited>
+    <atom:id>tag:erikzaadi.com,2010:news,NewThemeAndDownloadAvailable</atom:id>
+    <atom:author svc:id="erikzaadi">
+        <atom:name>Erik Zaadi</atom:name>
+        <atom:email>erik.zaadi@gmail.com</atom:email>
+        <atom:uri>http://erikzaadi.com/</atom:uri>
+    </atom:author>
+    <atom:link rel="edit" href="http://atomsitethemes.erikzaadi.com/" />
+    <atom:link rel="self" href="http://atomsitethemes.erikzaadi.com/" />
+    <atom:link rel="unapprove" href="http://atomsitethemes.erikzaadi.com/" />
+    <atom:link href="http://atomsitethemes.erikzaadi.com/" rel="replies" type="application/atom+xml" thread:count="0" thread:updated="2010-04-22T18:51:24.8845188Z" />
+    <atom:link rel="alternate" type="text/html" href="http://atomsitethemes.erikzaadi.com/" />
+    <atom:link rel="delete" href="http://atomsitethemes.erikzaadi.com/" />
+    <atom:link rel="admin-edit" href="http://atomsitethemes.erikzaadi.com/Admin/EditEntry?id=tag:erikzaadi.com,2010:news,NewThemeAndDownloadAvailable" />
+</atom:entry>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<atom:entry xmlns:atom="http://www.w3.org/2005/Atom" xmlns:thread="http://purl.org/syndication/thread/1.0" xmlns:app="http://www.w3.org/2007/app" xmlns:svc="http://atomsite.net/info/Service">
+    <atom:published>2008-09-29T21:06:00-05:00</atom:published>
+    <atom:title>Quisque pharetra lobortis</atom:title>
+    <atom:content type="xhtml">
+        <div xmlns="http://www.w3.org/1999/xhtml">
+            <p>
+                Quisque pharetra lobortis libero vitae mattis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec arcu diam, viverra sit amet imperdiet nec, scelerisque eu dolor. Ut vel erat ligula. Mauris non enim metus, nec eleifend lorem. Nulla facilisi. Pellentesque sed odio risus, nec suscipit justo. Aliquam urna risus, aliquam eget pharetra a, pretium vitae velit. Nam egestas rhoncus lacus, eleifend facilisis turpis laoreet ut. Fusce id enim sapien, id pellentesque neque. Etiam lobortis ullamcorper hendrerit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tincidunt eleifend mi, et tristique dui dignissim sed. Proin interdum tellus vitae diam consequat eu accumsan sapien suscipit. Donec adipiscing volutpat nisi sit amet viverra. Pellentesque at sem in lorem tincidunt mattis. Quisque erat orci, consectetur ut lobortis quis, bibendum quis quam.
+            </p>
+        </div>
+    </atom:content>
+    <atom:category term="LoremIpsum" label="Lorem Ipsum Samples" />
+    <atom:updated>2009-03-08T07:12:57.807Z</atom:updated>
+    <atom:id>tag:erikzaadi.com,2008-09-30:content,Quisquepharetralobortis</atom:id>
+    <svc:ratingCount>1</svc:ratingCount>
+    <svc:ratingSum>4</svc:ratingSum>
+    <svc:raters>127.0.0.1</svc:raters>
+    <atom:author svc:id="erikzaadi">
+        <atom:name>Erik Zaadi</atom:name>
+        <atom:email>erik.zaadi@gmail.com</atom:email>
+        <atom:uri>http://erikzaadi.com/</atom:uri>
+    </atom:author>
+    <app:edited>2010-04-21T22:38:33.6259325+03:00</app:edited>
+</atom:entry>

@@ -1,0 +1,24 @@
+﻿/* Copyright 2008-10 Jarrett Vance
+* see http://www.codeplex.com/blogsvc/license */
+body { font-family: "Gill Sans MT", "Segoe UI", Arial; margin:2.5em 0; background: white url('../../img/default/wizbg.png') no-repeat top;}
+body>div {margin:0 auto; width: 550px; background: transparent url('../../img/default/LogoSm.png') no-repeat top right; }
+h1 {margin: 0; padding:0}
+.taskOption { margin:1em 0 1.8em 0; padding:0;width:100%; clear:both; }
+.taskOption input[type='submit'] { float: right; margin:1em 0.3em 1em 0.8em; text-align:center; width: 11em; 
+    font-size: 1.1em; }
+em { color:Red; font-style: normal;}
+.status { text-align:center; margin: 1em auto; padding: .5em; font-weight:bold; font-size: 1.1em;
+    border-style:solid; border-width:medium; color:#9a9a9a; background:#dfdfdf; border-color: #ababab; 
+    width: 17em; -moz-border-radius:1em; -webkit-border-radius:1em;}
+.complete {color:#2cb82c; background:#baffba; border-color: #3bc73b;}
+.failure, .input-validation-error {color:#e20a0a; background:#ebb8b8; border-color: #e20a0a;}
+#tblTests { width:15em; margin: 1em auto;}
+.field {margin:1em 0;}
+.field label{ display:block;}
+form {margin:0; padding:0;}
+fieldset {border-style:none; margin:0; padding:0;}
+input[type='text'] {width:60%;}
+.field small {float:right; width:35%; margin-top:1em;}
+#divPreview {margin: 1em auto; border: solid medium #9a9a9a; background-color:#efefef; width:500px; height:310px}
+#divPreview img {width:100%;}
+.error, .validation-summary-errors {background-color:#fcc; color:#a90000; line-height:1.5em;-moz-border-radius:4px; -webkit-border-radius:4px; margin:0.5em; padding: 0.1em 1em;}

@@ -1,0 +1,6 @@
+﻿/* Copyright 2008-10 Jarrett Vance
+* see http://www.codeplex.com/blogsvc/license */
+.settings.categories li {min-height: 0.5em;width:auto; float:none}
+.settings.categories select {margin:0.2em}
+.settings.categories em {text-align:center;margin:1em;display:block;color:#999}
+.settings.categories a[rel=remove]{float:right}

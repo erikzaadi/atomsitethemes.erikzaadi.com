@@ -1,0 +1,7 @@
+﻿/* Copyright 2008-10 Jarrett Vance
+* see http://www.codeplex.com/blogsvc/license */
+#twitter h3 small {color:#888; font-size:smaller}
+#twitter .follow {text-align:center}
+#twitter .follow img {margin:0.4em 0}
+#twitter .tweet {padding: 0.2em 0 0.5em 0}
+#twitter .tweet abbr { font-size:smaller}

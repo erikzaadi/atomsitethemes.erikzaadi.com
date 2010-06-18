@@ -1,0 +1,75 @@
+﻿#AdminWidgets h2 {display:inline-block;width:90px}
+#AdminWidgets .info {float:right; width:80%}
+#AdminWidgets .info p {margin-top:1.2em;color:#888}
+#AdminWidgets .info img {float:right; margin-top:-1em; margin-left:1em}
+#AdminWidgets .info {clear:both}
+#AdminWidgets .yui-gd {clear:right} /* IE7 */
+
+.widgets.area .ico {display:inline-block; margin: 4px 6px 0 1px; text-indent:-9999px; vertical-align:text-top; width:15px; height:15px; overflow:hidden; background:transparent url('../../img/default/scopematrix.png') no-repeat scroll 0 0}
+
+.widgets.area .ico[title=configurable] {background-position: 0 -126px}
+.widgets.area .ico[title=invalid] {background-position: -34px -126px}
+.widgets.area .ico[title=saved] {background-position: -50px -126px}
+.widgets.area .ico[title=hint] {background-position: -16px -126px}
+
+.widgets.area .move {float:left}
+.widgets.area .move a {display:block; margin:4px 6px 6px 2px; width:12px; height:11px}
+.widgets.area .ico[title=moveup] {background-position: -27px -143px}
+.widgets.area .ico[title=movedown] {background-position: -39px -143px}
+.widgets.area .ico[title=moveup]:hover {background-position: 0 -143px}
+.widgets.area .ico[title=movedown]:hover {background-position: -12px -143px}
+
+.widgets.area .ico[title=widget] {background-position: -16px -112px}
+.widgets.area .ico[title=page] {background-position: -48px -112px}
+.widgets.area .selected .ico[title=widget],.widgets.area.selection .ico[title=widget]  {background-position: 0 -112px}
+.widgets.area .selected .ico[title=page],.widgets.area.selection .ico[title=page] {background-position: -32px -112px}
+
+.widgets.area .ico.tip {margin:0 5px}
+.widgets.area.selection .hint {background-color: #fffdf1}
+.widgets.area.selection .hint.alt {background-color: #fbf7e0}
+.widgets.area.selection .mismatch {background-color: #f8f0f0}
+.widgets.area.selection .mismatch.alt {background-color: #f3e2e2}
+
+.widgets.area li em {font-weight:bold; color:#777}
+
+.widgets li .scopes {float:right;clear:right;margin-top: -12px; width:51px; height:11px; text-indent:-9999px; overflow:hidden; background:transparent url('../../img/default/scopematrix.png') no-repeat scroll}
+.widgets li.target-w .scopes, .includes.widgets li .scopes {width:64px}
+/* s c w e i 
+.widgets li .scopes-31, .widgets li.target-p .scopes-15 {background-position: 0 0}*/
+/* w c e i */
+.widgets li .scopes-30, .widgets li.target-p .scopes-14 {background-position: 0 -11px}
+/* c e i */
+.widgets li .scopes-28, .widgets li.target-p .scopes-12 {background-position: 0 -22px}
+/* e i */
+.widgets li .scopes-24, .widgets li.target-p .scopes-8 {background-position: 0 -33px}
+/* s w c */
+.widgets li .scopes-7 {background-position: 0 -44px}
+/* c */
+.widgets li .scopes-4 {background-position: 0 -55px}
+/* w */
+.widgets li .scopes-2 {background-position: 0 -66px}
+/* s */
+.widgets li .scopes-1 {background-position: 0 -77px}
+/* e */
+.widgets li .scopes-8 {background-position: 0 -88px}
+/* w c */
+.widgets li .scopes-6 {background-position: 0 -99px}
+/* Copyright 2008-10 Jarrett Vance
+* see http://www.codeplex.com/blogsvc/license */
+
+.widgets li small {text-transform:lowercase; font-style:italic; color:#a90000}
+.widgets ul{padding:0; margin:0; max-height:30em; min-height:30em; overflow:auto;}
+.widgets li{display:block;list-style-type:none; margin: 0; padding:0.5em; border-top: solid 1px #dfdfdf; }
+.widgets li p {color:#555; margin:0 0.3em 0 22px}
+.widgets li.inherited {opacity:0.5;filter: alpha(opacity = 50);}
+.widgets li.selected { background-color: #EAF2FA }
+.widgets li.selected>a { font-weight:bold;}
+.widgets .actions {float:right;padding-bottom:1.3em;}
+.widgets .actions a {margin:0.2em;float:none}
+.widgets.selection .error{padding:0.2em;background:#ffdfdf;text-align:center; font-weight:bold; color:#a90000}
+
+
+/* overlay */
+#configure {width:44em}
+
+.widgets.area.areas .areakey {margin:-110px auto 0 auto; padding-top:5px; width:177px}

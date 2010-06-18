@@ -1,0 +1,202 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="ViewMasterPage<PageModel>" %>
+
+<%@ Import Namespace="ThemeExtensions" %>
+
+<%
+    var showAdvancedMenu = Html.GetThemeBooleanProperty("showadvancedmenu", false);
+    var colorScheme = Html.GetThemeProperty<string>("color", "green");
+
+    Model.UpdatePageModel(Page, "Site");%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <asp:ContentPlaceHolder ID="head" runat="server" />
+    <link rel="icon" type="image/png" href="<%=Url.ImageSrc("icon.png")%>" />
+    <link rel="stylesheet" type="text/css" href="<%=Url.ThemeStyleSheetHref()%>" />
+    <%=Html.StyleLinks()%>
+    <style type="text/css">
+        @import "<%=Url.StyleHref(string.Format("color-{0}.css",colorScheme ))%>";
+    </style>
+    <!--[if lte IE 6]><link media="screen" rel="stylesheet" href="<%=Url.StyleHref("ie6.css")%>" type="text/css" /><![endif]-->
+    <!--[if IE 7]><link media="screen" rel="stylesheet" href="<%=Url.StyleHref("ie7.css")%>" type="text/css" /><![endif]-->
+    <%
+        Html.RenderWidgets("head");%>
+</head>
+<%
+    var pageClass = string.Empty;
+    switch (Model.PageName)
+    {
+        case "BlogHome":
+            pageClass = "home";
+            break;
+        case "BlogListing":
+            pageClass = "blog";
+            break;
+        case "BlogEntry":
+            pageClass = "single-post";
+            break;
+    }
+    if (Model.User.IsAuthenticated)
+        pageClass += " loggedin";
+    pageClass = string.Format("{0} {1} {2} browser-{3}", pageClass, Model.PageTemplate, Model.PageWidth,
+                              Request.Browser.Browser.ToLower());
+%>
+<body id="<%=Model.PageName%>" class="<%=pageClass%>">
+    <div id="page">
+        <div class="page-content header-wrapper">
+            <div id="header" class="bubbleTrigger">
+                <div id="site-title" class="clearfix">
+                    <h1 id="logo">
+                        <a href="<%=Url.Content("~/")%>">
+                            <%=Model.Workspace.Title%></a></h1>
+                    <p class="headline">
+                        <%=Model.Workspace.Subtitle%></p>
+                </div>
+                <div class="shadow-left">
+                    <div class="shadow-right clear-block">
+                        <p class="nav-extra">
+                            <a style="display: none" href="http://twitter.com/REPLACE" class="nav-extra twitter"
+                                title="Follow me on Twitter"><span>Follow me on Twitter</span></a>
+                            <%       if (Model != null && Model.Collection != null && Model.Collection.Id != null)
+                                     {%>
+                            <a href="<%=Url.RouteIdUrl("AtomPubFeed", Model.Collection.Id)%>" class="nav-extra rss">
+                                <span>RSS Feeds</span></a>
+                            <%}%>
+                        </p>
+                        <%Html.RenderWidgets("nav");%>
+                    </div>
+                </div>
+            </div>
+            <!-- left+right bottom shadow -->
+            <div class="shadow-left page-content main-wrapper">
+                <div class="shadow-right">
+                    <!-- main content: primary + sidebar(s) -->
+                    <div id="main">
+                        <div id="main-inside" class="clearfix">
+                            <!-- primary content -->
+                            <div id="primary-content">
+                                <div class="blocks">
+                                    <asp:ContentPlaceHolder ID="content" runat="server" />
+                                    <%
+                                        Html.RenderWidgets("content");%>
+                                </div>
+                            </div>
+                            <!-- /primary content -->
+                            <div id="sidebar">
+                                <ul class="blocks">
+                                    <li class="block">
+                                        <!-- search form -->
+                                        <div class="search-form">
+                                            <form method="get" id="searchform" action="<%=Url.Content("~/")%>Search.xhtml?workspace=<%=Model.Scope.Workspace%>"
+                                            class="clearfix">
+                                            <fieldset>
+                                                <div id="searchfield">
+                                                    <input type="text" name="term" id="searchbox" class="text clearField" value="Search here..." />
+                                                </div>
+                                                <input type="submit" value="" class="submit" />
+                                            </fieldset>
+                                            </form>
+                                        </div>
+                                        <!-- /search form -->
+                                    </li>
+                                    <li class="block">
+                                        <asp:ContentPlaceHolder ID="sidetop" runat="server" />
+                                        <% Html.RenderWidgets("sidetop"); %></li>
+                                    <%
+                                        if (showAdvancedMenu)
+                                        {
+                                    %>
+                                    <li class="block">
+                                        <div class="block-sidebar_tabs">
+                                            <div id="instance-sidebartabswidget" class="tabbed-content sidebar-tabs clearfix">
+                                                <!-- tab navigation (items must be in reverse order because of the tab-design) -->
+                                                <ul class="box-tabs clearfix">
+                                                    <li class="recentcomm"><a title="Recent comments" href="#instance-sidebartabswidget-section-recentcomments">
+                                                        <span>Recent comments</span></a></li>
+                                                    <li class="archives"><a title="Archives" href="#instance-sidebartabswidget-section-archives">
+                                                        <span>Archives</span></a></li>
+                                                    <li class="tags"><a title="Category Cloud" href="#instance-sidebartabswidget-section-category-cloud">
+                                                        <span>Category Cloud</span></a></li>
+                                                    <li class="categories active"><a title="Categories" href="#instance-sidebartabswidget-section-categories">
+                                                        <span>Categories</span></a></li>
+                                                </ul>
+                                                <!-- /tab nav -->
+                                                <!-- tab sections -->
+                                                <div class="sections">
+                                                    <%
+                                                        }
+                                                    %>
+                                                    <asp:ContentPlaceHolder ID="sidemid" runat="server" />
+                                                    <% Html.RenderWidgets("sidemid"); %>
+                                                    <% if (showAdvancedMenu)
+                                                       {%>
+                                                </div>
+                                            </div>
+                                            <!-- tabbed content -->
+                                        </div>
+                                    </li>
+                                    <%
+                                        }%>
+                                    <li class="block">
+                                        <asp:ContentPlaceHolder ID="sidebot" runat="server" />
+                                        <% Html.RenderWidgets("sidebot"); %></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- footer -->
+                <div id="footer">
+                    <!-- blocks + slider -->
+                    <div id="footer-blocks" class="page-content<%=false ? " " :string.Empty %>">
+                    </div>
+                    <div class="page-content">
+                        <div id="copyright">
+                            Mystique theme by <a href="http://digitalnature.ro">digitalnature</a>. Ported to
+                            <a href="http://atomsite.net">AtomSite</a> by <a href="http://erikzaadi.com">Erik Zaadi</a><br />
+                            <span class="copyright">&copy; Copyright
+                                <%= DateTime.Today.Year %></span> <span class="attribution">Powered by <a href="http://atomsite.net">
+                                    AtomSite</a>
+                                    <%= ServerApp.CurrentVersion %></span>
+                            <% Html.RenderWidgets("foot");%>
+                            <% if (Model.AuthorizeService.GetScopes(Model.User).Count() > 0)
+                               {%>
+                            <a href="<%=Url.Action("Dashboard", "Admin")%>">Dashboard</a>
+                            <%
+                                }%>
+                            <br />
+                            <% if (Model != null && Model.Collection != null && Model.Collection.Id != null)
+                               {%>
+                            <a title="RSS Feeds" href="<%=Url.RouteIdUrl("AtomPubFeed", Model.Collection.Id)%>"
+                                class="rss-subscribe">RSS Feeds</a>
+                            <% }%>
+                            <a title="Valid XHTML" href="http://validator.w3.org/check?uri=referer" class="valid-xhtml">
+                                XHTML 1.1</a> <a name="goTop" class="js-link" id="goTop">Top</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- /footer -->
+            </div>
+        </div>
+        <!-- /shadow -->
+        <!-- page controls -->
+        <div id="pageControls">
+        </div>
+        <!-- /page controls -->
+    </div>
+    <script type="text/javascript" src="<%= Url.ScriptSrc("jquery-1.4.2.js")%>"></script>
+    <script type="text/javascript" src="<%= Url.ScriptSrc("jquery.timeago-0.8.2.js")%>"></script>
+    <%= Html.ScriptSources() %>
+    <!--[if lte IE 6]> <script type="text/javascript"> isIE6
+    = true; isIE = true; </script> <![endif]-->
+    <!--[if gte IE 7]> <script type="text/javascript">
+    isIE = true; </script> <![endif]-->
+    <script type="text/javascript" src="<%= Url.ScriptSrc("jquery.mystique.js")%>"></script>
+    <script type="text/javascript" src="<%= Url.ScriptSrc("jquery.mystique.init.js")%>"></script>
+    <asp:ContentPlaceHolder ID="tail" runat="server" />
+    <script type="text/javascript">
+    $(document).ready(function() { $('abbr.timeago').timeago(); }); <%= Model.TailScript
+    %> </script>
+    <% Html.RenderWidgets("tail"); %>
+</body>
+</html>

@@ -1,0 +1,10 @@
+﻿/* Copyright 2008-10 Jarrett Vance
+* see http://www.codeplex.com/blogsvc/license */
+#rightnow table {border: none; margin:0 1.4%; width:97%}
+#rightnow .main {font-size:120%;}
+#rightnow thead, .rightnow tfoot {background:none;}
+#rightnow thead th.c {text-align:center; width:12%}
+#rightnow td {width:16%; text-align:center;}
+#rightnow td a:hover, #rightnow th a:hover{text-decoration:underline;}
+#rightnow small {margin:0 1em}
+#rightnow p {margin: 0.7em 1em;}

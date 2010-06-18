@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<atom:entry xmlns:atom="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:theme="http://atomsite.net/info/Themes" xmlns:svc="http://atomsite.net/info/Service" xmlns:thread="http://purl.org/syndication/thread/1.0">
+  <atom:title>Default Theme (blank)</atom:title>
+  <atom:content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <p>This is the base style from the <a href="http://developer.yahoo.com/yui/grids/">YUI Grids</a> at Yahoo.  It is a blank theme with pratically no styling.  It can act as the base of a new theme.</p>
+    </div>
+  </atom:content>
+  <atom:contributor svc:id="JarrettV">
+    <atom:name>Jarrett</atom:name>
+    <atom:email>jarrettv@gmail.com</atom:email>
+    <atom:uri>http://jvance.com</atom:uri>
+  </atom:contributor>
+  <atom:published>2009-03-17T18:46:24.122Z</atom:published>
+  <atom:updated>2009-03-17T18:46:24.122Z</atom:updated>
+  <atom:id>tag:atomsite.net,2008:themes,default</atom:id>
+  <theme:homepage>http://atomsite.net</theme:homepage>
+  <theme:thumbnail>http://atomsite.net/media/DefaultTheme_thumb.png</theme:thumbnail>
+  <theme:screenshot>http://atomsite.net/media/DefaultTheme.png</theme:screenshot>
+  <theme:media>screen</theme:media>
+  <theme:layout>2 column</theme:layout>
+  <theme:width>doc, doc2, doc3, doc4, doc-custom</theme:width>
+  <theme:template>yui-t1, yui-t2, yui-t3, yui-t4, yui-t5, yui-t6</theme:template>
+  <theme:version>2.7</theme:version>
+  <theme:compatibleVersion>1.4.0.0</theme:compatibleVersion>
+  <atom:author>
+    <atom:name>Yahoo UI Library</atom:name>
+    <atom:uri>http://developer.yahoo.com/yui/grids</atom:uri>
+  </atom:author>
+  <app:edited>2009-03-18T00:36:37.841Z</app:edited>
+</atom:entry>

@@ -1,0 +1,122 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="ViewMasterPage<PageModel>" %>
+
+<% Model.UpdatePageModel(Page, "Site"); %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <asp:ContentPlaceHolder ID="head" runat="server" />
+    <link rel="icon" type="image/png" href="<%= Url.ImageSrc("icon.png") %>" />
+    <link rel="stylesheet" type="text/css" href="<%= Url.ThemeStyleSheetHref() %>" />
+    <%= Html.StyleLinks() %>
+    <!--[if lte IE 6]>
+   <link rel="stylesheet" media="all" href="<%= Url.Content("~/css/arclite/ie6.css") %>" />
+  <![endif]-->
+  <%
+   var pageWidthTemplate = Model.PageWidth.Split(new char[] {':'}); %>
+
+  <style type="text/css">
+    @import url('<%= Url.Content(string.Format("~/css/arclite/options/{0}.css", Model.PageTemplate)) %>');
+    <% if (pageWidthTemplate.Length == 2)
+    {%>
+        @import url('<%= Url.Content(string.Format("~/css/arclite/options/{0}.css",pageWidthTemplate[0])) %>');
+        @import url('<%= Url.Content(string.Format("~/css/arclite/options/{0}.css",pageWidthTemplate[1])) %>');
+    <%}%>
+  </style>
+    <% Html.RenderWidgets("head"); %>
+</head>
+<body id="<%= Model.PageName %>">
+    <!-- page -->
+    <div id="page" class="with-sidebar">
+        <div id="header-wrap">
+            <div id="header" class="block-content">
+                <div id="pagetitle">
+                    <h1 class="logo">
+                        <a href="<%= Url.Content("~/") %>">
+                            <%= Model.Workspace.Title %></a></h1>
+                    <h4>
+                        <%= Model.Workspace.Subtitle %></h4>
+                    <div class="clear">
+                    </div>
+                </div>
+                <% Html.RenderWidgets("nav"); %>
+            </div>
+            <div id="main-wrap1">
+                <div id="main-wrap2">
+                    <div id="main" class="block-content">
+                        <div class="mask-main rightdiv">
+                            <div class="mask-left">
+                                <div class="col1">
+                                    <div id="main-content">
+                                        <asp:ContentPlaceHolder ID="content" runat="server" />
+                                        <% Html.RenderWidgets("content"); %>
+                                    </div>
+                                </div>
+                                <div class="col2">
+                                    <ul id="sidebar">
+                                        <li class="block">
+                                            <asp:ContentPlaceHolder ID="sidetop" runat="server" />
+                                            <% Html.RenderWidgets("sidetop"); %>
+                                        </li>
+                                        <li class="block">
+                                            <asp:ContentPlaceHolder ID="sidemid" runat="server" />
+                                            <% Html.RenderWidgets("sidemid"); %>
+                                        </li>
+                                        <li class="block">
+                                            <asp:ContentPlaceHolder ID="sidebot" runat="server" />
+                                            <% Html.RenderWidgets("sidebot"); %>
+                                        </li>
+                                        <li class="block"><a href="http://validator.w3.org/check?uri=referer">
+                                            <img src="http://www.w3.org/Icons/valid-xhtml10-blue" alt="Valid XHTML 1.0 Strict"
+                                                height="31" width="88" />
+                                        </a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clear-content">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- footer -->
+        <div id="footer">
+            <div class="block-content">
+                <div class="copyright">
+                    &copy; Copyright
+                    <%= DateTime.Today.Year %>&nbsp;<span class="attribution">&nbsp;|&nbsp;Arclite theme
+                        by <a href="http://digitalnature.ro/projects/arclite">digitalnature</a>, ported
+                        by <a target="_blank" href="http://erikzaadi.com">Erik Zaadi</a>&nbsp;|&nbsp;Powered
+                        by <a href="http://atomsite.net">AtomSite</a>
+                        <%= ServerApp.CurrentVersion %></span>&nbsp;|&nbsp;
+                    <%       if (Model != null && Model.Collection != null && Model.Collection.Id != null)
+                             {%>
+                    <a href="<%=Url.RouteIdUrl("AtomPubFeed", Model.Collection.Id)%>" class="rss">Entries</a>&nbsp;|&nbsp;<a
+                        class="rss" href="<%=Url.RouteIdUrl("AnnotateAnnotationsFeed", Model.Collection.Id)%>">Comments</a>&nbsp;|&nbsp;<%
+                                                                                                                                            }%><a class="toplink" href="javascript:void(0);">TOP</a>
+                    <% if (Model.AuthorizeService.GetScopes(Model.User).Count() > 0)
+                       {%>
+                    &nbsp;|&nbsp;<a href="<%=Url.Action("Dashboard", "Admin") %>">Dashboard</a>
+                    <% }%><% Html.RenderWidgets("foot"); %>
+                </div>
+            </div>
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /page -->
+    <script type="text/javascript" src="<%= Url.ScriptSrc("jquery-1.4.2.js")%>"></script>
+    <script type="text/javascript" src="<%= Url.ScriptSrc("jquery.timeago-0.8.2.js")%>"></script>
+    <script type="text/javascript" src="<%= Url.ScriptSrc("jquery.easing-1.3.pack.js")%>"></script>
+    <script type="text/javascript" src="<%= Url.ScriptSrc("jquery.mousewheel-3.0.2.pack.js")%>"></script>
+    <script type="text/javascript" src="<%= Url.ScriptSrc("jquery.fancybox-1.3.1.pack.js")%>"></script>
+    <script type="text/javascript" src="<%= Url.ScriptSrc("jquery.arclite.js")%>"></script>
+    <%= Html.Hidden("_root", Request.Url.GetLeftPart(UriPartial.Authority) + Url.Content("~/"))%>
+    <%= Html.ScriptSources() %>
+    <asp:ContentPlaceHolder ID="tail" runat="server" />
+    <script type="text/javascript">//<![CDATA[
+    $(document).ready(function() { $('abbr.timeago').timeago(); });
+<%= Model.TailScript %>
+//]]></script>
+    <% Html.RenderWidgets("tail"); %>
+</body>
+</html>

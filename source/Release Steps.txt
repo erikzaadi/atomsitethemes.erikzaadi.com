@@ -1,0 +1,11 @@
+Update ServerApp, add new static version
+Update all assembly version
+Update all metadata files
+Edit csproj files product version for plugin projects
+Do plugins need special upgrade instructions?
+Add new post, delete old posts from www/blog
+manifest and parameters up to date?
+Readme up to date?
+Test web deploy
+Test in subfolder
+Test in root

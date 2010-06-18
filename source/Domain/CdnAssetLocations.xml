@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<cdn xmlns="http://atomsite.net/info/Service">
+  <!-- These are the default CDN asset locations, when multiple, always uses first one -->
+  <!-- These locations can be overridden in the <service> element of the service.config -->
+  <asset name="reset-fonts-grids-2.7.0.css" url="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css"/>
+  
+  <asset name="jquery-1.4.2.js" url="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"/>
+  <asset name="jquery.tools-1.1.2.js" url="http://cdn.jquerytools.org/1.1.2/tiny/jquery.tools.min.js"/>
+</cdn>

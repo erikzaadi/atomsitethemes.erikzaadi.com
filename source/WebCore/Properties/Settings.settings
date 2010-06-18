@@ -1,0 +1,24 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="AtomSite.WebCore.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="TimeZoneInfoId" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Central Standard Time</Value>
+    </Setting>
+    <Setting Name="TimeZoneDisplay" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">CST</Value>
+    </Setting>
+    <Setting Name="EventLog" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">AtomSite</Value>
+    </Setting>
+    <Setting Name="PluginsDir" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">plugins\</Value>
+    </Setting>
+    <Setting Name="AssetGroupMode" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">CombineAndMinify</Value>
+    </Setting>
+    <Setting Name="UseCDN" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

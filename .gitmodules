@@ -1,0 +1,3 @@
+[submodule "submodules/AtomSitePlugins"]
+	path = submodules/AtomSitePlugins
+	url = git://github.com/erikzaadi/AtomSitePlugins.git

@@ -1,0 +1,7 @@
+﻿/* Copyright 2008-10 Jarrett Vance
+* see http://www.codeplex.com/blogsvc/license */
+#contact label small {color:#666}
+#contact input[type=text], #contact textarea {display:block; width:90%; margin-bottom:0.8em}
+#contact input[type=text] {width:40%}
+#contact .field-validation-error {color:#FF4444; margin-left:1em}
+#contact .response strong {color:#008800}

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<service xmlns="http://www.w3.org/2007/app" xmlns:atom="http://www.w3.org/2005/Atom" 
+         xmlns:svc="http://atomsite.net/info/Service" xmlns:file="http://atomsite.net/info/FileRepository" 
+         xmlns:plug="http://atomsite.net/info/Plugins" svc:theme="blue" xml:base="http://localhost:1333/">
+  <svc:admin>Admin</svc:admin>
+  <workspace svc:name="example.com" svc:year="2009">
+    <atom:title>example.com</atom:title>
+    <atom:subtitle>A short description about my website.</atom:subtitle>
+    <collection svc:name="blog" svc:default="true" svc:bloggingOn="true">
+      <atom:title>My Blog</atom:title>
+    </collection>
+    <collection svc:name="pages" svc:dated="false" svc:ratingsOn="false" svc:annotationsOn="false" svc:bloggingOn="true">
+      <atom:title>My Pages</atom:title>
+    </collection>
+    <collection svc:name="media" svc:visible="false" svc:syndicationOn="no">
+      <atom:title>My Media</atom:title>
+      <accept svc:ext="png">image/png</accept>
+      <accept svc:ext="jpg">image/jpeg</accept>
+      <accept svc:ext="gif">image/gif</accept>
+    </collection>
+  </workspace>
+</service>

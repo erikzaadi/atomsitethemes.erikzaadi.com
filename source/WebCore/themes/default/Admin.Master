@@ -1,0 +1,96 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="ViewMasterPage<AdminModel>" %>
+<% Model.UpdatePageModel(Page, "Admin"); %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+  <link rel="stylesheet" type="text/css" href="<%= Url.StyleHref("reset-fonts-grids-2.7.0.css") %>" />
+  <%= Html.StyleLinks() %>
+  <link rel="icon" type="image/png" href="<%= Url.ImageSrc("icon.png") %>" />
+  <asp:ContentPlaceHolder ID="head" runat="server" />
+  <% Html.RenderWidgets("head"); %>
+</head>
+<body id="<%= Model.PageName %>">
+  <div id="doc3" class="yui-t1">
+    <div id="hd"><%Html.RenderPartial("AccountStatusWidget", Model); %>
+      <h1>AtomSite Manager</h1>
+      <a href="http://atomsite.net">atomsite.net</a>
+    </div>
+    <div id="scope">
+      <ul class="ddmenu">
+        <li><%Html.RenderScope(Model.Scope, true); %>
+          <ul>
+          <%foreach (Scope s in Model.AuthorizeService.GetScopes(Model.User)) { Html.RenderScope(s, false); }%>
+          </ul>
+        </li>
+      </ul>
+      <a class="visitsite" title="Exit manager and go back to site" href="<%=Model.SiteUri %>"><%= Model.SiteDisplayUrl %></a>
+    </div>
+    <div id="bd">
+      <div id="yui-main">
+        <div class="yui-b"><%-- id="content"--%>
+         <div id="errors" class="errors"> 
+	<% foreach ( string error in Model.Errors) { %>
+	  <p><span class="icon-alert"></span> <strong>Error</strong> <%= error %> <%= Html.ValidationSummary() %></p>
+	<%} %>
+	</div>
+        <div id="notifications" class="notifications"> 
+	<% foreach (KeyValuePair<string, string> notification in Model.Notifications) { %>
+		<p><span class="icon-info"></span> <strong><%= notification.Key %></strong> <%= notification.Value%></p>
+		<%} %>
+	</div>
+		      <asp:ContentPlaceHolder ID="content" runat="server" />
+          <% Html.RenderWidgets("content"); %>
+		    </div>
+		  </div>
+		  <div class="yui-b" id="menu">
+		    <ul>
+		    <li class="first" id="dashboard"><%= Html.ActionLink("Dashboard", "Dashboard", "Admin", new { workspace = Model.BaseScope.Workspace, collection = Model.BaseScope.Collection }, null)%></li>
+		    <li id="entries"><%= Html.ActionLink("Entries", "Entries", "Admin", new { workspace = Model.BaseScope.Workspace, collection = Model.BaseScope.Collection }, null)%>
+		      <ul>
+		      <li><%= Html.ActionLink("Edit", "Entries", "Admin", new { workspace = Model.BaseScope.Workspace, collection = Model.BaseScope.Collection }, null)%></li>
+              <% if (Model.AuthorizeService.IsAuthorized(Model.User, Model.Scope, AuthAction.CreateEntryOrMedia)) { %>
+		      <%-- if current scope supports entries, allow Add Entry --%>
+		      <% if (Model.ScopeAcceptsEntries()) { %>
+		      <li><%= Html.ActionLink("Add Entry", "EditEntry", "Admin", new { workspace = Model.BaseScope.Workspace, collection = Model.BaseScope.Collection }, null)%></li>
+		      <%} if (Model.ScopeAcceptsMedia()) { %>
+		      <%-- if current scope supports media, allow Add Media --%>
+		      <li><%= Html.ActionLink("Add Media", "EditMedia", "Admin", new { workspace = Model.BaseScope.Workspace, collection = Model.BaseScope.Collection }, null)%></li>
+		      <%} } %>
+		      </ul>
+		    </li>
+		    <li id="annotations"><%= Html.ActionLink("Annotations", "Annotations", "Admin", new { workspace = Model.BaseScope.Workspace, collection = Model.BaseScope.Collection }, null)%></li>
+            <% if (Model.AuthorizeService.IsInRole(Model.User, Model.Scope, AuthRoles.Author) || Model.AuthorizeService.IsInRole(Model.User, Model.Scope, AuthRoles.Administrator))
+               { %>
+		    <li id="theme"><%= Html.ActionLink("Theme", "Theme", "Admin", new { workspace = Model.BaseScope.Workspace, collection = Model.BaseScope.Collection }, null)%></li>
+		    <li id="widgets"><%= Html.ActionLink("Widgets", "Widgets", "Admin", new { workspace = Model.BaseScope.Workspace, collection = Model.BaseScope.Collection }, null)%></li>
+		    <li id="settings"><%= Html.ActionLink("Settings", "Settings", "Admin", new { workspace = Model.BaseScope.Workspace, collection = Model.BaseScope.Collection }, null)%></li>
+            <%} %>
+		    <% if (Model.AuthorizeService.IsInRole(Model.User, Scope.EntireSite, AuthRoles.Administrator)) { %>
+		    <li id="plugins"><%= Html.ActionLink("Plugins", "Plugins", "Admin")%></li>
+		    <li id="users"><%= Html.ActionLink("Users", "Users", "Admin")%>
+                <ul>
+                    <li><%= Html.ActionLink("User Listing", "Users", "Admin")%></li>
+		           <li><%= Html.ActionLink("Role Matrix", "RoleMatrix", "Admin", new { workspace = Model.BaseScope.Workspace, collection = Model.BaseScope.Collection }, null)%></li>
+                </ul>
+            </li>
+		    <li class="last" id="tools"><%= Html.ActionLink("Tools", "Tools", "Admin")%></li>
+		    <%} %>
+		    </ul>
+          <% Html.RenderWidgets("menu"); %>
+		  </div>
+    </div>
+    <div id="ft">
+      Thanks for publishing with <a href="http://atomsite.net">AtomSite</a>.  Please consider a <a href="http://atomsite.net/info/Contribute.xhtml#donation">donation</a> so we can continue to improve AtomSite.
+		</div>
+  </div>
+  
+  <script type="text/javascript" src="<%= Url.ScriptSrc("jquery-1.4.2.js") %>"></script>
+  <%= Html.ScriptSources() %>
+  
+  <asp:ContentPlaceHolder ID="tail" runat="server" />
+  <script type="text/javascript">//<![CDATA[
+    <%= Model.TailScript %>
+//]]></script>
+  <% Html.RenderWidgets("tail"); %>
+</body>
+</html>

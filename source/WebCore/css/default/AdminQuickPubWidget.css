@@ -1,0 +1,9 @@
+﻿/* Copyright 2008-10 Jarrett Vance
+* see http://www.codeplex.com/blogsvc/license */
+#quickpub .location {padding:2%}
+#quickpub label {width:15%; text-align:right; display:inline-block; vertical-align:top}
+#quickpub input[name=title], #quickpub textarea {width:80%; margin-bottom:2%}
+#quickpub textarea {height:10em;}
+#quickpub .publish {padding-left: 16%}
+#quickpub .notifications {padding:4px 10px; margin:0.5em 1em 0 1em}
+#quickpub .notifications strong {margin-right:1em;}

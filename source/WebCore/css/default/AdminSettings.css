@@ -1,0 +1,17 @@
+﻿/* Copyright 2008-10 Jarrett Vance
+* see http://www.codeplex.com/blogsvc/license */
+.settings ul{padding:0; margin:0; height:20em; overflow:auto;}
+.settings li{display:block;list-style-type:none; margin: 0; padding:0.5em; border-top: solid 1px #dfdfdf; }
+
+.settings li {min-height:40px}
+.settings li .avatar {float:left; margin-right:0.5em}
+.settings .actions {float:right}
+.settings .actions a {display:block; padding:0.1em}
+.settings p.restart {font-size:smaller; font-weight:bold; font-style:italic; color:#a90000}
+
+.area li div strong{display:inline-block;width:25%}
+.area li div small{padding-right:1em}
+.area img {float:left; margin-right:0.5em}
+.area li.notdefault img { cursor:pointer }
+
+
