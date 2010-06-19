@@ -1,4 +1,3 @@
-
 #ignore thumbnails created by windows
 Thumbs.db
 #Ignore files build by Visual Studio
@@ -35,3 +34,4 @@ _ReSharper*/
 .idea
 source/WebCore/plugins/*.zip
 source/WebCore/App_Data/ThemeCounter*.txt
+source/WebCore/WebCore.Publish.xml
