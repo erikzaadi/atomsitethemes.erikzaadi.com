@@ -143,38 +143,74 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- footer -->
-                <div id="footer">
-                    <!-- blocks + slider -->
-                    <div id="footer-blocks" class="page-content<%=false ? " " :string.Empty %>">
-                    </div>
-                    <div class="page-content">
-                        <div id="copyright">
-                            Mystique theme by <a href="http://digitalnature.ro">digitalnature</a>. Ported to
-                            <a href="http://atomsite.net">AtomSite</a> by <a href="http://erikzaadi.com">Erik Zaadi</a><br />
-                            <span class="copyright">&copy; Copyright
-                                <%= DateTime.Today.Year %></span> <span class="attribution">Powered by <a href="http://atomsite.net">
-                                    AtomSite</a>
-                                    <%= ServerApp.CurrentVersion %></span>
-                            <% Html.RenderWidgets("foot");%>
-                            <% if (Model.AuthorizeService.GetScopes(Model.User).Count() > 0)
-                               {%>
-                            <a href="<%=Url.Action("Dashboard", "Admin")%>">Dashboard</a>
-                            <%
-                                }%>
-                            <br />
-                            <% if (Model != null && Model.Collection != null && Model.Collection.Id != null)
-                               {%>
-                            <a title="RSS Feeds" href="<%=Url.RouteIdUrl("AtomPubFeed", Model.Collection.Id)%>"
-                                class="rss-subscribe">RSS Feeds</a>
-                            <% }%>
-                            <a title="Valid XHTML" href="http://validator.w3.org/check?uri=referer" class="valid-xhtml">
-                                XHTML 1.1</a> <a name="goTop" class="js-link" id="goTop">Top</a>
+                    <!-- footer -->
+                    <div id="footer">
+                        <!-- blocks + slider -->
+                        <div class="page-content withSlider" id="footer-blocks">
+                            <!-- block navigation -->
+                            <div class="slide-navigation">
+                                <a class="previous" href="#"><span>previous</span></a> <a class="next" href="#"><span>
+                                    next</span></a>
+                            </div>
+                            <!-- /block navigation -->
+                            <!-- block container -->
+                            <div class="slide-container clear-block" style="height: 538px; display: block;">
+                                <ul class="slides" style="width: 1880px;">
+                                    <!-- slide (100%) -->
+                                    <li class="slide slide-1 page-content" style="position: absolute; left: 0px; display: block;">
+                                        <div class="slide-content">
+                                            <ul class="blocks widgetcount-3">
+                                                <% Html.RenderWidgets("bottomcola1"); %>
+                                                <% Html.RenderWidgets("bottomcola2"); %>
+                                                <% Html.RenderWidgets("bottomcola3"); %>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <!-- /slide -->
+                                    <!-- slide (100%) -->
+                                    <li class="slide slide-2 page-content" style="position: absolute; left: -940px; display: block;">
+                                        <div class="slide-content">
+                                            <ul class="blocks widgetcount-1">
+                                                <% Html.RenderWidgets("bottomcolb"); %>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <!-- /slide -->
+                                </ul>
+                            </div>
+                            <!-- /block container -->
+                            <div class="leftFade">
+                            </div>
+                            <div class="rightFade">
+                            </div>
+                        </div>
+                        <div class="page-content">
+                            <div id="copyright">
+                                Mystique theme by <a href="http://digitalnature.ro">digitalnature</a>. Ported to
+                                <a href="http://atomsite.net">AtomSite</a> by <a href="http://erikzaadi.com">Erik Zaadi</a><br />
+                                <span class="copyright">&copy; Copyright
+                                    <%= DateTime.Today.Year %></span> <span class="attribution">Powered by <a href="http://atomsite.net">
+                                        AtomSite</a>
+                                        <%= ServerApp.CurrentVersion %></span>
+                                <% Html.RenderWidgets("foot");%>
+                                <% if (Model.AuthorizeService.GetScopes(Model.User).Count() > 0)
+                                   {%>
+                                <a href="<%=Url.Action("Dashboard", "Admin")%>">Dashboard</a>
+                                <%
+                                    }%>
+                                <br />
+                                <% if (Model != null && Model.Collection != null && Model.Collection.Id != null)
+                                   {%>
+                                <a title="RSS Feeds" href="<%=Url.RouteIdUrl("AtomPubFeed", Model.Collection.Id)%>"
+                                    class="rss-subscribe">RSS Feeds</a>
+                                <% }%>
+                                <a title="Valid XHTML" href="http://validator.w3.org/check?uri=referer" class="valid-xhtml">
+                                    XHTML 1.1</a> <a name="goTop" class="js-link" id="goTop">Top</a>
+                            </div>
                         </div>
                     </div>
+                    <!-- /footer -->
                 </div>
-                <!-- /footer -->
             </div>
         </div>
         <!-- /shadow -->

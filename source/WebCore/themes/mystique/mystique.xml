@@ -6,6 +6,27 @@
             <p>
                 Based on <a href="http://digitalnature.ro/projects/mystique/">Mystique</a> by <a href="http://digitalnature.ro">digitalnature</a>.
             </p>
+            <p>
+                Adds 4 new areas that you can add widgets to:
+                <ol>
+                    <li>
+                        bottomcola1 - <br/>
+                        Bottom left column at the footer
+                    </li>
+                    <li>
+                        bottomcola2 - <br/>
+                        Bottom left second column at the footer
+                    </li>
+                    <li>
+                        bottomcola3 - <br/>
+                        Bottom left third column at the footer
+                    </li>
+                    <li>
+                        bottomcolb - <br/>
+                        Bottom right column at the footer
+                    </li>
+                </ol>
+            </p>
         </div>
     </atom:content>
     <atom:contributor svc:id="erikzaadi">
