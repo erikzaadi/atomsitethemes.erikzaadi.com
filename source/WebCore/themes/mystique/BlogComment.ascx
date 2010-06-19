@@ -1,11 +1,11 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" Inherits="ViewUserControl<CommentModel>" %>
+<%@ Import Namespace="ThemeExtensions.UrlHelpers" %>
 <!-- comment entry -->
 <li class="comment withAvatars" id="comment-<%= Model.Comment.Id.ToWebId() %>">
     <div class="comment-head comment withAvatars <%= Model.IsOwner() ? " comment-author-admin" : "" %>">
         <div class="avatar-box">
-            <img height="48" width="48" src="<%= Url.GetGravatarHref(Model.Comment.Authors.First().Email, 48)
-                             + Request.Url.GetLeftPart(UriPartial.Authority) 
-                             + Url.ImageSrc("noav.png") %>" alt="Gravatar" class="avatar avatar-48 photo" /></div>
+            <img height="48" width="48" src="<%= Url.ThemeExtensions().Social.GetAvatarUrl(Model.Comment.Authors.First().Email, 48) %>"
+                alt="Gravatar" class="avatar avatar-48 photo" /></div>
         <div class="author">
             <span class="by">written by
                 <% Html.RenderPartial("AtomPubPeople", Model.Comment.People);%>

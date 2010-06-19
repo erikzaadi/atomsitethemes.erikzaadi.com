@@ -1,6 +1,8 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" Inherits="ViewUserControl<FeedModel>" %>
-<% 
-    var showAdvancedMenu = false;
+
+<%@ Import Namespace="ThemeExtensions.HtmlHelpers" %>
+<%
+    var showAdvancedMenu = Html.ThemeExtensions().Theme.GetThemeBooleanProperty("showadvancedmenu", false); 
 
     if (showAdvancedMenu)
     {

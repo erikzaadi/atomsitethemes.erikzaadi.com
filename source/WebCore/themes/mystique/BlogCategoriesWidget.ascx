@@ -1,6 +1,7 @@
 ﻿<%@ Control Language="C#" Inherits="ViewUserControl<FeedModel>" %>
-<% 
-    var showAdvancedMenu = false;
+<%@ Import Namespace="ThemeExtensions.HtmlHelpers" %>
+<%
+    var showAdvancedMenu = Html.ThemeExtensions().Theme.GetThemeBooleanProperty("showadvancedmenu", false);
 
     if (showAdvancedMenu)
     {
@@ -22,7 +23,7 @@
                { %>
             <!-- categories -->
             <ul class="menuList categories">
-                <% foreach (AtomCategory cat in Model.GetCategories())
+                <% foreach (var cat in Model.GetCategories())
                    { %>
                 <li class="cat-item"><a class="fadeThis" href="<%= Url.RouteIdUrl("BlogCategory", Model.Feed.Id, new {term = cat.Term}) %>"
                     style="padding-left: 0px;"><span class="entry">
@@ -58,7 +59,7 @@
            { %>
         <!-- categories -->
         <ul>
-            <% foreach (AtomCategory cat in Model.GetCategories())
+            <% foreach (var cat in Model.GetCategories())
                { %>
             <li><a href="<%= Url.RouteIdUrl("BlogCategory", Model.Feed.Id, new {term = cat.Term}) %>"
                 style="padding-left: 0px;">

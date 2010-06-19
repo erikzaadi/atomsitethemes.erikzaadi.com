@@ -1,6 +1,8 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" Inherits="ViewUserControl<FeedModel>" %>
-<% 
-    var showAdvancedMenu = false;
+<%@ Import Namespace="ThemeExtensions.HtmlHelpers" %>
+<%@ Import Namespace="ThemeExtensions.UrlHelpers" %>
+<%
+    var showAdvancedMenu = Html.ThemeExtensions().Theme.GetThemeBooleanProperty("showadvancedmenu", false);
 
     if (showAdvancedMenu)
     {
@@ -22,12 +24,11 @@
                 <!-- <%=Html.DateTimeAbbreviation(entry.Date, (d, tz) => d.ToString("g"))%> -->
                 <li class="clearfix"><a href="<%=Url.RouteIdUrl("BlogEntry", entry.Id.GetParentId()) + "#" + entry.Id.ToWebId()%>">
                     <span class="avatar">
-                        <img height="32" width="32" class="avatar" src="<%=Url.GetGravatarHref(entry.Authors.First().Email, 32)
-                          + Request.Url.GetLeftPart(UriPartial.Authority)
-                          + Url.ImageSrc("noav.png")%>" alt="avatar"></span> <span class="entry">
-                              <%=entry.Authors.Count() > 0 ? "- " + entry.Authors.First().ToString() : string.Empty%>:
-                              <span class="details">
-                                  <%=entry.Text.ToStringPreview(64)%></span></span></a></li>
+                        <img height="32" width="32" class="avatar" src="<%=Url.ThemeExtensions().Social.GetAvatarUrl(entry.Authors.First().Email, 32)%>"
+                            alt="avatar"></span> <span class="entry">
+                                <%=entry.Authors.Count() > 0 ? "- " + entry.Authors.First().ToString() : string.Empty%>:
+                                <span class="details">
+                                    <%=entry.Text.ToStringPreview(64)%></span></span></a></li>
                 <%
                     }
                    }%>
@@ -60,12 +61,11 @@
             <!-- <%=Html.DateTimeAbbreviation(entry.Date, (d, tz) => d.ToString("g"))%> -->
             <li class="clearfix"><a href="<%=Url.RouteIdUrl("BlogEntry", entry.Id.GetParentId()) + "#" + entry.Id.ToWebId()%>">
                 <span class="avatar">
-                    <img height="32" width="32" class="avatar" src="<%=Url.GetGravatarHref(entry.Authors.First().Email, 32)
-                          + Request.Url.GetLeftPart(UriPartial.Authority)
-                          + Url.ImageSrc("noav.png")%>" alt="avatar"></span> <span class="entry">
-                              <%=entry.Authors.Count() > 0 ? "- " + entry.Authors.First().ToString() : string.Empty%>:
-                              <span class="details">
-                                  <%=entry.Text.ToStringPreview(64)%></span></span></a></li>
+                    <img height="32" width="32" class="avatar" src="<%=Url.ThemeExtensions().Social.GetAvatarUrl(entry.Authors.First().Email, 32)%>"
+                        alt="avatar"></span> <span class="entry">
+                            <%=entry.Authors.Count() > 0 ? "- " + entry.Authors.First().ToString() : string.Empty%>:
+                            <span class="details">
+                                <%=entry.Text.ToStringPreview(64)%></span></span></a></li>
             <%
                 }
                }%>

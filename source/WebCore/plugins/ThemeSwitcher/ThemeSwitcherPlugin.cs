@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using AtomSite.Domain;
+using AtomSite.Repository;
 
 namespace AtomSite.WebCore.plugins.ThemeSwitcher
 {
@@ -15,8 +16,10 @@ namespace AtomSite.WebCore.plugins.ThemeSwitcher
         }
         public override void Register(StructureMap.IContainer container, List<SiteRoute> routes, System.Web.Mvc.ViewEngineCollection viewEngines, System.Web.Mvc.ModelBinderDictionary modelBinders, ICollection<Domain.Asset> globalAssets)
         {
-            container.Inject(typeof(IThemeSwitcherService),
-                             new ThemeSwitcherService(container.GetInstance<IThemeService>()));
+            container.Inject(typeof (IThemeSwitcherService),
+                             new ThemeSwitcherService(container.GetInstance<IThemeService>(),
+                                                      container.GetInstance<IAtomPubService>(),
+                                                      container.GetInstance<IAppServiceRepository>()));
 
             RegisterWidget(container, new CompositeWidget("ThemeSwitcherWidget", "ThemeSwitcher", "Widget")
             {

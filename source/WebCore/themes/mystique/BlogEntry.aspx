@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="C#" MasterPageFile="Site.Master" AutoEventWireup="true" Inherits="ViewPage<BlogEntryModel>" %>
 
+<%@ Import Namespace="ThemeExtensions.UrlHelpers" %>
 <asp:Content ID="Head" ContentPlaceHolderID="head" runat="server">
     <title>
         <%= Model.Entry.Title %></title>
@@ -37,24 +38,24 @@
                     <div class="shareThis clearfix">
                         <a href="#" class="control share">Share this post!</a>
                         <ul class="bubble">
-                            <li><a href="http://twitter.com/home?status=<%= Model.Entry.Title.Text%>+-+<%= Request.Url.GetLeftPart(UriPartial.Authority) + Url.RouteIdUrl("BlogEntry", Model.Entry.Id) %>"
+                            <li><a href="<%= Url.ThemeExtensions().Social.ShareEntryUrl(Model.Entry, Social.SocialNetwork.Twitter) %>"
                                 class="twitter" title="Tweet This!"><span>Twitter</span></a></li>
-                            <li><a href="http://digg.com/submit?phase=2&amp;url=<%= Request.Url.GetLeftPart(UriPartial.Authority) + Url.RouteIdUrl("BlogEntry", Model.Entry.Id) %>&amp;title=<%= Model.Entry.Title.Text%>"
+                            <li><a href="<%= Url.ThemeExtensions().Social.ShareEntryUrl(Model.Entry, Social.SocialNetwork.Digg) %>"
                                 class="digg" title="Digg this!"><span>Digg</span></a></li>
-                            <li><a href="http://www.facebook.com/share.php?u=<%= Request.Url.GetLeftPart(UriPartial.Authority) + Url.RouteIdUrl("BlogEntry", Model.Entry.Id) %>&amp;t=<%= Model.Entry.Title.Text%>"
+                            <li><a href="<%= Url.ThemeExtensions().Social.ShareEntryUrl(Model.Entry, Social.SocialNetwork.Facebook) %>"
                                 class="facebook" title="Share this on Facebook"><span>Facebook</span></a></li>
-                            <li><a href="http://del.icio.us/post?url=<%= Request.Url.GetLeftPart(UriPartial.Authority) + Url.RouteIdUrl("BlogEntry", Model.Entry.Id) %>&amp;title=<%= Model.Entry.Title.Text%>"
+                            <li><a href="<%= Url.ThemeExtensions().Social.ShareEntryUrl(Model.Entry, Social.SocialNetwork.Delicious) %>"
                                 class="delicious" title="Share this on del.icio.us"><span>Delicious</span></a></li>
-                            <li><a href="http://www.stumbleupon.com/submit?url=<%= Request.Url.GetLeftPart(UriPartial.Authority) + Url.RouteIdUrl("BlogEntry", Model.Entry.Id) %>&amp;title=<%= Model.Entry.Title.Text%>"
+                            <li><a href="<%= Url.ThemeExtensions().Social.ShareEntryUrl(Model.Entry, Social.SocialNetwork.StumbleUpon) %>"
                                 class="stumbleupon" title="Stumbled upon something good? Share it on StumbleUpon">
                                 <span>StumbleUpon</span></a></li>
-                            <li><a href="http://www.google.com/bookmarks/mark?op=add&amp;bkmk=<%= Request.Url.GetLeftPart(UriPartial.Authority) + Url.RouteIdUrl("BlogEntry", Model.Entry.Id) %>&amp;title=<%= Model.Entry.Title.Text%>"
+                            <li><a href="<%= Url.ThemeExtensions().Social.ShareEntryUrl(Model.Entry, Social.SocialNetwork.GoogleBookmarks) %>"
                                 class="google" title="Add this to Google Bookmarks"><span>Google Bookmarks</span></a></li>
-                            <li><a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=<%= Request.Url.GetLeftPart(UriPartial.Authority) + Url.RouteIdUrl("BlogEntry", Model.Entry.Id) %>&amp;title=<%= Model.Entry.Title.Text%>&amp;summary=<%= Model.Entry.Text.ToStringPreview(64) %>&amp;source=<%= Model.Workspace.Name %>"
+                            <li><a href="<%= Url.ThemeExtensions().Social.ShareEntryUrl(Model.Entry, Social.SocialNetwork.LinkedIn) %>"
                                 class="linkedin" title="Share this on Linkedin"><span>LinkedIn</span></a></li>
-                            <li><a href="http://buzz.yahoo.com/buzz?targetUrl=<%= Request.Url.GetLeftPart(UriPartial.Authority) + Url.RouteIdUrl("BlogEntry", Model.Entry.Id) %>&amp;headline=<%= Model.Entry.Title.Text%>&amp;summary=<%= Model.Entry.Text.ToStringPreview(64) %>"
+                            <li><a href="<%= Url.ThemeExtensions().Social.ShareEntryUrl(Model.Entry, Social.SocialNetwork.YahooBuzz) %>"
                                 class="yahoo" title="Buzz up!"><span>Yahoo Bookmarks</span></a></li>
-                            <li><a href="http://technorati.com/faves?add=<%= Request.Url.GetLeftPart(UriPartial.Authority) + Url.RouteIdUrl("BlogEntry", Model.Entry.Id) %>"
+                            <li><a href="<%= Url.ThemeExtensions().Social.ShareEntryUrl(Model.Entry, Social.SocialNetwork.Techorati) %>"
                                 class="technorati" title="Share this on Technorati"><span>Technorati Favorites</span></a></li>
                         </ul>
                     </div>
@@ -67,13 +68,15 @@
                     This entry was posted by
                     <% Html.RenderPartial("AtomPubPeople", Model.Entry.People, new ViewDataDictionary() { { "id", Model.Entry.Id } }); %>
                     on <span class="date">
-                        <%= Model.Entry.Date.ToString("MMMM dd, yyyy", System.Globalization.DateTimeFormatInfo.InvariantInfo)%> at <%= Model.Entry.Date.ToString("hh:mm tt")%></span>
-                        
-                        <% if (Model.Entry.Categories.Count() > 0)
-                                                                                    { %>
-                    <br />Filed under
+                        <%= Model.Entry.Date.ToString("MMMM dd, yyyy", System.Globalization.DateTimeFormatInfo.InvariantInfo)%>
+                        at
+                        <%= Model.Entry.Date.ToString("hh:mm tt")%></span>
+                    <% if (Model.Entry.Categories.Count() > 0)
+                       { %>
+                    <br />
+                    Filed under
                     <% Html.RenderPartial("BlogCategories", new CategoriesModel() { Categories = Model.Entry.Categories, Id = Model.Collection.Id });
-                                                                                    } %>.<br />
+                       } %>.<br />
                     Follow any responses to this post through <a title="RSS 2.0" href="<%= Url.RouteIdUrl("AnnotateEntryAnnotationsFeed", Model.EntryId) %>">
                         RSS 2.0</a>.
                     <br />

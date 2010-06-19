@@ -13,6 +13,7 @@
     </app:control>
     <atom:published>2010-06-07T15:09:00-05:00</atom:published>
     <atom:category term="NotYUI" />
+    <atom:category term="DependsOnThemeExtensions" label="Depends On ThemeExtensions" />
     <atom:updated>2010-06-07T20:11:37.1373829Z</atom:updated>
     <app:edited>2010-06-07T20:11:37.1373829Z</app:edited>
     <atom:id>tag:erikzaadi.com,2010:themecollection,Mystique</atom:id>

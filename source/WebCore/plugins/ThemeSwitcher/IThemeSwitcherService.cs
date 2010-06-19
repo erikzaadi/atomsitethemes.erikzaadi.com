@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Hosting;
 using System.Web.Mvc;
 using AtomSite.Domain;
+using AtomSite.Repository;
 using ICSharpCode.SharpZipLib.Core;
 using ICSharpCode.SharpZipLib.Zip;
 using System.Xml.Linq;
@@ -23,10 +24,16 @@ namespace AtomSite.WebCore.plugins.ThemeSwitcher
 
     public class ThemeSwitcherService : IThemeSwitcherService
     {
-        public ThemeSwitcherService(IThemeService themeService)
+        public ThemeSwitcherService(IThemeService themeService, IAtomPubService atomPubService, IAppServiceRepository appServiceRepository)
         {
+            this.appServiceRepository = appServiceRepository;
+            this.atomPubService = atomPubService;
+
             ThemeService = themeService;
         }
+
+        private IAtomPubService atomPubService { get; set; }
+        private IAppServiceRepository appServiceRepository { get; set; }
 
         #region IThemeSwitcherService Members
 
@@ -164,6 +171,7 @@ namespace AtomSite.WebCore.plugins.ThemeSwitcher
         public string Download(string ThemeName)
         {
             var theme = ThemeService.GetTheme(ThemeName);
+
             List<ThemeZipFileInfo> filenames = new List<ThemeZipFileInfo>();
 
             foreach (var dir in GetPaths(ThemeName))
@@ -186,6 +194,22 @@ namespace AtomSite.WebCore.plugins.ThemeSwitcher
                 PhysicalPath = ThemeService.GetThemePath(ThemeName),
                 ZipPath = Path.GetFileName(ThemeService.GetThemePath(ThemeName))
             });
+
+            var appService = appServiceRepository.GetService();
+            var id = appService.GetCollection("www", "themecollection").Id;
+            var themePostEntry = atomPubService.GetFeedBySearch(id, ThemeName, 0, 20).Entries.Where(p => p.Id.EntryPath.ToLower().EndsWith(ThemeName.ToLower())).SingleOrDefault();
+            
+            if (themePostEntry != null && themePostEntry.Categories.Any(x => x.Term == "DependsOnThemeExtensions"))
+            {
+                const string dll = @"bin\ThemeExtensions.dll";
+                var path = Path.Combine(HostingEnvironment.ApplicationPhysicalPath,dll );
+                filenames.Add(new ThemeZipFileInfo
+                                  {
+                                      PhysicalPath = path,
+                                      ZipPath = dll
+                                  });
+            }
+
 
             var toReturn = Path.GetTempFileName();
 

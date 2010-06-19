@@ -34,3 +34,4 @@ _ReSharper*/
 *~
 .idea
 source/WebCore/plugins/*.zip
+source/WebCore/App_Data/ThemeCounter*.txt

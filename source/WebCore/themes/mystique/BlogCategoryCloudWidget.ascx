@@ -1,6 +1,8 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" Inherits="ViewUserControl<FeedModel>" %>
-<% 
-    var showAdvancedMenu = false;
+<%@ Import Namespace="ThemeExtensions.HtmlHelpers" %>
+
+<%
+    var showAdvancedMenu = Html.ThemeExtensions().Theme.GetThemeBooleanProperty("showadvancedmenu", false);
 
     if (showAdvancedMenu)
     {
@@ -16,7 +18,7 @@
                 <% if (Model.GetCategories().Count() > 0)
                    { %>
                 <p class="cloud">
-                    <% foreach (AtomCategory cat in Model.GetCategories())
+                    <% foreach (var cat in Model.GetCategories())
                        { %>
                     <a style="font-size: <%= Model.GetCategorySize(cat, 1F, 1.9F) %>em" href="<%= Url.RouteIdUrl("BlogCategory", Model.Feed.Id, new {term = cat.Term}) %>">
                         <%= cat %></a>
@@ -48,7 +50,7 @@
             <% if (Model.GetCategories().Count() > 0)
                { %>
             <p class="cloud">
-                <% foreach (AtomCategory cat in Model.GetCategories())
+                <% foreach (var cat in Model.GetCategories())
                    { %>
                 <a style="font-size: <%= Model.GetCategorySize(cat, 1F, 1.9F) %>em" href="<%= Url.RouteIdUrl("BlogCategory", Model.Feed.Id, new {term = cat.Term}) %>">
                     <%= cat %></a>

@@ -1,48 +1,6 @@
 ﻿<%@ Page Language="C#" MasterPageFile="Site.Master" AutoEventWireup="true" Inherits="ViewPage<FeedModel>" %>
 
-<%@ Import Namespace="AtomSite.WebCore.Properties" %>
-<script runat="server" language="C#">
-    protected string EntryDate(DateTimeOffset date)
-    {
-        var ending = string.Empty;
-
-        if (date.Day.ToString().EndsWith("1"))
-        {
-            ending = date.Day.ToString().StartsWith("1") && date.Day != 1 ? "th" : "st";
-        }
-        else if (date.Day.ToString().EndsWith("2"))
-        {
-            ending = date.Day.ToString().StartsWith("1") ? "th" : "nd";
-        }
-        else if (date.Day.ToString().EndsWith("3"))
-        {
-            ending = date.Day.ToString().StartsWith("1") ? "th" : "rd";
-        }
-        else
-            ending = "th";
-        return string.Format("{0} {1}{2}", date.ToString("MMM", System.Globalization.DateTimeFormatInfo.InvariantInfo), date.ToString("dd"), ending);
-    }
-    protected string mystique_post_class(string initialClass, bool isOdd)
-    {
-        return string.Format("{0} {1}", initialClass, isOdd ? "odd" : "even alt");
-    }
-    protected string mystique_comments_text(int? Total)
-    {
-        var commentsText = string.Empty;
-        switch (Total)
-        {
-            case 0:
-            case null:
-                return "No Comments";
-            case 1:
-                return "1 Comment";
-                break;
-            default:
-                return string.Format("{0} Comments", Total);
-                break;
-        }
-    }
-</script>
+<%@ Import Namespace="ThemeExtensions.HtmlHelpers" %>
 <asp:Content ID="Head" ContentPlaceHolderID="head" runat="server">
     <title>
         <%= Model.Title %></title>
@@ -66,14 +24,14 @@
     <%
         var x = 0; foreach (AtomEntry entry in Model.Feed.Entries)
         {%>
-    <div id="post-<%=entry.Id.ToWebId() %>" class="<%= mystique_post_class("clearfix",++x  % 2 != 0)%>">
+    <div id="post-<%=entry.Id.ToWebId() %>" class="<%= string.Format("{0} {1}", "clearfix", ++x  % 2 != 0 ? "odd" : "even alt")%>">
         <h2 class="title">
             <a href="<%= Url.RouteIdUrl("BlogEntry", entry.Id) %>" rel="bookmark" title="<%= entry.Title.Text %>">
                 <%= entry.Title.Text %></a></h2>
     </div>
     <div class="post-date">
         <p class="day">
-            <%= EntryDate(entry.Date)%></p>
+            <%= Html.ThemeExtensions().Date.GetDateNthFormat(entry.Date)%></p>
     </div>
     <div class="post-info clearfix">
         <p class="author alignleft">
@@ -84,22 +42,21 @@
            { %>
         <p class="comments alignright">
             <a href="<%= Url.RouteIdUrl("BlogEntry", entry.Id) %>#comments" class="<%= entry.Total == 0 ?"no":"comments"%>">
-                <%=mystique_comments_text(entry.Total) %>
+                <%=Html.ThemeExtensions().Entries.GetNumberOfCommentsString(entry.Total) %>
             </a>
         </p>
         <%}%>
     </div>
-     <div class="post-content clearfix">
-            <%= entry.IsExtended ? entry.ContentBeforeSplit.ToString() : entry.Text.Text %>
-                <% if (entry.IsExtended) Response.Write("<a class=\"more-link\" href=\"" + Url.RouteIdUrl("BlogEntry", entry.Id) + "\">Read More</a>"); %>
-     
-   </div>
-   <div class="post-tags">
-     <% if (entry.Categories.Count() > 0)
-                       { %>
-                    <% Html.RenderPartial("BlogCategories", new CategoriesModel() { Categories = entry.Categories, Id = Model.Collection.Id });
+    <div class="post-content clearfix">
+        <%= entry.IsExtended ? entry.ContentBeforeSplit.ToString() : entry.Text.Text %>
+        <% if (entry.IsExtended) Response.Write("<a class=\"more-link\" href=\"" + Url.RouteIdUrl("BlogEntry", entry.Id) + "\">Read More</a>"); %>
+    </div>
+    <div class="post-tags">
+        <% if (entry.Categories.Count() > 0)
+           { %>
+        <% Html.RenderPartial("BlogCategories", new CategoriesModel() { Categories = entry.Categories, Id = Model.Collection.Id });
                        } %>
-   </div>
+    </div>
     <%
 }%>
     <div class="page-navigation clearfix">

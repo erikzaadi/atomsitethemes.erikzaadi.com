@@ -1,11 +1,9 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" Inherits="ViewUserControl<FeedModel>" %>
+<%@ Import Namespace="ThemeExtensions.HtmlHelpers" %>
+
 <%
-    var comments = Model.Feed.Entries != null && Model.Feed.Entries.Any()
-                       ? Model.Feed.Entries.Where(x => !(x.AnnotationType ?? string.Empty).EndsWith("back"))
-                       : new List<AtomEntry>();
-    var trackbacks = Model.Feed.Entries != null && Model.Feed.Entries.Any()
-                         ? Model.Feed.Entries.Where(x => (x.AnnotationType ?? string.Empty).EndsWith("back"))
-                         : new List<AtomEntry>();
+    var comments = Html.ThemeExtensions().Entries.GetCommentsWithoutTrackBacks(Model);
+    var trackbacks = Html.ThemeExtensions().Entries.GetTrackBacks(Model);
 %>
 <!-- tabbed content -->
 <div class="tabbed-content post-tabs clearfix" id="post-tabs">
@@ -27,7 +25,7 @@
             <div id="comments-wrap">
                 <div class="clearfix">
                     <ul id="comments" class="comments">
-                        <% var x = 0; foreach (AtomEntry comment in comments)
+                        <% var x = 0; foreach (var comment in comments)
                            {
                                Html.RenderPartial("BlogComment", new CommentModel() { Comment = comment });
                            } %>
@@ -46,7 +44,7 @@
             <%  if (trackbacks.Any())
                 {%>
             <ul id="trackbacks">
-                <%  foreach (AtomEntry trackback in trackbacks)
+                <%  foreach (var trackback in trackbacks)
                     {
                         Html.RenderPartial("BlogTrackBack", new CommentModel() { Comment = trackback });
                     } %>

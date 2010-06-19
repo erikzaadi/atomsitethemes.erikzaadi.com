@@ -1,10 +1,9 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="ViewMasterPage<PageModel>" %>
 
-<%@ Import Namespace="ThemeExtensions" %>
-
+<%@ Import Namespace="ThemeExtensions.HtmlHelpers" %>
 <%
-    var showAdvancedMenu = Html.GetThemeBooleanProperty("showadvancedmenu", false);
-    var colorScheme = Html.GetThemeProperty<string>("color", "green");
+    var showAdvancedMenu = Html.ThemeExtensions().Theme.GetThemeBooleanProperty("showadvancedmenu", false);
+    var colorScheme = Html.ThemeExtensions().Theme.GetThemeProperty<string>("color", "green");
 
     Model.UpdatePageModel(Page, "Site");%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">

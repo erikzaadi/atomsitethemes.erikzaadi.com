@@ -4,7 +4,7 @@
 <% if (Model.EntryCount > 0)
    { %>
 <ol class="entries">
-    <% foreach (AtomEntry entry in Model.Feed.Entries)
+    <% foreach (var entry in Model.Feed.Entries)
        {%>
     <li>
         <!-- post -->

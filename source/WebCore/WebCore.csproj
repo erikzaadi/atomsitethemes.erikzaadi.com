@@ -524,6 +524,9 @@
     <Content Include="App_Data\www\media\AtomThemeLogo128.xml" />
     <Content Include="App_Data\www\media\AtomThemeLogo64.png" />
     <Content Include="App_Data\www\media\AtomThemeLogo64.xml" />
+    <Content Include="App_Data\www\news\MystiqueAndSourceCode.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Data\www\news\ThreeThemesAndDownloadStats.xml">
       <SubType>Designer</SubType>
     </Content>
@@ -1393,7 +1396,6 @@
     <Content Include="themes\inove\screenshot.PNG" />
     <Content Include="themes\inove\thumbnail.png" />
     <Content Include="themes\mystique\AccountStatusWidget.ascx" />
-    <Content Include="themes\mystique\AdminThemeInfo.ascx" />
     <Content Include="themes\mystique\BlogAddCommentWidget.ascx" />
     <Content Include="themes\mystique\BlogArchiveWidget.ascx" />
     <Content Include="themes\mystique\BlogCategoriesWidget.ascx" />
@@ -1402,7 +1404,6 @@
     <Content Include="themes\mystique\BlogCommentsWidget.ascx" />
     <Content Include="themes\mystique\BlogEntry.aspx" />
     <Content Include="themes\mystique\BlogEntrySimpleWidget.ascx" />
-    <Content Include="themes\mystique\BlogHome.aspx" />
     <Content Include="themes\mystique\BlogListing.aspx" />
     <Content Include="themes\mystique\BlogRecentCommentsWidget.ascx" />
     <Content Include="themes\mystique\BlogRecentWidget.ascx" />
@@ -1450,10 +1451,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\submodules\AtomSitePlugins\src\AdditionalWidgets\AdditionalWidgets\AdditionalWidgets.csproj">
-      <Project>{58EA243B-FEC5-4F57-8B7F-63165A97715C}</Project>
-      <Name>AdditionalWidgets</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\submodules\AtomSitePlugins\src\GA4AtomSite\GA4AtomSite\GA4AtomSite.csproj">
       <Project>{E1FA6DF8-6971-44FF-8E85-6F7A61CDD813}</Project>
       <Name>GA4AtomSite</Name>
