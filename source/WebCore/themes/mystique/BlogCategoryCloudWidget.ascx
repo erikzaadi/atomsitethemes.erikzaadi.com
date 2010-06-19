@@ -1,6 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" Inherits="ViewUserControl<FeedModel>" %>
 <%@ Import Namespace="ThemeExtensions.HtmlHelpers" %>
-
 <%
     var showAdvancedMenu = Html.ThemeExtensions().Theme.GetThemeBooleanProperty("showadvancedmenu", false);
 
@@ -64,4 +63,6 @@
             <br />
             <% } %>
         </div>
-        <%} %>
+    </div>
+</li>
+<%} %>
