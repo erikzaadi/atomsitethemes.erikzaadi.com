@@ -626,6 +626,7 @@
     <Content Include="css\mystique\mystique.css" />
     <Content Include="css\notepad\notepad.css" />
     <Content Include="css\reset-fonts-grids-2.7.0.css" />
+    <Content Include="css\sample\sample.css" />
     <Content Include="css\settings\settings.css" />
     <Content Include="Default.aspx" />
     <Content Include="FavIcon.ico" />
@@ -1061,6 +1062,7 @@
     <Content Include="img\notepad\socialmedia\youtube.png" />
     <Content Include="img\notepad\subnav-gradient.png" />
     <Content Include="img\notepad\wrapper.png" />
+    <Content Include="img\sample\background.jpg" />
     <Content Include="img\settings\background1.png" />
     <Content Include="img\settings\bg.jpg" />
     <Content Include="img\settings\img01.png" />
@@ -1434,6 +1436,7 @@
     <Content Include="themes\notepad\notepad.xml" />
     <Content Include="themes\notepad\screenshot.png" />
     <Content Include="themes\notepad\thumbnail.png" />
+    <Content Include="themes\sample\sample.xml" />
     <Content Include="themes\settings\license.txt" />
     <Content Include="themes\settings\settings.png" />
     <Content Include="themes\settings\settings.xml" />
@@ -1511,6 +1514,7 @@
     <Content Include="themes\inove\Site.Master" />
     <Content Include="themes\coolblue\Site.Master" />
     <Content Include="themes\mystique\Site.Master" />
+    <Content Include="themes\sample\Site.Master" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="plugins\Admin\AdminPlugin.1.4.0.0.xml">

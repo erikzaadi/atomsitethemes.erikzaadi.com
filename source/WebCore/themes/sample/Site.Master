@@ -1,0 +1,70 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="ViewMasterPage<PageModel>" %>
+<% Model.UpdatePageModel(Page, "Site"); %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+  <link rel="stylesheet" type="text/css" href="<%= Url.StyleHref("reset-fonts-grids-2.7.0.css") %>" />
+  <asp:ContentPlaceHolder ID="head" runat="server" />
+  <link rel="icon" type="image/png" href="<%= Url.ImageSrc("icon.png") %>" />
+  <link rel="stylesheet" type="text/css" href="<%= Url.ThemeStyleSheetHref() %>" />
+  <%= Html.StyleLinks() %>
+  <% Html.RenderWidgets("head"); %>
+</head>
+<body id="<%= Model.PageName %>">
+  <div id="<%= Model.PageWidth %>" class="<%= Model.PageTemplate %>">
+    <div id="hd">
+      <h1><a href="/"><%= Model.Workspace.Title %></a></h1>
+      <h2><%= Model.Workspace.Subtitle %></h2>
+      <h3>I can has my custom sub sub title!</h3>
+      <h4>Even with dynamic content (Today == <%= DateTime.Now.ToString() %>)!</h4>
+    </div>
+    <div id="nav">
+      <% Html.RenderWidgets("nav"); %>
+    </div>
+    <div id="bd">
+      <div id="yui-main">
+        <div class="yui-b" id="content">
+		      <asp:ContentPlaceHolder ID="content" runat="server" />
+          <% Html.RenderWidgets("content"); %>
+		    </div>
+		  </div>
+		  <div class="yui-b" id="side">
+		    <div class="top">
+		      <asp:ContentPlaceHolder ID="sidetop" runat="server" />
+          <% Html.RenderWidgets("sidetop"); %>
+        </div>
+		    <div class="mid">
+		      <asp:ContentPlaceHolder ID="sidemid" runat="server" />
+          <% Html.RenderWidgets("sidemid"); %>
+        </div>
+		    <div class="bot">
+		      <asp:ContentPlaceHolder ID="sidebot" runat="server" />
+          <% Html.RenderWidgets("sidebot"); %>
+        </div>        
+      	<div class="badges">
+					<a href="http://validator.w3.org/check?uri=referer">
+						<img src="http://www.w3.org/Icons/valid-xhtml10-blue" alt="Valid XHTML 1.0 Strict" height="31" width="88" />
+					</a>
+				</div>
+		  </div>
+    </div>
+    <div id="ft">
+      <span class="copyright">&copy; Copyright <%= DateTime.Today.Year %></span>
+				<span class="attribution">Powered by <a href="http://atomsite.net">AtomSite</a> <%= ServerApp.CurrentVersion %></span>
+        <% if (Model.AuthorizeService.GetScopes(Model.User).Count() > 0)
+           {%>
+           <div style="float:left; margin-right:1em"><a href="<%=Url.Action("Dashboard", "Admin") %>">Dashboard</a>&#160;|&#160;</div>
+        <% }%>
+        <% Html.RenderWidgets("foot"); %>
+		</div>
+  </div>
+  <script type="text/javascript" src="<%= Url.ScriptSrc("jquery-1.4.2.js")%>"></script>
+  <script type="text/javascript" src="<%= Url.ScriptSrc("jquery.timeago-0.8.2.js")%>"></script>
+  <%= Html.ScriptSources() %>
+  <asp:ContentPlaceHolder ID="tail" runat="server" />
+  <script type="text/javascript">//<![CDATA[
+    $(document).ready(function() { $('abbr.timeago').timeago(); });
+<%= Model.TailScript %>
+//]]></script><% Html.RenderWidgets("tail"); %>
+</body>
+</html>
