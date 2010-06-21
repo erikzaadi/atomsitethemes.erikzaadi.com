@@ -1,0 +1,12 @@
+/* CSS for IE */
+
+#breadcrumbs { top: 79px;}
+#header { margin-bottom: 60px;}
+
+.home #nav { bottom: 0; }
+#nav { bottom: 1px;}
+#nav li a{ display: block;}
+#nav li ul { top: 39px; }
+
+.widget ul { list-style: disc; list-style-image: none; }
+.searchform input[type=text] { width: 160px; }

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<atom:entry xmlns:atom="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:theme="http://atomsite.net/info/Themes" xmlns:svc="http://atomsite.net/info/Service" xmlns:thread="http://purl.org/syndication/thread/1.0">
+    <atom:title>Japibas</atom:title>
+    <atom:content type="xhtml">
+        <div xmlns="http://www.w3.org/1999/xhtml">
+            <p>
+                Based on <a href="http://wpthemes.jayj.dk/japibas/">Japibas</a> by <a href="http://jayj.dk/">jayj.dk</a>. 
+            </p>
+        </div>
+    </atom:content>
+    <atom:contributor svc:id="erikzaadi">
+        <atom:name>Erik Zaadi</atom:name>
+        <atom:email>erik.zaadi@gmail.com</atom:email>
+        <atom:uri>http://erikzaadi.com</atom:uri>
+    </atom:contributor>
+    <atom:published>2010-05-21T00:36:37.841Z</atom:published>
+    <atom:updated>2010-05-21T00:36:37.841Z</atom:updated>
+    <atom:id>tag:atomsite.net,2008:themes,japibas</atom:id>
+    <theme:homepage>http://atomsitethemes.erikzaadi.com/themecollection/Japibas.xhtml</theme:homepage>
+    <theme:thumbnail>http://atomsitethemes.erikzaadi.com/themes/japibas/thumbnail.png</theme:thumbnail>
+    <theme:screenshot>http://atomsitethemes.erikzaadi.com/themes/japibas/screenshot.png</theme:screenshot>
+    <theme:media>screen</theme:media>
+    <theme:layout>2 column</theme:layout>
+    <theme:width>doc2</theme:width>
+    <theme:template>default</theme:template>
+    <theme:version>1.0</theme:version>
+    <theme:compatibleVersion>1.4.0.0</theme:compatibleVersion>
+    <atom:author svc:id="erikzaadi">
+        <atom:name>Erik Zaadi</atom:name>
+        <atom:email>erik.zaadi@gmail.com</atom:email>
+        <atom:uri>http://erikzaadi.com</atom:uri>
+    </atom:author>
+    <app:edited>2010-05-18T00:36:37.841Z</app:edited>
+</atom:entry>

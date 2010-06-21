@@ -615,6 +615,13 @@
     <Content Include="css\inove\inove.css" />
     <Content Include="css\inove\wp-recentcomments.css" />
     <Content Include="css\inove\wp-syntax.css" />
+    <Content Include="css\japibas\ie.css" />
+    <Content Include="css\japibas\ie6.css" />
+    <Content Include="css\japibas\japibas.css" />
+    <Content Include="css\japibas\reset.css" />
+    <Content Include="css\japibas\blue.css" />
+    <Content Include="css\japibas\green.css" />
+    <Content Include="css\japibas\red.css" />
     <Content Include="css\mystique\color-blue.css" />
     <Content Include="css\mystique\color-green.css" />
     <Content Include="css\mystique\color-grey.css" />
@@ -932,6 +939,63 @@
     <Content Include="img\inove\title.gif" />
     <Content Include="img\inove\widgetsep.png" />
     <Content Include="img\inove\wp-logo.png" />
+    <Content Include="img\japibas\accept.png" />
+    <Content Include="img\japibas\blue\arrows.png" />
+    <Content Include="img\japibas\blue\bg.png" />
+    <Content Include="img\japibas\blue\btn.png" />
+    <Content Include="img\japibas\blue\featured_bg.png" />
+    <Content Include="img\japibas\blue\header_light.png" />
+    <Content Include="img\japibas\blue\li.png" />
+    <Content Include="img\japibas\blue\post_bg.png" />
+    <Content Include="img\japibas\blue\post_bottom.png" />
+    <Content Include="img\japibas\blue\post_top.png" />
+    <Content Include="img\japibas\blue\sidebar_bg.png" />
+    <Content Include="img\japibas\blue\sidebar_bottom.png" />
+    <Content Include="img\japibas\blue\sidebar_top.png" />
+    <Content Include="img\japibas\blue\slider_btn.png" />
+    <Content Include="img\japibas\comments_num.png" />
+    <Content Include="img\japibas\delete.png" />
+    <Content Include="img\japibas\delicious.png" />
+    <Content Include="img\japibas\designfloat.png" />
+    <Content Include="img\japibas\digg.png" />
+    <Content Include="img\japibas\disk.png" />
+    <Content Include="img\japibas\exclamation.png" />
+    <Content Include="img\japibas\facebook.png" />
+    <Content Include="img\japibas\green\arrows.png" />
+    <Content Include="img\japibas\green\bg.png" />
+    <Content Include="img\japibas\green\btn.png" />
+    <Content Include="img\japibas\green\featured_bg.png" />
+    <Content Include="img\japibas\green\header_light.png" />
+    <Content Include="img\japibas\green\li.png" />
+    <Content Include="img\japibas\green\post_bg.png" />
+    <Content Include="img\japibas\green\post_bottom.png" />
+    <Content Include="img\japibas\green\post_top.png" />
+    <Content Include="img\japibas\green\sidebar_bg.png" />
+    <Content Include="img\japibas\green\sidebar_bottom.png" />
+    <Content Include="img\japibas\green\sidebar_top.png" />
+    <Content Include="img\japibas\green\slider_btn.png" />
+    <Content Include="img\japibas\information.png" />
+    <Content Include="img\japibas\lock.png" />
+    <Content Include="img\japibas\page_copy.png" />
+    <Content Include="img\japibas\reddit.png" />
+    <Content Include="img\japibas\red\arrows.png" />
+    <Content Include="img\japibas\red\bg.png" />
+    <Content Include="img\japibas\red\btn.png" />
+    <Content Include="img\japibas\red\featured_bg.png" />
+    <Content Include="img\japibas\red\header_light.png" />
+    <Content Include="img\japibas\red\li.png" />
+    <Content Include="img\japibas\red\post_bg.png" />
+    <Content Include="img\japibas\red\post_bottom.png" />
+    <Content Include="img\japibas\red\post_top.png" />
+    <Content Include="img\japibas\red\sidebar_bg.png" />
+    <Content Include="img\japibas\red\sidebar_bottom.png" />
+    <Content Include="img\japibas\red\sidebar_top.png" />
+    <Content Include="img\japibas\red\slider_btn.png" />
+    <Content Include="img\japibas\stumbleupon.png" />
+    <Content Include="img\japibas\technorati.png" />
+    <Content Include="img\japibas\twitter-bird.png" />
+    <Content Include="img\japibas\twitter-icon.png" />
+    <Content Include="img\japibas\twitter.png" />
     <Content Include="img\mystique\bg-lightgray.png" />
     <Content Include="img\mystique\bg-trans.png" />
     <Content Include="img\mystique\bg-trans2.png" />
@@ -1198,6 +1262,11 @@
     <Content Include="js\inove\base.js" />
     <Content Include="js\inove\comment.js" />
     <Content Include="js\inove\menu.js" />
+    <Content Include="js\japibas\jquery.anythingslider.js" />
+    <Content Include="js\japibas\jquery.anythingslider.min.js" />
+    <Content Include="js\japibas\png.js" />
+    <Content Include="js\japibas\script.js" />
+    <Content Include="js\japibas\zindex.js" />
     <Content Include="js\jquery-1.4.2.js" />
     <Content Include="js\jquery.multifile-1.46.js" />
     <Content Include="js\jquery.openid-1.1.js" />
@@ -1397,6 +1466,9 @@
     <Content Include="themes\inove\NotFound.aspx" />
     <Content Include="themes\inove\screenshot.PNG" />
     <Content Include="themes\inove\thumbnail.png" />
+    <Content Include="themes\japibas\japibas.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="themes\mystique\AccountStatusWidget.ascx" />
     <Content Include="themes\mystique\BlogAddCommentWidget.ascx" />
     <Content Include="themes\mystique\BlogArchiveWidget.ascx" />
@@ -1436,7 +1508,9 @@
     <Content Include="themes\notepad\notepad.xml" />
     <Content Include="themes\notepad\screenshot.png" />
     <Content Include="themes\notepad\thumbnail.png" />
-    <Content Include="themes\sample\sample.xml" />
+    <Content Include="themes\sample\sample.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="themes\settings\license.txt" />
     <Content Include="themes\settings\settings.png" />
     <Content Include="themes\settings\settings.xml" />
@@ -1515,6 +1589,7 @@
     <Content Include="themes\coolblue\Site.Master" />
     <Content Include="themes\mystique\Site.Master" />
     <Content Include="themes\sample\Site.Master" />
+    <Content Include="themes\japibas\Site.Master" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="plugins\Admin\AdminPlugin.1.4.0.0.xml">

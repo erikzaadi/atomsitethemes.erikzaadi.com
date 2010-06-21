@@ -1,0 +1,244 @@
+/* 
+Green colour scheme 
+*/
+
+
+body { 
+	background: #dad6d3 url(../../img/japibas/green/bg.png) repeat-x;
+	color: #333;
+}
+
+a { color: #768c22;  }
+h1, h1 a, h2 a, h3, h3 a { color: #222; }
+hr { border: 1px #ccc solid; }
+
+/* Header */
+
+#header h1 a, #header h2 a{ background: url(../../img/japibas/green/logo.png) no-repeat; } /* Logo - Width and height is entered in style.css - If you want to override them, just enter the new width and height here */
+#header h1.noimage a, #header h2.noimage a{ color: #fff; text-shadow: #000 1px 1px 0;}
+#header p { color: #44423e; text-shadow: #1a1919 1px 1px 0; }
+	
+	#breadcrumbs { background: url(../../img/japibas/green/header_light.png) no-repeat; }
+	#breadcrumbs p, h4.pagetitle { color: #fff; text-shadow: #778a29 1px 1px 0; }
+	#breadcrumbs a { color: #fff; }
+	
+/* Menu */
+
+#nav li a {
+	background: #3c3c3c;
+	border: 1px solid #4a4a4a;
+	border-bottom: none;
+	color: #fff;
+	text-shadow: #2b2b2b 1px 1px 0;
+}
+
+#nav li a:hover, #nav li.current_page_item a, #nav li.current_page_item a:hover, #nav li.hover a {
+	background: #8ca529;
+	border: 1px solid #a4be39;
+	border-bottom: 1px solid #8ca529;
+	text-shadow: #7f9526 1px 1px 0;
+}
+
+#nav li a:hover { border-bottom: 1px solid #a8c336; }
+
+	/* Level 2 */
+	
+	#nav li ul li a:hover, #nav li ul li.current_page_item a:hover { border-bottom: none; }
+	
+	#nav li ul li.current_page_item a {
+		background: #353434;
+		border: 1px solid #4a4a4a; border-bottom: none;
+		text-shadow: #2b2b2b 1px 1px 0;
+	}
+
+/* Featured section */
+
+#featured-section {
+	 background: #fff url(../../img/japibas/green/featured_bg.png) no-repeat;
+	 box-shadow: 0 0 20px #818180;
+	 -webkit-box-shadow: 0 0 20px #818180;
+	 -moz-box-shadow: 0 0 20px #818180;
+}	
+
+
+#featured-section .arrow { background: url(../../img/japibas/green/slider_btn.png) no-repeat; height: 60px; width: 29px; }
+#featured-section .forward { background-position: -30px 0; right: -29px; }
+#featured-section .back { background-position: 0 0; left: -29px; }
+	
+#featured-section img {
+	background: #fff;
+	border: none;
+	-webkit-box-shadow: 0 0 5px #818180;
+	-moz-box-shadow: 0 0 5px #818180;
+}
+
+
+#featured-section p { color: #999; }
+
+
+/* Post */
+
+.post, #comments {
+	background: #fff url(../../img/japibas/green/post_bg.png) repeat-y;
+	border: 1px solid #fff;
+}
+
+.post-top { background: url(../../img/japibas/green/post_top.png);}
+.post-bottom {background: url(../../img/japibas/green/post_bottom.png); }
+
+
+
+	/* Post meta */
+	.post-meta {
+		border-top: 1px dotted #ccc;
+		color: #888;
+	}
+	
+	.post-meta a { color: #555;}
+	.post-meta img {
+		opacity: 0.5;
+		-webkit-transition: opacity 0.2s linear;
+	}
+	.post-meta:hover img { opacity: 0.8; }
+
+
+	div.date { 
+		background: #171512;
+		color: #e2e2e2;
+		text-shadow: #000 1px 1px 0px;
+	}
+	
+	div.date span { color:#fff;}
+	
+	
+	.post a.comments-num {
+		color: #333;
+		text-shadow: #fff 1px 1px 1px;
+	}
+
+
+	/* Post navigation */
+
+	#post-navi a { background: url(../../img/japibas/green/arrows.png) no-repeat; }
+	#post-navi p.alignleft a{
+		background-position: 0 0;
+		padding-left: 55px;
+	}
+	
+	#post-navi p.alignright a{ 
+		background-position: right -58px;
+		padding-right: 55px;
+	}
+	
+	#post-navi p.alignleft a:hover { background-position: 0 -29px; }
+	#post-navi p.alignright a:hover { background-position: right -87px; }
+	
+	
+/* Sidebar */
+
+#sidebar {
+	background: url(../../img/japibas/green/sidebar_bg.png);
+	border: 1px solid #fff;
+}
+
+.sidebar-top { background: url(../../img/japibas/green/sidebar_top.png);  }
+.sidebar-bottom {background: url(../../img/japibas/green/sidebar_bottom.png); }
+
+
+.widget h3 { text-shadow: #fff 1px 1px 0; }
+.widget ul { list-style: url(../../img/japibas/green/li.png) inside; }
+.widget ol { color: #999; }
+.japibas-ads img:hover { opacity: 0.9; }
+
+/* Footer */
+
+#footer {  border-top: 5px dotted #b9afa8; }
+#footer p { color: #887a6f; }
+#footer a { color: #5a4e45; }
+#footer_ad {
+	box-shadow: 0 0 7px #818180;
+	-webkit-box-shadow: 0 0 7px #818180;
+	-moz-box-shadow: 0 0 7px #818180;
+}
+
+
+/* Comments */
+
+
+.commentlist li { border-bottom: 1px dotted #ccc; }
+.commentlist li ul li{  border: 1px dotted #ccc; border-right: none; }
+.commentlist li ul li{ background: #F9F9F9; }
+.commentlist li ul li ul li{ background: #fff; }
+
+
+.reply a{
+	background: #8ca429 url(../../img/japibas/green/btn.png) repeat-x;
+	border: 1px solid #768c22;
+	color: #fff;
+}
+
+span.comment-num { color: #ccc; }
+
+
+/* Comment Form / Forms */
+
+#respond label { color: #B9B9B9;  }
+#respond p:hover label, #respond p:hover input[type=text] { color: #333; }
+
+input[type=text], input[type=password], textarea {
+	border: 1px dashed #ccc;
+	color: #A7A7A7;
+}
+
+input[type=text]:hover, input[type=text]:focus, textarea:hover, textarea:focus {
+	border: 1px dashed #969696;
+	color: #333;
+}
+
+
+
+/* Images */
+
+.thumbnail, .avatar, img.alignleft, img.alignright {
+	background: #e9e9e9;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+}
+
+
+/* Misc */
+.more-link, input[type=submit] { 
+	background: #8ca429 url(../../img/japibas/green/btn.png) repeat-x;
+	border: 1px solid #768c22;
+	color: #fff;
+}
+
+.more-link:hover, input[type=submit]:hover { border: 1px solid #526119; }
+
+	
+.nopassword {background: #fff6bf url(../../images/icons/lock.png) no-repeat 10px center; }
+
+
+pre {
+	background: #fff;
+	border: 1px dotted #ccc;
+}
+
+
+code { background: #eee; }
+
+blockquote { border-left: 4px solid #8ca429; }
+
+table {	border: 1px solid #ccc8c1;  }
+
+	table thead th {
+		background: #EAEAEA;
+		border: 1px solid #ccc8c1;
+	}
+	table tbody td{ 
+		background: #fcfcfc;
+		border-left: 1px solid #ccc8c1;
+		border-bottom: 1px solid #ccc8c1;
+	}

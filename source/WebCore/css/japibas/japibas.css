@@ -1,0 +1,539 @@
+/* 
+Theme Name: Japibas
+Theme URI: http://jayj.dk
+Description: "Japibas", a free WordPress theme by Jayj.dk
+Version: 1.0
+Author: Jay
+Author URI: http://jayj.dk
+*/
+
+/* ported to AtomSite by Erik Zaadi (http://erikzaadi.com) */
+
+@import "reset.css"; /* Imports the reset.css */
+
+body { 
+	font: 14px/22px Georgia, Helvetica, sans-serif; 
+}
+
+#wrapper {
+	width: 960px;
+	margin: 0 auto;
+}
+
+a { text-decoration: none; }
+a:hover {  text-decoration: underline; }
+
+p { margin-bottom: 20px; }
+
+h1 { font-size: 26px; }
+h3 { 
+	font: 28px Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	letter-spacing: -1px;
+}
+h4 { font-size: 21px; margin-bottom: 10px;}
+h5 { font-size: 18px; margin-bottom: 5px;}
+h6 { font-size: 16px; margin-bottom: 5px;}
+
+.post h3, .post ul, .post ol { margin: 20px 0; }
+#featured-section h2, #content h2, #content h1 {
+	font: 38px Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	letter-spacing: -2px;
+	line-height: 40px;
+}
+
+hr { border-top-width: 1px; clear: both; height: 0; margin: 20px 0; }
+
+.post ol { list-style: decimal; }
+.post ul { list-style: disc; }
+.post li { margin-left: 30px; }
+
+.alignleft { float: left; }
+.alignright { float: right; }
+.clear { clear: both; }
+
+/* Header */
+
+#header {
+	height: 79px;
+	position: relative;
+}
+
+#header h1 a, #header h2 a{
+	float: left;
+	display: block;
+	height: 32px; width: 169px;
+	margin: 27px 0 0 25px;
+	text-indent: -9999px;
+}
+
+#header h1.noimage a, #header h2.noimage a{
+	background: none;
+	font-size: 32px;
+	height: auto; width: auto;
+	letter-spacing: -1px;
+	margin-top: 28px;
+	text-indent: 0;
+}
+#header p { 
+	float: left;
+	font-style: italic;
+	margin: 45px 0 0 5px;
+}
+	
+	/* Breadcrumbs */
+	#breadcrumbs {
+		height: 105px; width: 960px;
+		position: absolute;
+	}
+	
+	#breadcrumbs p {
+		font-size: 14px;
+		margin: 20px 0 0 5px;
+	}
+	
+/* Menu */
+
+#nav {
+	position: absolute;
+	bottom: 6px; right: 0;
+}
+
+#nav li {
+	float: left;
+	list-style: none;
+	margin: 0 5px 0 0;
+	position: relative;
+}
+
+#nav li a {
+	padding: 8px 12px;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+}
+
+#nav li a:hover, #nav li.current_page_item a, #nav li.current_page_item a:hover, #nav li.hover a {
+	text-decoration: none;
+}
+
+	/* Level 2 */
+	
+	#nav li ul {
+		position: absolute; 
+		top: 27px;
+		z-index: 100;
+		visibility: hidden;
+	}
+	
+	#nav li ul li { width: 200px; }
+	
+	#nav li ul li a {
+		display: block;
+		-webkit-border-radius: 0;
+		-moz-border-radius: 0;
+	}
+
+
+/* Featured section */
+
+#featured-section {
+	 margin: 60px 0 50px;
+	 height: 281px; width: 960px;
+	 position: relative;
+}	
+
+#featured-section .wrapper {
+	width: 920px; 
+	overflow: auto; 
+	height: 238px;
+	margin: 22px 20px 21px;
+	position: absolute; top: 0; left: 0;
+}
+#featured-section ul {
+	height: 238px;
+	width: 99999px;
+	list-style: none; 
+	position: absolute; top: 0; left: 0;
+}
+#featured-section li { 
+	overflow: hidden;
+	float: left;
+	width: 920px;
+	height: 238px;
+	display: block;
+}
+
+
+#featured-section .arrow {
+	display: block;
+	text-indent: -9999px;
+	position: absolute; top: 105px;
+	cursor: pointer;
+	
+}
+	
+#featured-section img {
+	padding: 5px;
+	margin: 5px 30px 0 5px;
+}
+
+#featured-section h2 { margin: 20px 0; }
+#featured-section p { 
+	font-size: 14px;
+	line-height: 26px;
+	padding-right: 50px;
+}
+
+#featured-section .more-link { line-height: normal; }
+
+
+/* Content */
+
+body.home #content { margin-top: 0; }
+#content, body.noslider #content { margin-top: 60px; }
+
+#main {
+	float: left;
+	width: 630px;
+}
+
+.pagetitle { margin-bottom: 15px; }
+h4.pagetitle {
+	font-size: 26px;
+	position: relative;
+	z-index: 3;
+}
+
+
+
+
+/* Post */
+
+.post, #comments {
+	margin-bottom: 20px;
+	padding: 20px;
+	position: relative;
+}
+
+.post-top, .post-bottom { height: 60px; width: 628px; position: absolute; left: 0; z-index: 0; }
+.post-top { top: 0; }
+.post-bottom { bottom: 0;}
+.post-content { z-index: 1; position: relative; }
+
+.post h1, .post h2 { margin: 5px 45px 25px 0;}
+
+.post p {
+	line-height: 24px;
+	margin-right: 20px;
+}
+
+	/* Post meta */
+	.post-meta {
+		font-size: 12px;
+		margin-top: 50px;
+		padding-top: 5px;
+	}
+	
+	.post-meta img {
+		vertical-align: text-bottom;
+		margin-right: 5px;
+	}
+
+
+	div.date { 
+		float: left;
+		padding: 5px 0;
+		width: 50px;
+		text-align: center;
+		position: absolute;
+		top: 0; left: -71px;
+	}
+	
+	div.date span { color:#fff; font-size: 28px; display: block; margin-bottom: 5px;}
+	
+	
+	.post a.comments-num {
+		background: url(../../img/japibas/comments_num.png)  no-repeat;
+		font: bold 20px Arial, Helvetica, sans-serif;
+		display: block;
+		height: 45px; width: 44px;
+		line-height: 37px;
+		text-align: center;
+		position: absolute;
+		top: -5px; right: -5px;
+	}
+
+	/* Social */
+	
+	.social img { margin-right: 10px; }
+	.social a:hover { text-decoration: none; } 
+
+	/* Post navigation */
+	
+	#post-navi {
+		overflow: hidden;
+		margin-top: 30px;
+	}
+	#post-navi p { margin: 0; }
+	#post-navi a  {
+		font-size: 20px;
+		letter-spacing: -1px;
+		line-height: 27px;
+		height: 27px;
+		padding-bottom: 2px;
+		text-decoration: none;
+	}
+	#post-navi p.alignleft a{
+		padding-left: 55px;
+	}
+	
+	#post-navi p.alignright a{ 
+		padding-right: 55px;
+	}
+	
+	
+	/* 404 */
+	
+	.error404 .widget { margin: 0 0 20px; }
+	.error404 #main { margin-top: 25px; }
+	.error404 h4 { margin-top: 35px; }
+	
+/* Sidebar */
+
+#sidebar {
+	float: right;
+	width: 308px; /* 310px with border */
+	position: relative;
+}
+
+.sidebar-top, .sidebar-bottom { height: 54px; width: 308px; position: absolute; left: 0; z-index: 0; }
+.sidebar-top { top: 0; }
+.sidebar-bottom { bottom: 0;}
+
+
+.widget {
+	margin: 20px;
+	position: relative;
+	z-index: 1;
+}
+
+.widget h3 {
+	margin-bottom: 10px;
+}
+
+.widget ul, .widget ol  { margin-left: 5px; }
+.widget ol { list-style-position: inside; }
+.widget li{ margin-bottom: 5px; }
+.widget li a { padding-left: 5px; }
+
+	/* Sidebar -> Ads */
+	
+	.japibas-ads img { margin: 0 10px 10px 0; }
+
+/* Footer */
+
+#footer { 
+	margin-top: 120px;
+	padding: 20px;
+}
+
+#footer p { 
+	font-size: 16px;
+	text-align: center;
+	margin: 0;
+}
+
+#footer a { font-size: 17px; }
+
+#footer_ad {
+	margin: 30px auto 20px;
+	width: 728px;
+}
+
+
+/* Comments */
+
+#comments h3 { margin: 20px 0 30px; }
+
+.commentlist { margin: 20px 0 40px; list-style: none; }
+
+.commentlist li {
+	padding: 20px 10px;
+	overflow: hidden;
+	position: relative;
+}
+
+.commentlist li.empty { display: none; }
+
+.commentlist li ul { 
+	margin: 50px -20px 0 0;
+	overflow: hidden;
+}
+.commentlist li ul li{  
+	float: right;
+	margin-bottom: 10px;
+	padding: 20px;
+	width: 85%;
+}
+
+.commentlist li ul li ul li{ width: 90%;}
+
+.commentlist li p { padding: 0 80px 0 5px; margin: 0; }
+
+.comment-author cite{ font-style: normal; font-size: 17px; }
+/*.says { display: none; }*/
+
+.comment-meta{
+	font-size: 12px;
+	margin-bottom: 30px;
+}
+
+.reply a{
+	float: right;
+	font-size: 12px;
+	padding: 2px 10px;
+}
+
+span.comment-num {
+	font-size: 24px;
+	font-style: italic;
+	position: absolute;
+	top: 10px; right: 20px;
+}
+
+
+/* Comment Form / Forms */
+
+#respond p { margin-bottom: 0; padding: 10px 0; }
+#respond label {  margin-left: 3px; }
+#respond textarea { width: 90%; }
+
+
+input, textarea { font: 14px Georgia, "Times New Roman", Times, serif; }
+
+input[type=text], input[type=password], textarea {
+	padding: 7px 4px;
+}
+
+textarea { overflow: auto; }
+input[type=submit], label { cursor: pointer; }
+
+	/* Searchform */
+	.searchform { overflow: hidden; }
+	
+	.searchform input[type=text] {
+		float: left;
+		width: 175px;
+	}
+	.searchform input[type=submit] {
+		float: right;
+		padding: 6px 18px;
+	}
+	
+	.post .searchform input[type=text], .post .searchform input[type=submit] { float: none; }
+
+	/* Password protected post */
+	form[action*=pass] { background: url(../../img/japibas/icons/lock.png) no-repeat; padding-left: 60px; }
+	form[action*=pass] label br { display: block; }
+	form[action*=pass] br { display: none; }
+
+
+/* Images */
+img.avatar {
+	float: left;
+	padding: 4px;
+	margin: 0 15px 0 0;
+}
+.thumbnail, .avatar, img.alignleft, img.alignright {
+	padding: 5px;
+	margin: 0 20px 10px 0;
+}
+
+img.alignleft { margin: 0 20px 0 0; }
+img.alignright { margin: 0 0 0 20px; } 
+img.aligncenter { display: block; margin: 20px auto; }
+
+
+/* Misc */
+.more-link, input[type=submit] { 
+	padding: 8px 18px;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+}
+
+
+
+pre {
+	font-size: 12px;
+	padding: 10px;
+	margin: 10px 0;
+}
+
+pre code { background: none; }
+
+code { font-size: 12px; }
+
+blockquote {
+	font-size: 12px;
+	font-style: italic;
+	padding-left: 10px;
+}
+
+table {	
+	width: 100%;
+	margin: 10px 0;
+}
+	table caption{
+		font-size: 16px;
+		text-align:left;
+		line-height:40px;
+	}
+	table thead th {
+		font-size: 12px;
+		padding: 10px;
+	}
+	table tbody td{ 
+		font-size: 12px;
+		padding: 10px;
+		text-align: left;
+	}
+	
+	/* Errors, warnings and so on - Example usage: <p class="error">Error! Message</p> */
+	.error, .warning, .download, .success, .tip { padding: 5px 20px 5px 45px; border-left: none!important; border-right: none!important; }
+	
+	.error{
+		background: #ffebe8 url(../../img/japibas/icons/delete.png) no-repeat 15px center;
+		border: 2px solid #C00;
+	}
+	.warning {
+		background: #fff6bf url(../../img/japibas/icons/exclamation.png) no-repeat 15px center;
+		border: 2px solid #ffd324;
+	}
+	.download {
+		background: url(../../img/japibas/icons/disk.png) no-repeat 15px center;
+		border: 2px solid #b5d4fe;
+	}
+	.success {
+		background: #e7f7d3 url(../../img/japibas/icons/accept.png) no-repeat 15px center;
+		border: 2px solid #6c3;
+	}
+	.tip {
+		background: url(../../img/japibas/icons/information.png) no-repeat 15px center;
+		border: 2px solid #b5d4fe;
+	}
+	
+	.nopassword {
+		padding: 25px 25px 25px 70px;
+	}
+	
+	
+	/* Browser fixes */
+	
+	.firefox #nav { bottom: 7px; }
+	.firefox #footer_ad { margin: 30px auto 20px; width: 728px; }
+	.firefox #footer_ad img { margin-bottom: -5px; }
+	.opera .reply { margin-bottom: 20px;}
