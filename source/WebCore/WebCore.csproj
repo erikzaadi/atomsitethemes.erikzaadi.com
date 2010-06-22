@@ -1466,9 +1466,18 @@
     <Content Include="themes\inove\NotFound.aspx" />
     <Content Include="themes\inove\screenshot.PNG" />
     <Content Include="themes\inove\thumbnail.png" />
+    <Content Include="themes\japibas\BlogArchiveWidget.ascx" />
+    <Content Include="themes\japibas\BlogCategoriesWidget.ascx" />
+    <Content Include="themes\japibas\BlogCategoryCloudWidget.ascx" />
+    <Content Include="themes\japibas\BlogEntrySimpleWidget.ascx" />
+    <Content Include="themes\japibas\BlogRecentCommentsWidget.ascx" />
+    <Content Include="themes\japibas\BlogRecentWidget.ascx" />
+    <Content Include="themes\japibas\BlogSearchWidget.ascx" />
     <Content Include="themes\japibas\japibas.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="themes\japibas\MenuWidget.ascx" />
+    <Content Include="themes\japibas\TwitterWidget.ascx" />
     <Content Include="themes\mystique\AccountStatusWidget.ascx" />
     <Content Include="themes\mystique\BlogAddCommentWidget.ascx" />
     <Content Include="themes\mystique\BlogArchiveWidget.ascx" />
